@@ -1,15 +1,57 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Gcmc2</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="ja">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+  <title>GCMC</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<header>
+  <%= link_to "", "/", class: "logo" %>
+  <nav class="left-nav">
+    <ul>
+      <li>
+        <%= link_to "/" do %>
+          <i class="fas fa-chalkboard"></i> プロジェクト
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/" do %>
+          <i class="fas fa-users"></i> ユーザー
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+  <nav class="right-nav">
+    <% if user_signed_in? %>
+    <% else %>
+      <ul>
+        <li>
+          <%= link_to new_user_registration_path do %>
+            <i class="fas fa-user-plus"></i> 新規登録
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <i class="fas fa-sign-in-alt"></i> ログイン
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+  </nav>
+</header>
+<main role="main">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+</main>
+<footer>
+
+</footer>
+</body>
 </html>
