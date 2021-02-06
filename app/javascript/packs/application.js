@@ -16,3 +16,26 @@ import '@fortawesome/fontawesome-free/js/all'
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+// Support component names relative to this directory:
+var componentRequireContext = require.context("components", true);
+var ReactRailsUJS = require("react_ujs");
+ReactRailsUJS.useContext(componentRequireContext);
+
+$(document).ready(function () {
+    let isPullDownMenuOpen = false;
+    let isPopUpMenuOpen = false;
+
+    $(document).on("click touchend", function (e) {
+        if(isPopUpMenuOpen){
+            if(!$(e.target).closest("#jquery-header-pop-up-menu").length){
+                isPopUpMenuOpen=false;
+                $("#jquery-header-pop-up-menu").hide();
+            }
+        }else{
+            if($(e.target).closest("#jquery-header-user-button").length){
+                isPopUpMenuOpen=true;
+                $("#jquery-header-pop-up-menu").show();
+            }
+        }
+    });
+});

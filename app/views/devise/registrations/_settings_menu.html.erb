@@ -1,0 +1,46 @@
+<div>
+  <nav>
+    <ul>
+      <li>
+        <%= link_to edit_user_registration_path do %>
+          プロフィール設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/settings/skills" do %>
+          スキルセット設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/settings/portfolios" do %>
+          ポートフォリオ設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/settings/invitations" do %>
+          招待設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/settings/email" do %>
+          メールアドレス変更
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/settings/password" do %>
+          パスワード変更
+        <% end %>
+      </li>
+      <li>
+        <%= link_to edit_sns_user_registration_path do %>
+          SNS設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/settings/destroy" do %>
+          退会
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</div>

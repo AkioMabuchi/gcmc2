@@ -59,3 +59,11 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 
 gem 'omniauth-github'
+
+gem 'friendly_id'
+
+gem 'aws-ses'
+
+gem 'carrierwave'
+
+gem 'react-rails'

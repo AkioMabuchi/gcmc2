@@ -10,4 +10,8 @@ class HomeController < ApplicationController
 
   def contact_form
   end
+
+  def contact
+
+  end
 end

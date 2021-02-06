@@ -13,11 +13,14 @@
 <body>
 <header>
   <%= link_to "", "/", class: "logo" %>
+  <div class="hamburger-button">
+    <i class="fas fa-bars"></i>
+  </div>
   <nav class="left-nav">
     <ul>
       <li>
         <%= link_to "/" do %>
-          <i class="fas fa-chalkboard"></i> プロジェクト
+          <i class="far fa-list-alt"></i> チーム
         <% end %>
       </li>
       <li>
@@ -29,25 +32,92 @@
   </nav>
   <nav class="right-nav">
     <% if user_signed_in? %>
+      <ul>
+        <li>
+          <%= link_to "/" do %>
+            新規チーム作成
+          <% end %>
+        </li>
+        <li>
+          <div id="jquery-header-user-button" class="user-image">
+            <%= image_tag current_user.image.url %>
+          </div>
+        </li>
+      </ul>
     <% else %>
       <ul>
         <li>
-          <%= link_to new_user_registration_path do %>
+          <%= link_to "/signup" do %>
             <i class="fas fa-user-plus"></i> 新規登録
           <% end %>
         </li>
         <li>
-          <%= link_to new_user_session_path do %>
+          <%= link_to "/login" do %>
             <i class="fas fa-sign-in-alt"></i> ログイン
           <% end %>
         </li>
       </ul>
     <% end %>
   </nav>
+  <div class="pull-down-menu">
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "/" do %>
+            <i class="far fa-list-alt"></i> チーム
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "/" do %>
+            <i class="fas fa-users"></i> ユーザー
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+    <nav>
+      <% if user_signed_in? %>
+        <ul>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+
+            <% end %>
+          </li>
+        </ul>
+      <% else %>
+      <% end %>
+    </nav>
+  </div>
+  <% if user_signed_in? %>
+    <div id="jquery-header-pop-up-menu" class="pop-up-menu">
+      <div class="user-name">
+        <%= current_user.name %>
+      </div>
+      <ul>
+        <li>
+          <%= link_to edit_user_registration_path do %>
+            <span class="icon"><i class="fas fa-user-cog"></i></span> アカウント設定
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <span class="icon"><i class="fas fa-sign-out-alt"></i></span> ログアウト
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
 </header>
 <main role="main">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if notice %>
+    <p class="notice">
+      <%= notice %>
+    </p>
+  <% end %>
+  <% if alert %>
+    <p class="alert">
+      <%= alert %>
+    </p>
+  <% end %>
   <%= yield %>
 </main>
 <footer>
