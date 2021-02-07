@@ -67,3 +67,6 @@ gem 'aws-ses'
 gem 'carrierwave'
 
 gem 'react-rails'
+
+gem 'devise-i18n'
+gem 'devise-i18n-views'

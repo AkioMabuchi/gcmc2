@@ -1,0 +1,6 @@
+<p><%= @resource.name %>様<br/>この度はGCMCのユーザーにご登録いただき、誠にありがとうございます。</p>
+<p>セキュリティおよび不正利用を防ぐ観点から、アカウント認証をお願いしております。<br/>認証され次第、GCMCにログインおよび機能が使用できるようになります。</p>
+<p>アカウント認証のため、以下のURLをクリックするか、コピーしてブラウザのアドレス欄に貼り付けてください。</p>
+<p><%= link_to confirmation_url(@resource, confirmation_token: @token), confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>このメールに覚えがない場合や、GCMCに登録するのをやめたい場合は、何もする必要はありません。</p>
+<p>GCMC</p>

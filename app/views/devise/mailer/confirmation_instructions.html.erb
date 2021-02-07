@@ -1,5 +1,6 @@
-<p>Welcome <%= @resource.name %>さん！</p>
-
-<p>以下のリンクをクリックしてアカウントを認証してください。</p>
-
-<p><%= link_to confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= @resource.name %>様<br/>毎度GCMCをご利用いただき、誠にありがとうございます。</p>
+<p>メールアドレスの変更を行う際、メールアドレスの認証をお願いしております。<br/>認証され次第、新しいメールアドレスでのログインが可能となります。</p>
+<p>メールアドレス認証のため、以下のURLをクリックするか、コピーしてブラウザのアドレス欄に貼り付けてください。</p>
+<p><%= link_to confirmation_url(@resource, confirmation_token: @token), confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>このメールに覚えがない場合や、メールアドレスを変更するのをやめたい場合は、何もする必要はありません。</p>
+<p>GCMC</p>

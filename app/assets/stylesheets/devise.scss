@@ -1,0 +1,103 @@
+form.sign-up-form{
+  @media(max-width: 500px){
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  @media(min-width: 500px){
+    width: 480px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  padding: 20px 15px 30px;
+
+  div.field{
+    &:nth-child(n+3){
+      margin-top: 20px;
+    }
+  }
+}
+
+div.user-setting-page{
+  div.container1{
+    display: flex;
+    div.container2{
+      div.settings-menu{
+        width: 240px;
+        border: 1px solid #BFBFBF;
+        border-radius: 10px;
+        padding: 10px 15px;
+        nav{
+          ul{
+            li{
+              border-top: 1px solid #E6E6E6;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              line-height: 20px;
+              text-align: center;
+              a{
+                font-size: 18px;
+
+                color: black;
+                &:hover{
+                  color: #7F7F7F;
+                }
+              }
+              &:last-child{
+                border-bottom: 1px solid #E6E6E6;
+              }
+            }
+          }
+        }
+      }
+    }
+    div.container3{
+      form.user-setting-form{
+        width: 480px;
+        padding: 20px 15px 30px;
+        h3{
+          font-size: 20px;
+          line-height: 30px;
+          text-align: center;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #E6E6E6;
+        }
+        div.field{
+          padding-top: 20px;
+          h5{
+            font-size: 12px;
+            line-height: 20px;
+            color: #BFBFBF;
+          }
+        }
+      }
+      form.profile-form{
+        div.user-image{
+          margin-top: 10px;
+          margin-bottom: 20px;
+          width: 160px;
+          height: 160px;
+          img{
+            display: block;
+            width: 160px;
+            height: 160px;
+            border-radius: 100%;
+          }
+        }
+
+      }
+      form.skills-form{
+        div.skills{
+          padding-top: 20px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #E6E6E6;
+          h4{
+
+          }
+          div.level{
+
+          }
+        }
+      }
+    }
+  }
+}

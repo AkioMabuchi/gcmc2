@@ -1,45 +1,135 @@
 <h1>アカウント設定</h1>
-<ul>
+<div class="user-setting-page">
+  <div class="container1">
+    <div class="container2">
+      <%= render partial: "layouts/user_settings_menu" %>
+    </div>
+    <div class="container3">
+      <% case @mode %>
+      <% when "profile" then %>
+        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form profile-form" do |f| %>
+          <%= f.hidden_field :mode, name: "mode", id: nil, value: "profile" %>
+          <h3>プロフィール設定</h3>
+          <div class="field">
+            <h4>ユーザーID<small>（必須、英数字およびハイフンのみ、24字以内）</small></h4>
+            <%= f.text_field :permalink %>
+            <% if flash[:permalink_warning] %>
+              <div class="warning">
+                <%= flash[:permalink_warning] %>
+              </div>
+            <% end %>
+          </div>
+          <div class="field">
+            <h4>ユーザー画像</h4>
+            <h5>1MB以内のgif、png、jpgファイル<br/>400x400推奨</h5>
+            <%= react_component "SettingUserImage", info: {image: resource.image.url} %>
+            <%= f.file_field :image, onchange: "window.settingUserImageOnFileChanged();" %>
+          </div>
+          <div class="field">
+            <h4>ユーザー名</h4>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <h4>担当</h4>
+            <ul>
+              <%= f.collection_check_boxes :user_tag_name_ids, UserTagName.all.order(sort_number: :asc), :id, :name do |tag| %>
+                <li>
+                  <%= tag.label do %>
+                    <%= tag.check_box %>
+                    <%= tag.text %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="field">
+            <h4>自己紹介<small>（240字以内）</small></h4>
+            <%= f.text_area :description %>
+          </div>
+          <div class="field">
+            <h4>所在地</h4>
+            <%= f.text_field :location %>
+          </div>
 
-</ul>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="field">
+            <h4>誕生日</h4>
+            <%= raw sprintf(f.date_select(:birth, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, date_separator: "%s"), "年 ", "月 ") + "日" %>
+          </div>
 
-  <div class="field">
-    <%= f.label :email %><br/>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <div class="field">
+            <h4>ホームページ</h4>
+            <%= f.url_field :url %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "更新" %>
+          </div>
+        <% end %>
+      <% when "skills" %>
+        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form skills-form" do |f| %>
+          <%= f.hidden_field :mode, name: "mode", id: nil, value: "skills" %>
+          <h3>スキルセット設定</h3>
+        <% end %>
+      <% when "email" then %>
+        <%= form_with model: resource, url: user_registration_path, local: true do |f| %>
+          <%= f.hidden_field :mode, name: "mode", id: nil, value: "email" %>
+          <div class="field">
+            <h4>現在のメールアドレス</h4>
+            <%= f.email_field :current_email, name: "current_email", id: nil, autocomplete: "email" %>
+            <% if flash[:current_email_warning] %>
+              <div class="warning">
+                <%= flash[:current_email_warning] %>
+              </div>
+            <% end %>
+          </div>
+          <div class="field">
+            <h4>新しいメールアドレス</h4>
+            <%= f.email_field :email, value: nil %>
+            <% if flash[:email_warning] %>
+              <div class="warning">
+                <%= flash[:email_warning] %>
+              </div>
+            <% end %>
+          </div>
+          <div class="actions">
+            <%= f.submit "更新" %>
+          </div>
+        <% end %>
+      <% when "password" then %>
+        <%= form_with model: resource, url: user_registration_path, local: true do |f| %>
+          <%= f.hidden_field :mode, name: "mode", id: nil, value: "password" %>
+          <div class="field">
+            <h4>現在のパスワード</h4>
+            <%= f.password_field :current_password, name: "current_password", id: nil %>
+          </div>
+          <div class="field">
+            <h4>新しいパスワード<small>（8字以上、32字以内）</small></h4>
+            <%= f.password_field :password %>
+          </div>
+          <div class="field">
+            <h4>新しいパスワード<small>（確認用）</small></h4>
+            <%= f.password_field :password_confirmation %>
+          </div>
+          <div class="actions">
+            <%= f.submit "更新" %>
+          </div>
+        <% end %>
+      <% when "sns" then %>
+        <%= form_with model: resource, url: user_registration_path, local: true do |f| %>
+          <%= link_to user_twitter_omniauth_authorize_path, method: :post do %>
+            Twitterと連携する
+          <% end %>
+          <%= link_to disconnect_twitter_path, method: :put do %>
+            Twitterとの連携を解除する
+          <% end %>
+          <%= link_to user_github_omniauth_authorize_path, method: :post do %>
+            GitHubと連携する
+          <% end %>
+          <%= link_to disconnect_github_path, method: :put do %>
+            GitHubとの連携を解除する
+          <% end %>
+        <% end %>
+      <% else end %>
+    </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br/>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br/>
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br/>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br/>
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>

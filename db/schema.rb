@@ -10,7 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_05_115516) do
+ActiveRecord::Schema.define(version: 2021_02_07_120924) do
+
+  create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "level"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_skills_on_user_id"
+  end
+
+  create_table "user_tag_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.integer "sort_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "name_id"
+    t.index ["name_id"], name: "index_user_tags_on_name_id"
+    t.index ["user_id"], name: "index_user_tags_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,7 +55,6 @@ ActiveRecord::Schema.define(version: 2021_02_05_115516) do
     t.string "description", default: "", null: false
     t.string "url", default: "", null: false
     t.string "location", default: "", null: false
-    t.datetime "birth", default: "2000-01-01 12:00:00", null: false
     t.boolean "is_birth_published", default: false, null: false
     t.string "twitter_uid"
     t.string "twitter_url"
@@ -38,9 +62,13 @@ ActiveRecord::Schema.define(version: 2021_02_05_115516) do
     t.string "github_uid"
     t.string "github_url"
     t.boolean "is_published_github"
+    t.date "birth", default: "2000-01-01", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "skills", "users"
+  add_foreign_key "user_tags", "user_tag_names", column: "name_id"
+  add_foreign_key "user_tags", "users"
 end

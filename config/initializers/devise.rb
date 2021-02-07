@@ -244,7 +244,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
@@ -271,7 +271,14 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+  config.omniauth :twitter,
+                  Rails.application.credentials.twitter_api[:key],
+                  Rails.application.credentials.twitter_api[:secret_key]
+
+  config.omniauth :github,
+                  Rails.application.credentials.github_api[:key],
+                  Rails.application.credentials.github_api[:secret_key]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -296,13 +303,6 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  config.omniauth :twitter,
-                  Rails.application.credentials.twitter_api[:key],
-                  Rails.application.credentials.twitter_api[:secret_key]
-
-  config.omniauth :github,
-                  Rails.application.credentials.github_api[:key],
-                  Rails.application.credentials.github_api[:secret_key]
 
   # ==> Turbolinks configuration
   # If your app is using Turbolinks, Turbolinks::Controller needs to be included to make redirection work correctly:

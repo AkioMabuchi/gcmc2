@@ -1,4 +1,4 @@
-<div>
+<div class="settings-menu">
   <nav>
     <ul>
       <li>
@@ -7,27 +7,27 @@
         <% end %>
       </li>
       <li>
-        <%= link_to "/settings/skills" do %>
+        <%= link_to setting_skills_path do %>
           スキルセット設定
         <% end %>
       </li>
       <li>
-        <%= link_to "/settings/portfolios" do %>
+        <%= link_to "/" do %>
           ポートフォリオ設定
         <% end %>
       </li>
       <li>
-        <%= link_to "/settings/invitations" do %>
+        <%= link_to "/" do %>
           招待設定
         <% end %>
       </li>
       <li>
-        <%= link_to "/settings/email" do %>
+        <%= link_to edit_email_user_registration_path do %>
           メールアドレス変更
         <% end %>
       </li>
       <li>
-        <%= link_to "/settings/password" do %>
+        <%= link_to edit_password_user_registration_path do %>
           パスワード変更
         <% end %>
       </li>
@@ -37,7 +37,7 @@
         <% end %>
       </li>
       <li>
-        <%= link_to "/settings/destroy" do %>
+        <%= link_to edit_destroy_user_registration_path do %>
           退会
         <% end %>
       </li>

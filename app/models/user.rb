@@ -5,8 +5,30 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: [:twitter, :github]
 
+  validates :email,
+            presence: {message: "入力してください"},
+            uniqueness: {case_sensitive: true, message: "そのメールアドレスは既に使用されています"}
+
+  validates :permalink,
+            presence: {message: "入力してください"},
+            uniqueness: {case_sensitive: true, message: "そのユーザーIDは既に使用されています"},
+            length: {maximum: 24, message: "24字以内で入力してください"}
+  validates :name,
+            presence: {message: "入力してください"},
+            length: {maximum: 24, message: "24字以内で入力してください"}
+
   validates :twitter_uid, presence: true, uniqueness: {case_sensitive: true}, allow_nil: true
   validates :github_uid, presence: true, uniqueness: {case_sensitive: true}, allow_nil: true
+
+  has_many :user_tags, dependent: :destroy
+  has_many :user_tag_names, through: :user_tags, dependent: :destroy
+
+  has_many :skills, dependent: :destroy
+
+  def send_on_create_confirmation_instructions
+    generate_confirmation_token! unless @raw_confirmation_token
+    send_devise_notification :confirmation_on_create_instructions, @raw_confirmation_token
+  end
 
   def connect_twitter(uid, url)
     self.twitter_uid = uid
@@ -29,9 +51,16 @@ class User < ApplicationRecord
       params.delete :password_confirmation
     end
 
-    result = update_attributes params, *options
+    result = update params, *options
     clean_up_passwords
     result
   end
 
+  def invitable?(user)
+    if user
+      false
+    else
+      false
+    end
+  end
 end

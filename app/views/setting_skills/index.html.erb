@@ -1,0 +1,11 @@
+<h1>アカウント設定</h1>
+<div class="user-setting-page">
+  <div class="container1">
+    <div class="container2">
+      <%= render partial: "layouts/user_settings_menu" %>
+    </div>
+    <div class="container3">
+      <%= react_component "SettingSkillsForm", info: @react_info %>
+    </div>
+  </div>
+</div>
