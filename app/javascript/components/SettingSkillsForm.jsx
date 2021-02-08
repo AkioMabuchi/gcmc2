@@ -53,8 +53,6 @@ class SettingSkillsForm extends React.Component {
     }
 
     render() {
-        let methodField;
-
         return (
             <form action={this.state.action} method={"POST"}
                   className={"general-form user-setting-form skills-form"}>

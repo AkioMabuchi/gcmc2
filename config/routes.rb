@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   end
 
   resources :setting_skills, except: [:show, :new, :edit], path: "settings/skills"
+  resources :setting_portfolios, except: [:new, :edit], path: "settings/portfolios"
+  resources :setting_invitations, except: [:show, :new, :edit, :update], path: "settings/invitations"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -129,6 +129,16 @@
             GitHubとの連携を解除する
           <% end %>
         <% end %>
+      <% when "destroy" then %>
+        <div class="user-destroy-box">
+          <h3>退会</h3>
+          <div class="caution">
+            退会後、全てのデータが削除されます。また、削除されたデータの復元はできません。
+          </div>
+          <div class="destroy-action">
+            <%= button_to "退会", user_registration_path, data: {confirm: "本当に退会しますか？"}, method: :delete %>
+          </div>
+        </div>
       <% else end %>
     </div>
   </div>

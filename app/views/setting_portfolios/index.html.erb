@@ -1,0 +1,58 @@
+<h1>アカウント設定</h1>
+<div class="user-setting-page">
+  <div class="container1">
+    <div class="container2">
+      <%= render partial: "layouts/user_settings_menu" %>
+    </div>
+    <div class="container3">
+      <%= form_with model: @portfolio, url: setting_portfolios_path, local: true, class: "general-form user-setting-form portfolios-form" do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <h3>ポートフォリオ設定</h3>
+        <div class="portfolios">
+          <h4>現在のポートフォリオ</h4>
+          <ul>
+            <% current_user.portfolios.each do |portfolio| %>
+              <li>
+                <div class="portfolio-image">
+                  <%= link_to setting_portfolio_url portfolio.id do %>
+                    <%= image_tag portfolio.image.url %>
+                  <% end %>
+                </div>
+                <div class="portfolio-name">
+                  <%= link_to setting_portfolio_url portfolio.id do %>
+                    <%= portfolio.name %>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="field">
+          <h4>新規ポートフォリオ名<small>（必須）</small></h4>
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <h4>新規ポートフォリオ画像</h4>
+          <h5>2MB以内のgif、png、jpgファイル<br/>600x315推奨</h5>
+          <%= react_component "SettingPortfolioImage" %>
+          <%= f.file_field :image %>
+        </div>
+        <div class="field">
+          <h4>制作期間</h4>
+          <%= f.text_field :period %>
+        </div>
+        <div class="field">
+          <h4>新規ポートフォリオ説明</h4>
+          <%= f.text_area :description %>
+        </div>
+        <div class="field">
+          <h4>新規ポートフォリオURL</h4>
+          <%= f.url_field :url %>
+        </div>
+        <div class="actions">
+          <%= f.submit value: "追加" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

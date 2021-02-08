@@ -1,48 +1,53 @@
-form.sign-up-form{
-  @media(max-width: 500px){
+form.sign-up-form {
+  @media(max-width: 500px) {
     margin-right: 10px;
     margin-left: 10px;
   }
-  @media(min-width: 500px){
+  @media(min-width: 500px) {
     width: 480px;
     margin-right: auto;
     margin-left: auto;
   }
   padding: 20px 15px 30px;
 
-  div.field{
-    &:nth-child(n+3){
+  div.field {
+    &:nth-child(n+3) {
       margin-top: 20px;
     }
   }
 }
 
-div.user-setting-page{
-  div.container1{
+div.user-setting-page {
+  div.container1 {
     display: flex;
-    div.container2{
-      div.settings-menu{
+
+    div.container2 {
+      div.settings-menu {
         width: 240px;
         border: 1px solid #BFBFBF;
         border-radius: 10px;
         padding: 10px 15px;
-        nav{
-          ul{
-            li{
+
+        nav {
+          ul {
+            li {
               border-top: 1px solid #E6E6E6;
               padding-top: 5px;
               padding-bottom: 5px;
               line-height: 20px;
               text-align: center;
-              a{
+
+              a {
                 font-size: 18px;
 
                 color: black;
-                &:hover{
+
+                &:hover {
                   color: #7F7F7F;
                 }
               }
-              &:last-child{
+
+              &:last-child {
                 border-bottom: 1px solid #E6E6E6;
               }
             }
@@ -50,51 +55,142 @@ div.user-setting-page{
         }
       }
     }
-    div.container3{
-      form.user-setting-form{
+
+    div.container3 {
+      form.user-setting-form {
         width: 480px;
         padding: 20px 15px 30px;
-        h3{
+
+        h3 {
           font-size: 20px;
           line-height: 30px;
           text-align: center;
           padding-bottom: 20px;
           border-bottom: 1px solid #E6E6E6;
         }
-        div.field{
+
+        div.field {
           padding-top: 20px;
-          h5{
+
+          h5 {
             font-size: 12px;
             line-height: 20px;
             color: #BFBFBF;
           }
         }
       }
-      form.profile-form{
-        div.user-image{
+
+      form.profile-form {
+        div.user-image {
           margin-top: 10px;
           margin-bottom: 20px;
           width: 160px;
           height: 160px;
-          img{
+
+          img {
             display: block;
             width: 160px;
             height: 160px;
             border-radius: 100%;
           }
         }
-
       }
-      form.skills-form{
-        div.skills{
+
+      form.skills-form {
+        div.skills {
           padding-top: 20px;
           padding-bottom: 10px;
           border-bottom: 1px solid #E6E6E6;
-          h4{
+
+          h4 {
+            font-size: 18px;
+            line-height: 20px;
+          }
+
+          div.level {
 
           }
-          div.level{
+        }
+      }
 
+      form.portfolios-form {
+        div.portfolios {
+          padding-top: 20px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #E6E6E6;
+
+          h4 {
+            font-size: 18px;
+            line-height: 20px;
+          }
+
+          div.portfolio-image {
+            a {
+              display: block;
+              width: 200px;
+              height: 105px;
+
+              img {
+                display: block;
+                width: 200px;
+                height: 105px;
+              }
+            }
+          }
+        }
+      }
+
+      form.portfolio-form {
+
+      }
+
+      form.invitations-form {
+      }
+
+      form.email-form {
+      }
+
+      form.password-form {
+      }
+
+      form.sns-form {
+      }
+
+      div.user-destroy-box {
+        border: 1px solid #BFBFBF;
+        border-radius: 10px;
+        width: 480px;
+        padding: 20px 15px 30px;
+
+        h3 {
+          font-size: 20px;
+          line-height: 30px;
+          text-align: center;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #E6E6E6;
+        }
+
+        div.caution{
+          padding-top: 10px;
+          padding-bottom: 10px;
+          font-size: 16px;
+          color: red;
+          line-height: 24px;
+          border-bottom: 1px solid #E6E6E6;
+        }
+        div.destroy-action {
+          input[type="submit"] {
+            display: block;
+            width: 200px;
+            height: 40px;
+            background-color: #FFB2B2;
+            color: red;
+            font-weight: 700;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 30px auto 0;
+            border: 2px solid #FF0000;
+            border-radius: 10px;
           }
         }
       }

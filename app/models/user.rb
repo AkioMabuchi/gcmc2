@@ -24,6 +24,7 @@ class User < ApplicationRecord
   has_many :user_tag_names, through: :user_tags, dependent: :destroy
 
   has_many :skills, dependent: :destroy
+  has_many :portfolios, dependent: :destroy
 
   def send_on_create_confirmation_instructions
     generate_confirmation_token! unless @raw_confirmation_token
