@@ -8,22 +8,26 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def twitter
     auth_hash = request.env["omniauth.auth"]
     if auth_hash[:provider] == "twitter"
-      user = User.find_by(twitter_uid: auth_hash[:uid])
       if user_signed_in?
-        if user
-          redirect_to edit_sns_user_registration_path, alert: "このTwitterアカウントは既に使用されています"
-        else
-          current_user.connect_twitter auth_hash[:uid], auth_hash[:info][:urls][:Twitter]
+        new_twitter = Twitter.new(
+            user_id: current_user.id,
+            uid: auth_hash[:uid],
+            url: auth_hash[:info][:urls][:Twitter]
+        )
+        if new_twitter.save
           redirect_to edit_sns_user_registration_path, notice: "Twitterと連携しました"
+        else
+          redirect_to edit_sns_user_registration_path, alert: "このTwitterアカウントは既に使用されています"
         end
       else
-        if user
+        twitter_record = Twitter.find_by(uid: auth_hash[:uid])
+        if twitter_record
+          user = twitter_record.user
           sign_in user
           redirect_to root_path, notice: "ようこそ、#{user.name}さん"
         else
           redirect_to new_user_session_path, alert: "このTwitterアカウントは連携されていません"
         end
-
       end
     else
       raise StandardError
@@ -33,16 +37,21 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def github
     auth_hash = request.env["omniauth.auth"]
     if auth_hash[:provider] == "github"
-      user = User.find_by(github_uid: auth_hash[:uid])
       if user_signed_in?
-        if user
-          redirect_to edit_sns_user_registration_path, alert: "このGitHubアカウントは既に使用されています"
-        else
-          current_user.connect_github auth_hash[:uid], auth_hash[:info][:urls][:GitHub]
+        new_github = Github.new(
+            user_id: current_user.id,
+            uid: auth_hash[:uid],
+            url: auth_hash[:info][:urls][:GitHub]
+        )
+        if new_github.save
           redirect_to edit_sns_user_registration_path, notice: "GitHubと連携しました"
+        else
+          redirect_to edit_sns_user_registration_path, alert: "このGitHubアカウントは既に使用されています"
         end
       else
-        if user
+        github_record = Github.find_by(uid: auth_hash[:uid])
+        if github_record
+          user = github_record.user
           sign_in user
           redirect_to root_path, notice: "ようこそ、#{user.name}さん"
         else

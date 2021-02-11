@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  url: MyString
+  is_published_url: false
+
+two:
+  uid: MyString
+  url: MyString
+  is_published_url: false

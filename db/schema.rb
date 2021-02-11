@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_214556) do
+ActiveRecord::Schema.define(version: 2021_02_11_003133) do
+
+  create_table "githubs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "uid"
+    t.string "url"
+    t.boolean "is_published_url", default: false, null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_githubs_on_user_id"
+  end
 
   create_table "portfolios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -24,6 +34,22 @@ ActiveRecord::Schema.define(version: 2021_02_07_214556) do
     t.index ["user_id"], name: "index_portfolios_on_user_id"
   end
 
+  create_table "position_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.integer "sort_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "name_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name_id"], name: "index_positions_on_name_id"
+    t.index ["user_id"], name: "index_positions_on_user_id"
+  end
+
   create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "level"
@@ -31,6 +57,28 @@ ActiveRecord::Schema.define(version: 2021_02_07_214556) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_skills_on_user_id"
+  end
+
+  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "permalink"
+    t.string "name"
+    t.string "image"
+    t.string "title"
+    t.text "description"
+    t.bigint "owner_user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_user_id"], name: "index_teams_on_owner_user_id"
+  end
+
+  create_table "twitters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "uid"
+    t.string "url"
+    t.boolean "is_published_url", default: false, null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_twitters_on_user_id"
   end
 
   create_table "user_tag_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -68,20 +116,19 @@ ActiveRecord::Schema.define(version: 2021_02_07_214556) do
     t.string "url", default: "", null: false
     t.string "location", default: "", null: false
     t.boolean "is_birth_published", default: false, null: false
-    t.string "twitter_uid"
-    t.string "twitter_url"
-    t.boolean "is_published_twitter"
-    t.string "github_uid"
-    t.string "github_url"
-    t.boolean "is_published_github"
     t.date "birth", default: "2000-01-01", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "githubs", "users"
   add_foreign_key "portfolios", "users"
+  add_foreign_key "positions", "position_names", column: "name_id"
+  add_foreign_key "positions", "users"
   add_foreign_key "skills", "users"
+  add_foreign_key "teams", "users", column: "owner_user_id"
+  add_foreign_key "twitters", "users"
   add_foreign_key "user_tags", "user_tag_names", column: "name_id"
   add_foreign_key "user_tags", "users"
 end

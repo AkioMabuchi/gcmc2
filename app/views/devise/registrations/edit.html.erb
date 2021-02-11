@@ -31,7 +31,7 @@
           </div>
           <div class="field">
             <h4>担当</h4>
-            <ul>
+            <ul class="tags">
               <%= f.collection_check_boxes :user_tag_name_ids, UserTagName.all.order(sort_number: :asc), :id, :name do |tag| %>
                 <li>
                   <%= tag.label do %>
@@ -53,7 +53,9 @@
 
           <div class="field">
             <h4>誕生日</h4>
-            <%= raw sprintf(f.date_select(:birth, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, date_separator: "%s"), "年 ", "月 ") + "日" %>
+            <div class="birth-box">
+              <%= raw sprintf(f.date_select(:birth, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, date_separator: "%s"), "年 ", "月 ") + "日" %>
+            </div>
           </div>
 
           <div class="field">
@@ -71,8 +73,9 @@
           <h3>スキルセット設定</h3>
         <% end %>
       <% when "email" then %>
-        <%= form_with model: resource, url: user_registration_path, local: true do |f| %>
+        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form email-form" do |f| %>
           <%= f.hidden_field :mode, name: "mode", id: nil, value: "email" %>
+          <h3>メールアドレス変更</h3>
           <div class="field">
             <h4>現在のメールアドレス</h4>
             <%= f.email_field :current_email, name: "current_email", id: nil, autocomplete: "email" %>
@@ -96,8 +99,9 @@
           </div>
         <% end %>
       <% when "password" then %>
-        <%= form_with model: resource, url: user_registration_path, local: true do |f| %>
+        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form password-form" do |f| %>
           <%= f.hidden_field :mode, name: "mode", id: nil, value: "password" %>
+          <h3>パスワード変更</h3>
           <div class="field">
             <h4>現在のパスワード</h4>
             <%= f.password_field :current_password, name: "current_password", id: nil %>
@@ -115,19 +119,48 @@
           </div>
         <% end %>
       <% when "sns" then %>
-        <%= form_with model: resource, url: user_registration_path, local: true do |f| %>
-          <%= link_to user_twitter_omniauth_authorize_path, method: :post do %>
-            Twitterと連携する
-          <% end %>
-          <%= link_to disconnect_twitter_path, method: :put do %>
-            Twitterとの連携を解除する
-          <% end %>
-          <%= link_to user_github_omniauth_authorize_path, method: :post do %>
-            GitHubと連携する
-          <% end %>
-          <%= link_to disconnect_github_path, method: :put do %>
-            GitHubとの連携を解除する
-          <% end %>
+        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form sns-form" do |f| %>
+          <%= f.hidden_field :mode, name: "mode", id: nil, value: "sns" %>
+          <h3>SNS設定</h3>
+          <div class="field">
+            <h4>Twitter連携</h4>
+            <% if current_user.twitter %>
+              <h5>このアカウントはTwitterと連携済みです</h5>
+              <%= link_to twitters_path, method: :delete, class: "disconnect-twitter" do %>
+                <i class="fab fa-twitter"></i> Twitterとの連携を解除
+              <% end %>
+              <%= f.fields_for :twitter do |twitter| %>
+                <div class="check-box-field">
+                  <%= twitter.check_box :is_published_url %> URL公開
+                </div>
+              <% end %>
+            <% else %>
+              <%= link_to user_twitter_omniauth_authorize_path, method: :post, class: "connect-twitter" do %>
+                <i class="fab fa-twitter"></i> Twitterと連携する
+              <% end %>
+            <% end %>
+          </div>
+          <div class="field">
+            <h4>GitHub連携</h4>
+            <% if current_user.github %>
+              <h5>このアカウントはGitHubと連携済みです</h5>
+              <%= link_to githubs_path, method: :delete, class: "disconnect-github" do %>
+                <i class="fab fa-github"></i> GitHubとの連携を解除する
+              <% end %>
+              <%= f.fields_for :github do |github| %>
+                <div class="check-box-field">
+                  <%= github.check_box :is_published_url %> URL公開
+                </div>
+              <% end %>
+            <% else %>
+              <%= link_to user_github_omniauth_authorize_path, method: :post, class: "connect-github" do %>
+                <i class="fab fa-github"></i> GitHubと連携する
+              <% end %>
+            <% end %>
+          </div>
+          <div class="actions">
+            <%= f.submit value: "更新" %>
+          </div>
         <% end %>
       <% when "destroy" then %>
         <div class="user-destroy-box">

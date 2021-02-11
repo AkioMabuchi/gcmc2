@@ -19,12 +19,12 @@
   <nav class="left-nav">
     <ul>
       <li>
-        <%= link_to "/" do %>
+        <%= link_to teams_path do %>
           <i class="far fa-list-alt"></i> チーム
         <% end %>
       </li>
       <li>
-        <%= link_to "/" do %>
+        <%= link_to users_path do %>
           <i class="fas fa-users"></i> ユーザー
         <% end %>
       </li>
@@ -34,7 +34,7 @@
     <% if user_signed_in? %>
       <ul>
         <li>
-          <%= link_to "/" do %>
+          <%= link_to new_team_path do %>
             新規チーム作成
           <% end %>
         </li>
@@ -63,12 +63,12 @@
     <nav>
       <ul>
         <li>
-          <%= link_to "/" do %>
+          <%= link_to teams_path do %>
             <i class="far fa-list-alt"></i> チーム
           <% end %>
         </li>
         <li>
-          <%= link_to "/" do %>
+          <%= link_to users_path do %>
             <i class="fas fa-users"></i> ユーザー
           <% end %>
         </li>

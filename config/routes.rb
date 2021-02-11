@@ -20,12 +20,19 @@ Rails.application.routes.draw do
     get "settings/password", as: "edit_password_user_registration"
     get "settings/sns", as: "edit_sns_user_registration"
     get "settings/destroy", as: "edit_destroy_user_registration"
-    put "disconnect/twitter", to: "users/registrations#disconnect_twitter", as: "disconnect_twitter"
-    put "disconnect/github", to: "users/registrations#disconnect_github", as: "disconnect_github"
   end
 
+  resources :users, only: [:index, :show]
+  resources :teams, except: [:new], path_names: {edit: :settings}
+
+  resource :twitters, only: [:destroy], path: "disconnect/twitter"
+  resource :githubs, only: [:destroy], path: "disconnect/github"
   resources :setting_skills, except: [:show, :new, :edit], path: "settings/skills"
   resources :setting_portfolios, except: [:new, :edit], path: "settings/portfolios"
   resources :setting_invitations, except: [:show, :new, :edit, :update], path: "settings/invitations"
+
+  get "new-team", to: "teams#new", as: "new_team"
+
+  post "test-data", to: "users#test_data"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

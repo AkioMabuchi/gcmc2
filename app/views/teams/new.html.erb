@@ -1,0 +1,31 @@
+<h1>新規チーム作成</h1>
+<div>
+  <%= form_with model: Team.new, url: teams_path, local: true, class: "general-form" do |f| %>
+    <%= f.hidden_field :owner_user_id, value: current_user.id %>
+    <div class="field">
+      <h4>チームID<small>（必須、24字以内）</small></h4>
+      <h5>リンク名に使われます</h5>
+      <%= f.text_field :permalink %>
+    </div>
+    <div class="field">
+      <h4>チーム名<small>（必須、24字以内）</small></h4>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <h4>キャッチフレーズ</h4>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <h4>チーム画像</h4>
+      <h5>4MB以内のgif、png、jpgファイル<br/>1200x630推奨</h5>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <h4>チーム紹介文</h4>
+      <%= f.text_area :description %>
+    </div>
+    <div class="actions">
+      <%= f.submit value: "作成" %>
+    </div>
+  <% end %>
+</div>

@@ -52,6 +52,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to edit_user_registration_path, notice: "プロフィールを更新しました"
       when "email" then
         redirect_to edit_email_user_registration_path, notice: "メールアドレスを更新するための確認を行ってください"
+      when "sns" then
+        redirect_to edit_sns_user_registration_path, notice: "SNS設定を更新しました"
       else
         raise StandardError
       end
@@ -73,6 +75,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to edit_user_registration_path
       when "email" then
         redirect_to edit_email_user_registration_path
+      when "sns" then
+        redirect_to edit_sns_user_registration_path
       else
         raise StandardError
       end
@@ -83,32 +87,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def destroy
   #   super
   # end
-
-  def disconnect_twitter
-    current_user.update_attributes(
-        {
-            twitter_uid: nil,
-            twitter_url: nil,
-            is_published_twitter: nil
-        }
-    )
-    current_user.save!
-
-    redirect_to edit_sns_user_registration_path, notice: "Twitterとの連携を解除しました"
-  end
-
-  def disconnect_github
-    current_user.update_attributes(
-        {
-            github_uid: nil,
-            github_url: nil,
-            is_published_github: nil
-        }
-    )
-    current_user.save!
-
-    redirect_to edit_sns_user_registration_path, notice: "GitHubとの連携を解除しました"
-  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -148,9 +126,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
             :description,
             :location,
             :birth,
-            :url
+            :url,
         ],
-        user_tag_name_ids: []
+        user_tag_name_ids: [],
+        twitter_attributes:[
+            :id,
+            :uid,
+            :url,
+            :is_published_url
+        ],
+        github_attributes: [
+            :id,
+            :uid,
+            :url,
+            :is_published_url
+        ]
     ]
 
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs

@@ -1,9 +1,12 @@
 class User < ApplicationRecord
+  include FriendlyId
   mount_uploader :image, UserImageUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: [:twitter, :github]
+
+  friendly_id :permalink
 
   validates :email,
             presence: {message: "入力してください"},
@@ -17,32 +20,25 @@ class User < ApplicationRecord
             presence: {message: "入力してください"},
             length: {maximum: 24, message: "24字以内で入力してください"}
 
-  validates :twitter_uid, presence: true, uniqueness: {case_sensitive: true}, allow_nil: true
-  validates :github_uid, presence: true, uniqueness: {case_sensitive: true}, allow_nil: true
-
   has_many :user_tags, dependent: :destroy
   has_many :user_tag_names, through: :user_tags, dependent: :destroy
 
+  has_one :twitter, dependent: :destroy
+  has_one :github, dependent: :destroy
+
   has_many :skills, dependent: :destroy
   has_many :portfolios, dependent: :destroy
+  has_many :positions, dependent: :destroy
+  has_many :position_names, through: :positions, dependent: :destroy
+
+  has_many :owner_teams, class_name: "Team"
+
+  accepts_nested_attributes_for :twitter
+  accepts_nested_attributes_for :github
 
   def send_on_create_confirmation_instructions
     generate_confirmation_token! unless @raw_confirmation_token
     send_devise_notification :confirmation_on_create_instructions, @raw_confirmation_token
-  end
-
-  def connect_twitter(uid, url)
-    self.twitter_uid = uid
-    self.twitter_url = url
-    self.is_published_twitter = false
-    save!
-  end
-
-  def connect_github(uid, url)
-    self.github_uid = uid
-    self.github_url = url
-    self.is_published_github = false
-    save!
   end
 
   def update_without_current_password(params, *options)
