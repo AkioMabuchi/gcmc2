@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "home#top"
+  root "home#index"
 
   devise_for :users,
              path: "",
@@ -23,13 +23,26 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :show]
-  resources :teams, except: [:new], path_names: {edit: :settings}
+  resources :teams, except: [:new], path_names: {edit: :settings} do
+    member do
+      get :tags_edit, path: "settings/tags"
+      get :environments_edit, path: "settings/environments"
+      get :wants_edit, path: "settings/wants"
+      get :publishing_edit, path: "settings/publishing"
+      get :dissolution, path: "settings/dissolution"
+      patch :tags_update, path: "tags"
+      patch :publishing_update, path: "publishing"
+      patch :environments_update, path: "environments"
+    end
+  end
+
 
   resource :twitters, only: [:destroy], path: "disconnect/twitter"
   resource :githubs, only: [:destroy], path: "disconnect/github"
   resources :setting_skills, except: [:show, :new, :edit], path: "settings/skills"
   resources :setting_portfolios, except: [:new, :edit], path: "settings/portfolios"
   resources :setting_invitations, except: [:show, :new, :edit, :update], path: "settings/invitations"
+  resources :wanted_positions, only: [:create, :update, :destroy], path: "settings/:permalink/wants"
 
   get "new-team", to: "teams#new", as: "new_team"
 

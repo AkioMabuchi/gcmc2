@@ -1,0 +1,28 @@
+<h1>チーム設定</h1>
+<div class="team-setting-page">
+  <div class="container1">
+    <div class="container2">
+      <%= render partial: "layouts/team_settings_menu", locals: {team: @team} %>
+    </div>
+    <div class="container3">
+      <%= form_with model: @team, url: tags_update_team_path(@team.permalink), local: true, class: "general-form team-setting-form tags-form" do |f| %>
+        <h3>タグ設定</h3>
+        <div class="field">
+          <ul class="tags">
+            <%= f.collection_check_boxes :team_tag_name_ids, TeamTagName.order(sort_number: :asc), :id, :name do |tag| %>
+              <li>
+                <%= tag.label do %>
+                  <%= tag.check_box %>
+                  <%= tag.text %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="actions">
+          <%= f.submit value: "更新" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<h1>チーム設定</h1>
+<div class="team-setting-page">
+  <div class="container1">
+    <div class="container2">
+      <%= render partial: "layouts/team_settings_menu", locals: {team: @team} %>
+    </div>
+    <div class="container3">
+      <%= react_component "SettingWantsForm", info: @react_info %>
+    </div>
+  </div>
+</div>

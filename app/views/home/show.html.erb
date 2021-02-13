@@ -1,0 +1,8 @@
+<h1>マイページ</h1>
+<div class="page-home-top-user">
+  <ul>
+    <% current_user.owner_teams.each do |team| %>
+      <%= link_to "編集", edit_team_path(team.permalink) %>
+    <% end %>
+  </ul>
+</div>

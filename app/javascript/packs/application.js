@@ -26,14 +26,14 @@ $(document).ready(function () {
     let isPopUpMenuOpen = false;
 
     $(document).on("click touchend", function (e) {
-        if(isPopUpMenuOpen){
-            if(!$(e.target).closest("#jquery-header-pop-up-menu").length){
-                isPopUpMenuOpen=false;
+        if (isPopUpMenuOpen) {
+            if (!$(e.target).closest("#jquery-header-pop-up-menu").length) {
+                isPopUpMenuOpen = false;
                 $("#jquery-header-pop-up-menu").hide();
             }
-        }else{
-            if($(e.target).closest("#jquery-header-user-button").length){
-                isPopUpMenuOpen=true;
+        } else {
+            if ($(e.target).closest("#jquery-header-user-button").length) {
+                isPopUpMenuOpen = true;
                 $("#jquery-header-pop-up-menu").show();
             }
         }

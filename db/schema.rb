@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_003133) do
+ActiveRecord::Schema.define(version: 2021_02_12_133127) do
 
   create_table "githubs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "uid"
@@ -57,6 +57,22 @@ ActiveRecord::Schema.define(version: 2021_02_11_003133) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_skills_on_user_id"
+  end
+
+  create_table "team_tag_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.integer "sort_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "team_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "team_id"
+    t.bigint "name_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name_id"], name: "index_team_tags_on_name_id"
+    t.index ["team_id"], name: "index_team_tags_on_team_id"
   end
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -122,13 +138,27 @@ ActiveRecord::Schema.define(version: 2021_02_11_003133) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wanted_positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "amount"
+    t.bigint "team_id"
+    t.bigint "name_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name_id"], name: "index_wanted_positions_on_name_id"
+    t.index ["team_id"], name: "index_wanted_positions_on_team_id"
+  end
+
   add_foreign_key "githubs", "users"
   add_foreign_key "portfolios", "users"
   add_foreign_key "positions", "position_names", column: "name_id"
   add_foreign_key "positions", "users"
   add_foreign_key "skills", "users"
+  add_foreign_key "team_tags", "team_tag_names", column: "name_id"
+  add_foreign_key "team_tags", "teams"
   add_foreign_key "teams", "users", column: "owner_user_id"
   add_foreign_key "twitters", "users"
   add_foreign_key "user_tags", "user_tag_names", column: "name_id"
   add_foreign_key "user_tags", "users"
+  add_foreign_key "wanted_positions", "position_names", column: "name_id"
+  add_foreign_key "wanted_positions", "teams"
 end

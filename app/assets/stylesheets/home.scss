@@ -3,23 +3,25 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 // ------------------------------ GENERAL ------------------------------
-*{
+* {
   font-family: "M PLUS 1p", serif;
   box-sizing: border-box;
-  &.focus{
+
+  &.focus {
     outline: none;
   }
 }
 
-a{
+a {
   text-decoration: none;
   color: #4A90E2;
-  &.hover{
+
+  &.hover {
     color: #4A90E2;
   }
 }
 
-h1{
+h1 {
   margin: 0;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -31,54 +33,55 @@ h1{
   font-weight: 100;
 }
 
-h2{
+h2 {
   margin: 0;
   padding: 0;
 }
 
-h3{
+h3 {
   margin: 0;
   padding: 0;
 }
 
-h4{
+h4 {
   margin: 0;
   padding: 0;
 }
 
-h5{
+h5 {
   margin: 0;
   padding: 0;
 }
 
-h6{
+h6 {
   margin: 0;
   padding: 0;
 }
 
-ul{
+ul {
   margin: 0;
   padding: 0;
 }
 
-li{
+li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-p{
+p {
   margin: 0;
   padding: 0;
 }
-body{
+
+body {
   margin: 0;
   padding: 0;
 }
 
 // ------------------------------ HEADER ------------------------------
 
-header{
+header {
   $breakpoint: 1000px;
   height: 60px;
   background-color: #00FFBF;
@@ -88,7 +91,7 @@ header{
   left: 0;
   z-index: 100;
 
-  a.logo{
+  a.logo {
     display: block;
     width: 192px;
     height: 50px;
@@ -98,14 +101,13 @@ header{
     top: 5px;
     left: 5px;
 
-    &:hover{
+    &:hover {
       background-image: image-url("HeaderLogoHover.png");
     }
   }
 
-  div.hamburger-button{
-    @media(max-width: $breakpoint)
-    {
+  div.hamburger-button {
+    @media(max-width: $breakpoint) {
       display: block;
       width: 50px;
       height: 40px;
@@ -121,30 +123,31 @@ header{
       color: white;
       font-size: 24px;
       cursor: pointer;
-      &:hover{
+      &:hover {
         color: #CCFFF2;
         border-color: #CCFFF2;
       }
     }
-    @media(min-width: $breakpoint)
-    {
+    @media(min-width: $breakpoint) {
       display: none;
     }
   }
 
-  nav.left-nav{
+  nav.left-nav {
     height: 60px;
     position: absolute;
     top: 0;
     left: 210px;
 
-    ul{
+    ul {
       padding-top: 15px;
       padding-bottom: 15px;
       display: flex;
-      li{
+
+      li {
         justify-content: left;
-        a{
+
+        a {
           font-weight: 700;
           font-size: 18px;
           display: block;
@@ -153,7 +156,8 @@ header{
           height: 30px;
           line-height: 30px;
           color: white;
-          &:hover{
+
+          &:hover {
             background-color: #CCFFF2;
             color: #00CC99;
           }
@@ -162,21 +166,23 @@ header{
     }
   }
 
-  nav.right-nav{
+  nav.right-nav {
     height: 60px;
     position: absolute;
     top: 0;
     right: 10px;
 
-    ul{
+    ul {
       padding-top: 5px;
       padding-bottom: 5px;
       display: flex;
-      li{
+
+      li {
         padding-left: 10px;
         height: 50px;
         justify-content: right;
-        a{
+
+        a {
           margin-top: 5px;
           margin-bottom: 5px;
           letter-spacing: 1px;
@@ -190,17 +196,20 @@ header{
           text-align: center;
           font-size: 18px;
           color: white;
-          &:hover{
+
+          &:hover {
             background-color: #CCFFF2;
             border-color: #CCFFF2;
             color: #00CC99;
           }
         }
-        div.user-image{
+
+        div.user-image {
           width: 50px;
           height: 50px;
           cursor: pointer;
-          img{
+
+          img {
             display: block;
             width: 50px;
             height: 50px;
@@ -211,7 +220,7 @@ header{
     }
   }
 
-  div.pull-down-menu{
+  div.pull-down-menu {
     display: none;
     position: fixed;
     top: 60px;
@@ -220,7 +229,7 @@ header{
     z-index: 99;
   }
 
-  div.pop-up-menu{
+  div.pop-up-menu {
     display: none;
     position: fixed;
     top: 57px;
@@ -230,31 +239,37 @@ header{
     border: 1px solid black;
     background-color: white;
     z-index: 101;
-    div.user-name{
+
+    div.user-name {
       padding-top: 5px;
       padding-bottom: 14px;
       line-height: 30px;
       font-size: 20px;
       color: black;
     }
-    ul{
-      li{
+
+    ul {
+      li {
         border-top: 1px solid #E6E6E6;
         padding: 10px 3px;
         line-height: 20px;
         font-size: 18px;
-        a{
-          span.icon{
+
+        a {
+          span.icon {
             display: inline-block;
             width: 30px;
             text-align: center;
           }
+
           color: #BFBFBF;
-          &:hover{
+
+          &:hover {
             color: black;
           }
         }
-        &:last-child{
+
+        &:last-child {
           border-bottom: 1px solid #E6E6E6;
         }
       }
@@ -264,12 +279,12 @@ header{
 
 // ------------------------------ MAIN ------------------------------
 
-main[role="main"]{
+main[role="main"] {
   margin: 0;
   padding-top: 60px;
   min-height: 1200px;
 
-  p.notice{
+  p.notice {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -282,7 +297,7 @@ main[role="main"]{
 
 // ------------------------------ FOOTER ------------------------------
 
-footer{
+footer {
   width: 100%;
   background-color: #DAE6E3;
   color: #79807E;
@@ -290,52 +305,61 @@ footer{
 
 // ------------------------------ TOP ------------------------------
 
-div.page-home-top{
+div.page-home-top {
   margin: 0;
-  div.top-section{
+
+  div.top-section {
     background-image: image-url("TopSectionBackground.png");
     background-size: cover;
     width: 100%;
     height: 540px;
 
-    div.top-section-main{
+    div.top-section-main {
       background-image: image-url("TopSectionBackground2.png");
       background-size: 100% 100%;
       width: 100%;
       height: 100%;
-      h1{
+
+      h1 {
         color: white;
       }
     }
   }
 }
+
 // ------------------------------ TERMS and PRIVACY ------------------------------
 
-div.page-home-terms{
+div.page-home-terms {
 
 }
+
 // ------------------------------ CONTACT ------------------------------
 
-div.page-home-contact{
+div.page-home-contact {
 
 }
+
 // ------------------------------ TEMPLATES ------------------------------
-form.general-form{
+form.general-form {
   border: 1px solid #BFBFBF;
   border-radius: 10px;
+
   div.field {
     h4 {
       font-size: 18px;
       line-height: 20px;
-      small{
+
+      small {
         font-size: 12px;
         color: #BFBFBF;
       }
     }
+
     input[type="text"],
     input[type="email"],
     input[type="password"],
-    input[type="url"]{
+    input[type="url"]
+    {
       margin-top: 5px;
       width: 100%;
       height: 30px;
@@ -343,11 +367,13 @@ form.general-form{
       border: 1px solid #BFBFBF;
       padding-left: 5px;
       appearance: none;
-      &::placeholder{
+
+      &::placeholder {
         color: #E6E6E6;
       }
     }
-    textarea{
+
+    textarea {
       margin-top: 5px;
       border: 1px solid #BFBFBF;
       width: 100%;
@@ -355,8 +381,9 @@ form.general-form{
       resize: none;
     }
   }
-  div.actions{
-    input[type="submit"]{
+
+  div.actions {
+    input[type="submit"] {
       display: block;
       width: 200px;
       height: 40px;
@@ -368,6 +395,39 @@ form.general-form{
       margin: 30px auto 0;
       border: none;
       border-radius: 10px;
+    }
+  }
+}
+
+div.settings-menu {
+  width: 260px;
+  border: 1px solid #BFBFBF;
+  border-radius: 10px;
+  padding: 10px 15px;
+
+  nav {
+    ul {
+      li {
+        border-top: 1px solid #E6E6E6;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 20px;
+        text-align: center;
+
+        a {
+          font-size: 18px;
+
+          color: black;
+
+          &:hover {
+            color: #7F7F7F;
+          }
+        }
+
+        &:last-child {
+          border-bottom: 1px solid #E6E6E6;
+        }
+      }
     }
   }
 }

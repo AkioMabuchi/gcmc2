@@ -1,0 +1,47 @@
+<div class="team-description">
+  <div class="team-image">
+    <%= link_to team_path(team.permalink) do %>
+      <%= image_tag team.image.url %>
+    <% end %>
+  </div>
+  <div class="team-name">
+    <%= link_to team.name, team_path(team.permalink) %>
+  </div>
+</div>
+
+<div class="settings-menu">
+  <nav>
+    <ul>
+      <li>
+        <%= link_to edit_team_path(team.permalink) do %>
+          基本設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to tags_edit_team_path(team.permalink) do %>
+          タグ設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to environments_edit_team_path(team.permalink) do %>
+          開発環境設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to wants_edit_team_path(team.permalink) do %>
+          募集ポジション設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to publishing_edit_team_path(team.permalink) do %>
+          公開設定
+        <% end %>
+      </li>
+      <li>
+        <%= link_to dissolution_team_path(team.permalink) do %>
+          チーム解散
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</div>

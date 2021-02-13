@@ -1,5 +1,10 @@
 class HomeController < ApplicationController
-  def top
+  def index
+    if user_signed_in?
+      render "home/show"
+    else
+      render "home/index"
+    end
   end
 
   def terms

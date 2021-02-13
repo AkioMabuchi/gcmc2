@@ -70,3 +70,5 @@ gem 'react-rails'
 
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
+gem 'kaminari'

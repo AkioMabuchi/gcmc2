@@ -21,7 +21,7 @@ class User < ApplicationRecord
             length: {maximum: 24, message: "24字以内で入力してください"}
 
   has_many :user_tags, dependent: :destroy
-  has_many :user_tag_names, through: :user_tags, dependent: :destroy
+  has_many :user_tag_names, through: :user_tags
 
   has_one :twitter, dependent: :destroy
   has_one :github, dependent: :destroy
@@ -29,12 +29,22 @@ class User < ApplicationRecord
   has_many :skills, dependent: :destroy
   has_many :portfolios, dependent: :destroy
   has_many :positions, dependent: :destroy
-  has_many :position_names, through: :positions, dependent: :destroy
+  has_many :position_names, through: :positions
 
-  has_many :owner_teams, class_name: "Team"
+  has_many :owner_teams, class_name: "Team", foreign_key: :owner_user_id
+
+  has_many :invitation_names, ->{where(positions: {name_id: Thread.current[:users_hyper_sort]})}, through: :positions, source: :position_name
 
   accepts_nested_attributes_for :twitter
   accepts_nested_attributes_for :github
+
+  scope :hyper_sort, ->(current_user) do
+    if current_user.nil?
+      order(created_at: :desc)
+    else
+      where.not(id: current_user.id).left_joins(:invitation_names).group(:id).order("count(position_names.id) desc")
+    end
+  end
 
   def send_on_create_confirmation_instructions
     generate_confirmation_token! unless @raw_confirmation_token
@@ -53,8 +63,13 @@ class User < ApplicationRecord
     result
   end
 
-  def invitable?(user)
-    if user
+  def invitable?(current_user)
+    if current_user
+      positions = Thread.current[:users_hyper_sort]
+
+      self.positions.each do |position|
+        return true if positions.include? position.name_id
+      end
       false
     else
       false
