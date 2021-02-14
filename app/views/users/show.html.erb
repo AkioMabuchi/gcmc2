@@ -1,5 +1,158 @@
 <h1>プロフィール</h1>
-<%= @user.name %>
-<% @user.position_names.each do |position_name| %>
-  <%= position_name.name %>
-<% end %>
+<div class="user-show-page">
+  <div class="container1">
+    <div class="container2">
+      <div class="profile">
+        <div class="profile-image">
+          <%= image_tag @user.image.url %>
+        </div>
+        <div class="profile-name">
+          <%= @user.name %>
+        </div>
+        <ul class="profile-urls">
+          <li>
+            <% if @user.url == "" %>
+              <div class="no-url">
+                <i class="fas fa-home"></i>
+              </div>
+            <% else %>
+              <%= link_to @user.url, class: "home-url", target: :_blank do %>
+                <i class="fas fa-home"></i>
+              <% end %>
+            <% end %>
+          </li>
+          <li>
+            <% if @user.twitter %>
+              <% if @user.twitter.is_published_url %>
+                <%= link_to @user.twitter.url, class: "twitter-url", target: :_blank do %>
+                  <i class="fab fa-twitter"></i>
+                <% end %>
+              <% else %>
+                <div class="no-url">
+                  <i class="fab fa-twitter"></i>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="no-url">
+                <i class="fab fa-twitter"></i>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <% if @user.github %>
+              <% if @user.github.is_published_url %>
+                <%= link_to @user.github.url, class: "github-url", target: :_blank do %>
+                  <i class="fab fa-github"></i>
+                <% end %>
+              <% else %>
+                <div class="no-url">
+                  <i class="fab fa-github"></i>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="no-url">
+                <i class="fab fa-github"></i>
+              </div>
+            <% end %>
+          </li>
+        </ul>
+        <ul class="user-tags">
+          <% @user.user_tag_names.each do |tag| %>
+            <li>
+              <%= tag.name %>
+            </li>
+          <% end %>
+        </ul>
+        <div class="profile-description">
+          <%= @user.description %>
+        </div>
+        <% unless @user.location == "" %>
+          <div class="profile-location">
+            所在地：<%= @user.location %>
+          </div>
+        <% end %>
+        <% if @user.is_birth_published %>
+          <div class="profile-birth">
+            誕生日：<%= @user.birth.strftime "%Y年 %m月 %d日" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="container3">
+      <div class="skills">
+        <h2>スキルセット</h2>
+        <ul>
+          <% @user.skills.each do |skill| %>
+            <li>
+              <div class="skill-name">
+                <%= skill.name %>
+              </div>
+              <div class="skill-level">
+                <%= skill.level %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="portfolios">
+        <h2>ポートフォリオ</h2>
+        <ul>
+          <% @user.portfolios.each do |portfolio| %>
+            <li>
+              <div class="portfolio-header">
+                <div class="portfolio-image">
+                  <%= link_to portfolio_path(portfolio.id) do %>
+                    <%= image_tag portfolio.image.url %>
+                  <% end %>
+                </div>
+                <div class="portfolio-name">
+                  <%= link_to portfolio.name, portfolio_path(portfolio.id) %>
+                </div>
+                <div class="portfolio-period">
+                  制作期間：<%= portfolio.period %>
+                </div>
+              </div>
+              <div class="portfolio-description">
+                <%= portfolio.description %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container4">
+    <div class="container5">
+      <div class="teams">
+        <h2>参加中のチーム</h2>
+        <h3>オーナー</h3>
+        <ul>
+
+        </ul>
+        <h3>メンバー</h3>
+        <ul>
+
+        </ul>
+      </div>
+    </div>
+    <div class="container6">
+      <div class="positions">
+        <h2>招待待ちポジション</h2>
+        <% if @user.position_names.length > 0 %>
+          <h3>以下の役割での招待を待ってます！</h3>
+          <ul>
+            <% @user.position_names.each do |position| %>
+              <li>
+                <%= position.name %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <div class="no-position">
+            このユーザーは招待待ちではないようです
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -37,7 +37,7 @@ class User < ApplicationRecord
 
   has_many :join_requests, dependent: :destroy
 
-  has_many :invitation_names, ->{where(positions: {name_id: Thread.current[:users_hyper_sort]})}, through: :positions, source: :position_name
+  has_many :invitation_names, -> { where(positions: {name_id: Thread.current[:users_hyper_sort]}) }, through: :positions, source: :position_name
 
   accepts_nested_attributes_for :twitter
   accepts_nested_attributes_for :github
@@ -69,10 +69,12 @@ class User < ApplicationRecord
 
   def invitable?(current_user)
     if current_user
-      positions = Thread.current[:users_hyper_sort]
+      unless current_user.id == self.id
+        positions = Thread.current[:users_hyper_sort]
 
-      self.positions.each do |position|
-        return true if positions.include? position.name_id
+        self.positions.each do |position|
+          return true if positions.include? position.name_id
+        end
       end
       false
     else

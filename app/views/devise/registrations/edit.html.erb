@@ -56,6 +56,9 @@
             <div class="birth-box">
               <%= raw sprintf(f.date_select(:birth, use_month_numbers: true, start_year: 1930, end_year: Time.now.year, date_separator: "%s"), "年 ", "月 ") + "日" %>
             </div>
+            <div class="check-box">
+              <%= f.check_box :is_birth_published %>公開
+            </div>
           </div>
 
           <div class="field">

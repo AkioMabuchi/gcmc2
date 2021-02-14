@@ -132,11 +132,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
             :description,
             :location,
             :birth,
-            :url,
-            :is_email_notified
+            :is_birth_published,
+            :url
         ],
         user_tag_name_ids: [],
-        twitter_attributes:[
+        twitter_attributes: [
             :id,
             :uid,
             :url,

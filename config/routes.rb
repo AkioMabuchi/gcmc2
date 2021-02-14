@@ -50,6 +50,7 @@ Rails.application.routes.draw do
       post :reject
     end
   end
+  resources :portfolios, only: [:show]
 
   get "new-team", to: "teams#new", as: "new_team"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
