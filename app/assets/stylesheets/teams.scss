@@ -2,6 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+div.teams-index-page {
+  div.container1 {
+    div.container2 {
+
+    }
+
+    div.container3 {
+      div.teams {
+        border: 1px solid #BFBFBF;
+        border-radius: 10px;
+        padding: 9px;
+        width: 300px;
+      }
+    }
+  }
+}
+
+div.team-show-page {
+  div.top-image {
+    width: 100%;
+    height: 480px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
 div.team-setting-page {
   div.container1 {
     display: flex;

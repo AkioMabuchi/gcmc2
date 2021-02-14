@@ -1,2 +1,46 @@
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
+<div class="team-show-page">
+  <div class="top-image">
+    <%= image_tag @team.image.url %>
+  </div>
+  <% if user_signed_in? %>
+    <% unless @team.owner_user_id == current_user.id or @team.member? current_user %>
+      <% if @team.join_request current_user %>
+        <%= link_to "加入申請を取り消す", join_request_path(@team.permalink, (@team.join_request current_user).id), method: :delete %>
+      <% else %>
+        <%= form_with model: JoinRequest.new, url: join_requests_path(@team.permalink), local: true, class: "" do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :team_id, value: @team.id %>
+          <div class="field">
+            <h4>ポジション</h4>
+            <%= f.collection_select :position_name_id, @team.position_names, :id, :name %>
+          </div>
+          <div class="field">
+            <h4>メッセージ</h4>
+            <%= f.text_area :message %>
+          </div>
+          <div class="actions">
+            <%= f.submit value: "加入申請" %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <% if @team.owner_user_id == current_user.id %>
+      <div>
+        <ul>
+          <% @team.join_requests.each do |join_request| %>
+            <li>
+              <%= join_request.user.name %>
+              <%= join_request.position_name.name %>
+              <%= join_request.message %>
+              <%= button_to "受諾", accept_join_request_path(@team.permalink, join_request.id), data: {confirm: "加入申請を受諾しますか？"}, method: :post %>
+              <%= button_to "拒否", reject_join_request_path(@team.permalink, join_request.id), data: {confirm: "加入申請を拒否しますか？"}, method: :post %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>

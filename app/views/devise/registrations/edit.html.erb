@@ -118,6 +118,20 @@
             <%= f.submit "更新" %>
           </div>
         <% end %>
+      <% when "notification" then %>
+        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form notification-form" do |f| %>
+          <%= f.hidden_field :mode, name: "mode", id: nil, value: "notification" %>
+          <h3>通知設定</h3>
+          <div class="field">
+            <h4>メール通知</h4>
+            <div class="check-box-field">
+              <%= f.check_box :is_email_notified %> メール通知をONにする
+            </div>
+          </div>
+          <div class="actions">
+            <%= f.submit value: "更新" %>
+          </div>
+        <% end %>
       <% when "sns" then %>
         <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form sns-form" do |f| %>
           <%= f.hidden_field :mode, name: "mode", id: nil, value: "sns" %>

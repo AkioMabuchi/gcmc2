@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_12_133127) do
+ActiveRecord::Schema.define(version: 2021_02_14_110342) do
 
   create_table "githubs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "uid"
@@ -20,6 +20,29 @@ ActiveRecord::Schema.define(version: 2021_02_12_133127) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_githubs_on_user_id"
+  end
+
+  create_table "join_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "message"
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.bigint "position_name_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["position_name_id"], name: "index_join_requests_on_position_name_id"
+    t.index ["team_id"], name: "index_join_requests_on_team_id"
+    t.index ["user_id"], name: "index_join_requests_on_user_id"
+  end
+
+  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.bigint "position_name_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["position_name_id"], name: "index_members_on_position_name_id"
+    t.index ["team_id"], name: "index_members_on_team_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
   end
 
   create_table "portfolios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -133,6 +156,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_133127) do
     t.string "location", default: "", null: false
     t.boolean "is_birth_published", default: false, null: false
     t.date "birth", default: "2000-01-01", null: false
+    t.boolean "is_email_notified", default: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -149,6 +173,12 @@ ActiveRecord::Schema.define(version: 2021_02_12_133127) do
   end
 
   add_foreign_key "githubs", "users"
+  add_foreign_key "join_requests", "position_names"
+  add_foreign_key "join_requests", "teams"
+  add_foreign_key "join_requests", "users"
+  add_foreign_key "members", "position_names"
+  add_foreign_key "members", "teams"
+  add_foreign_key "members", "users"
   add_foreign_key "portfolios", "users"
   add_foreign_key "positions", "position_names", column: "name_id"
   add_foreign_key "positions", "users"

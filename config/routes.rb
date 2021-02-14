@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "home#index"
+  root "home#top"
 
   devise_for :users,
              path: "",
@@ -15,9 +15,10 @@ Rails.application.routes.draw do
              }
 
   devise_scope :user do
-    get "settings/:mode", to: "users/registrations#edit", constraints: {mode: %w[email password sns destroy]}
+    get "settings/:mode", to: "users/registrations#edit", constraints: {mode: %w[email password notification sns destroy]}
     get "settings/email", as: "edit_email_user_registration"
     get "settings/password", as: "edit_password_user_registration"
+    get "settings/notification", as: "edit_notification_user_registration"
     get "settings/sns", as: "edit_sns_user_registration"
     get "settings/destroy", as: "edit_destroy_user_registration"
   end
@@ -43,9 +44,13 @@ Rails.application.routes.draw do
   resources :setting_portfolios, except: [:new, :edit], path: "settings/portfolios"
   resources :setting_invitations, except: [:show, :new, :edit, :update], path: "settings/invitations"
   resources :wanted_positions, only: [:create, :update, :destroy], path: "settings/:permalink/wants"
+  resources :join_requests, only: [:create, :destroy], path: "teams/:permalink/join" do
+    member do
+      post :accept
+      post :reject
+    end
+  end
 
   get "new-team", to: "teams#new", as: "new_team"
-
-  post "test-data", to: "users#test_data"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -30,8 +30,12 @@ class User < ApplicationRecord
   has_many :portfolios, dependent: :destroy
   has_many :positions, dependent: :destroy
   has_many :position_names, through: :positions
+  has_many :members, dependent: :destroy
 
   has_many :owner_teams, class_name: "Team", foreign_key: :owner_user_id
+  has_many :member_teams, through: :members, source: :team
+
+  has_many :join_requests, dependent: :destroy
 
   has_many :invitation_names, ->{where(positions: {name_id: Thread.current[:users_hyper_sort]})}, through: :positions, source: :position_name
 

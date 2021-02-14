@@ -1,6 +1,15 @@
 class TeamsController < ApplicationController
   def index
-    @teams = Team.all
+    positions = Set.new
+    if user_signed_in?
+      current_user.position_names.pluck(:id).each do |position|
+        positions.add position
+      end
+    end
+
+    Thread.current[:teams_hyper_sort] = positions
+
+    @teams = Team.hyper_sort(current_user).page(params[:page]).per(5)
   end
 
   def show

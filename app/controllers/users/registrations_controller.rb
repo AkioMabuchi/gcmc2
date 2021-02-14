@@ -22,6 +22,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         @mode = "email"
       when "password" then
         @mode = "password"
+      when "notification" then
+        @mode = "notification"
       when "sns" then
         @mode = "sns"
       when "destroy" then
@@ -52,6 +54,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to edit_user_registration_path, notice: "プロフィールを更新しました"
       when "email" then
         redirect_to edit_email_user_registration_path, notice: "メールアドレスを更新するための確認を行ってください"
+      when "password" then
+        redirect_to edit_password_user_registration_path, notice: "パスワードを更新しました"
+      when "notification" then
+        redirect_to edit_notification_user_registration_path, notice: "通知設定を更新しました"
       when "sns" then
         redirect_to edit_sns_user_registration_path, notice: "SNS設定を更新しました"
       else
@@ -127,6 +133,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
             :location,
             :birth,
             :url,
+            :is_email_notified
         ],
         user_tag_name_ids: [],
         twitter_attributes:[
