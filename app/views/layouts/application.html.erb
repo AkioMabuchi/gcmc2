@@ -41,6 +41,9 @@
         <li>
           <div id="jquery-header-user-button" class="user-image">
             <%= image_tag current_user.image.url %>
+            <% if current_user.invitations.length > 0 %>
+              <div class="notice-circle"></div>
+            <% end %>
           </div>
         </li>
       </ul>
@@ -94,8 +97,25 @@
       </div>
       <ul>
         <li>
+
+          <% if current_user.invitations.length > 0 %>
+            <%= link_to invitations_path, class: "invited" do %>
+              <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧（<%= current_user.invitations.length %>件）
+            <% end %>
+          <% else %>
+            <%= link_to invitations_path do %>
+              <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧
+            <% end %>
+          <% end %>
+        </li>
+        <li>
           <%= link_to edit_user_registration_path do %>
             <span class="icon"><i class="fas fa-user-cog"></i></span> アカウント設定
+          <% end %>
+        </li>
+        <li>
+          <%= link_to user_path(current_user.permalink) do %>
+            <span class="icon"><i class="far fa-address-card"></i></span> プロフィール
           <% end %>
         </li>
         <li>

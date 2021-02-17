@@ -6,4 +6,5 @@ class PositionName < ApplicationRecord
   has_many :wanted_positions, foreign_key: :name_id, dependent: :destroy
   has_many :join_requests, dependent: :destroy
   has_many :members, dependent: :destroy
+  has_many :invitations, dependent: :destroy
 end

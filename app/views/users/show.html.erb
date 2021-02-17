@@ -147,6 +147,9 @@
               </li>
             <% end %>
           </ul>
+          <% if user_signed_in? %>
+            <%= react_component "InviteForm", info: @react_info %>
+          <% end %>
         <% else %>
           <div class="no-position">
             このユーザーは招待待ちではないようです

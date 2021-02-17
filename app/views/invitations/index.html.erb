@@ -1,0 +1,27 @@
+<h1>招待一覧</h1>
+<div class="invitations-page">
+  <% if current_user.invitations.length > 0 %>
+    <div class="invitations">
+      <ul>
+        <% current_user.invitations.each do |invitation| %>
+          <li>
+            <div class="invitation">
+              <div class="position">
+                <h4>招待ポジション</h4>
+                <p><%= invitation.position_name.name %></p>
+              </div>
+              <div class="actions">
+                <%= button_to "受諾", accept_invitation_path(invitation.id), data: {confirm: "招待を受諾しますか？"}, method: :post %>
+                <%= button_to "拒否", reject_invitation_path(invitation.id), data: {confirm: "招待を拒否しますか？"}, method: :post %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+    <div class="no-invitations">
+      現在招待は届いていません
+    </div>
+  <% end %>
+</div>

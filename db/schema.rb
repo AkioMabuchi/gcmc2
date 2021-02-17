@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_110342) do
+ActiveRecord::Schema.define(version: 2021_02_17_115606) do
 
   create_table "githubs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "uid"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 2021_02_14_110342) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_githubs_on_user_id"
+  end
+
+  create_table "invitations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.bigint "position_name_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["position_name_id"], name: "index_invitations_on_position_name_id"
+    t.index ["team_id"], name: "index_invitations_on_team_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
   create_table "join_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -98,6 +109,16 @@ ActiveRecord::Schema.define(version: 2021_02_14_110342) do
     t.index ["team_id"], name: "index_team_tags_on_team_id"
   end
 
+  create_table "team_urls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.boolean "is_public", default: false, null: false
+    t.bigint "team_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_team_urls_on_team_id"
+  end
+
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "permalink"
     t.string "name"
@@ -107,6 +128,14 @@ ActiveRecord::Schema.define(version: 2021_02_14_110342) do
     t.bigint "owner_user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "using_language", default: "", null: false
+    t.string "platform", default: "", null: false
+    t.string "source_tool", default: "", null: false
+    t.string "communication_tool", default: "", null: false
+    t.string "project_tool", default: "", null: false
+    t.string "period", default: "", null: false
+    t.string "frequency", default: "", null: false
+    t.string "location", default: "", null: false
     t.index ["owner_user_id"], name: "index_teams_on_owner_user_id"
   end
 
@@ -173,6 +202,9 @@ ActiveRecord::Schema.define(version: 2021_02_14_110342) do
   end
 
   add_foreign_key "githubs", "users"
+  add_foreign_key "invitations", "position_names"
+  add_foreign_key "invitations", "teams"
+  add_foreign_key "invitations", "users"
   add_foreign_key "join_requests", "position_names"
   add_foreign_key "join_requests", "teams"
   add_foreign_key "join_requests", "users"
@@ -185,6 +217,7 @@ ActiveRecord::Schema.define(version: 2021_02_14_110342) do
   add_foreign_key "skills", "users"
   add_foreign_key "team_tags", "team_tag_names", column: "name_id"
   add_foreign_key "team_tags", "teams"
+  add_foreign_key "team_urls", "teams"
   add_foreign_key "teams", "users", column: "owner_user_id"
   add_foreign_key "twitters", "users"
   add_foreign_key "user_tags", "user_tag_names", column: "name_id"

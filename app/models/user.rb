@@ -36,6 +36,8 @@ class User < ApplicationRecord
   has_many :member_teams, through: :members, source: :team
 
   has_many :join_requests, dependent: :destroy
+  has_many :invitations, dependent: :destroy
+  has_many :invited_teams, through: :invitations, source: :team
 
   has_many :invitation_names, -> { where(positions: {name_id: Thread.current[:users_hyper_sort]}) }, through: :positions, source: :position_name
 

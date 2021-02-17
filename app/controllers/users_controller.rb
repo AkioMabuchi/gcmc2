@@ -15,11 +15,27 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
-  end
 
-  def invite_form
-  end
-
-  def message_form
+    if user_signed_in?
+      owner_teams = []
+      current_user.owner_teams.each do |owner_team|
+        team = {
+            permalink: owner_team.permalink,
+            id: owner_team.id,
+            name: owner_team.name,
+            positionIds: owner_team.position_names.pluck(:id)
+        }
+        owner_teams.append team
+      end
+      @react_info = {
+          authenticityToken: form_authenticity_token,
+          user:{
+              id: @user.id,
+              name: @user.name
+          },
+          teams: owner_teams,
+          positions: @user.position_names.select(:id, :name)
+      }
+    end
   end
 end

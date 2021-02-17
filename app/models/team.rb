@@ -27,6 +27,9 @@ class Team < ApplicationRecord
   has_many :position_names, through: :wanted_positions
 
   has_many :join_requests, dependent: :destroy
+  has_many :invitations, dependent: :destroy
+
+  has_many :team_urls, dependent: :destroy
 
   has_many :wanted_names, -> { where(wanted_positions: {name_id: Thread.current[:teams_hyper_sort]}) }, through: :wanted_positions, source: :position_name
   scope :hyper_sort, ->(current_user) do
@@ -51,6 +54,14 @@ class Team < ApplicationRecord
     end
   end
 
+  def owner?(current_user)
+    if current_user
+      self.owner_user_id == current_user.id
+    else
+      false
+    end
+  end
+
   def member?(current_user)
     if current_user
       self.members.each do |member|
@@ -64,5 +75,26 @@ class Team < ApplicationRecord
 
   def join_request(current_user)
     JoinRequest.find_by(user_id: current_user.id, team_id: self.id)
+  end
+
+  def has_url?(current_user)
+    members = Set.new
+    self.members.each do |member|
+      members.add member.user_id
+    end
+
+    self.team_urls.each do |url|
+      if url.is_public
+        return true
+      elsif current_user
+        if self.owner_user_id == current_user.id
+          return true
+        end
+        if members.include? current_user.id
+          return true
+        end
+      end
+    end
+    false
   end
 end

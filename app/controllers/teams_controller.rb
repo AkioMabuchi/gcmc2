@@ -1,4 +1,18 @@
 class TeamsController < ApplicationController
+  before_action :authenticate_user, only: [
+      :edit,
+      :update,
+      :destroy,
+      :tags_edit,
+      :tags_update,
+      :environments_edit,
+      :environments_update,
+      :wants_edit,
+      :publishing_edit,
+      :publishing_update,
+      :dissolution
+  ]
+
   def index
     positions = Set.new
     if user_signed_in?
@@ -65,6 +79,16 @@ class TeamsController < ApplicationController
   end
 
   def environments_update
+    team = Team.friendly.find(params[:id])
+    team.update team_environments_params
+    if team.save
+      redirect_to environments_edit_team_path(params[:id]), notice: "開発環境を更新しました"
+    else
+      redirect_to environments_edit_team_path(params[:id])
+    end
+  end
+
+  def urls_edit
 
   end
 
@@ -96,11 +120,32 @@ class TeamsController < ApplicationController
 
   private
 
+  def login_user_only
+    unless user_signed_in?
+      raise Forbidden
+    end
+  end
+
+  def authenticate_user
+    team = Team.friendly.find(params[:id])
+    if user_signed_in?
+      unless team.owner_user_id == current_user.id
+        raise Forbidden
+      end
+    else
+      raise Forbidden
+    end
+  end
+
   def team_params
     params.require(:team).permit(:owner_user_id, :permalink, :name, :image, :title, :description)
   end
 
   def team_tags_params
     params.require(:team).permit(team_tag_name_ids: [])
+  end
+
+  def team_environments_params
+    params.require(:team).permit(:using_language, :platform, :source_tool, :communication_tool, :project_tool, :period, :frequency, :location)
   end
 end

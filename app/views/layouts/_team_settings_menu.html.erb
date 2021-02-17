@@ -23,6 +23,11 @@
         <% end %>
       </li>
       <li>
+        <%= link_to urls_edit_team_path(team.permalink) do %>
+          外部リンク設定
+        <% end %>
+      </li>
+      <li>
         <%= link_to environments_edit_team_path(team.permalink) do %>
           開発環境設定
         <% end %>

@@ -2,29 +2,219 @@
   <div class="top-image">
     <%= image_tag @team.image.url %>
   </div>
-  <% if user_signed_in? %>
-    <% unless @team.owner_user_id == current_user.id or @team.member? current_user %>
-      <% if @team.join_request current_user %>
-        <%= link_to "加入申請を取り消す", join_request_path(@team.permalink, (@team.join_request current_user).id), method: :delete %>
-      <% else %>
-        <%= form_with model: JoinRequest.new, url: join_requests_path(@team.permalink), local: true, class: "" do |f| %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          <%= f.hidden_field :team_id, value: @team.id %>
-          <div class="field">
-            <h4>ポジション</h4>
-            <%= f.collection_select :position_name_id, @team.position_names, :id, :name %>
+  <div class="container1">
+    <div class="container2">
+      <div class="information">
+        <ul class="general-tags">
+          <% @team.team_tag_names.each do |tag| %>
+            <li>
+              <%= tag.name %>
+            </li>
+          <% end %>
+        </ul>
+        <div class="team-header">
+          作成日時：<%= @team.created_at.strftime("%Y-%m-%d") %>　更新日時：<%= @team.updated_at.strftime("%Y-%m-%d") %>
+        </div>
+
+        <div class="team-name">
+          チーム名：<%= @team.name %>
+        </div>
+        <div class="team-owner">
+          <div class="owner-image">
+            <%= link_to user_path(@team.user.permalink) do %>
+              <%= image_tag @team.user.image.url %>
+            <% end %>
           </div>
-          <div class="field">
-            <h4>メッセージ</h4>
-            <%= f.text_area :message %>
+          <div class="owner-header">
+            オーナー
           </div>
-          <div class="actions">
-            <%= f.submit value: "加入申請" %>
+          <div class="owner-name">
+            <%= link_to user_path(@team.user.permalink) do %>
+              <%= @team.user.name %>
+            <% end %>
+          </div>
+        </div>
+        <div class="team-title">
+          <%= @team.title %>
+        </div>
+        <div class="team-description">
+          <%= @team.description %>
+        </div>
+      </div>
+      <div class="members">
+        <h2>メンバー</h2>
+        <% if @team.members.length > 0 %>
+          <ul>
+            <% @team.member_users.each do |member| %>
+              <li>
+                <%= link_to user_path(member.permalink) do %>
+                  <%= image_tag member.image.url %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <div class="no-member">
+            このチームにはメンバーがいません
           </div>
         <% end %>
-      <% end %>
-    <% end %>
-  <% end %>
+      </div>
+      <div class="urls">
+        <h2>外部リンク</h2>
+        <% if @team.has_url?(user_signed_in? ? current_user : nil) %>
+          <ul>
+            <% @team.team_urls.each do |url| %>
+              <% if url.is_public %>
+                <li>
+                  <div class="url-name">
+                    <%= url.name %>
+                  </div>
+                  <div class="url-address">
+                    <%= link_to url.url, url.url, target: "_blank" %>
+                  </div>
+                </li>
+              <% elsif user_signed_in? %>
+                <% if @team.owner?(current_user) or @team.member?(current_user) %>
+                  <li>
+                    <div class="url-name">
+                      <%= url.name %><small>（メンバー限定公開）</small>
+                    </div>
+                    <div class="url-address">
+                      <%= link_to url.url, url.url, target: "_blank" %>
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+        <% elsif @team.team_urls.length > 0 %>
+          <div class="no-url">
+            すべて、メンバー限定公開リンクです
+          </div>
+        <% else %>
+          <div class="no-url">
+            外部リンクが存在しません
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="container3">
+      <div class="environments">
+        <h2>開発環境</h2>
+        <ul>
+          <li>
+            <h4>使用言語</h4>
+            <% if @team.using_language == "" %>
+              <p class="undefined">未定</p>
+            <% else %>
+              <p><%= @team.using_language %></p>
+            <% end %>
+          </li>
+          <li>
+            <h4>プラットフォーム</h4>
+            <% if @team.platform == "" %>
+              <p class="undefined">未定</p>
+            <% else %>
+              <p><%= @team.platform %></p>
+            <% end %>
+          </li>
+          <li>
+            <h4>ソースコード管理ツール</h4>
+            <% if @team.source_tool == "" %>
+              <p class="undefined">未定</p>
+            <% else %>
+              <p><%= @team.source_tool %></p>
+            <% end %>
+          </li>
+          <li>
+            <h4>コミュニケーションツール</h4>
+            <% if @team.communication_tool == "" %>
+              <p class="undefined">未定</p>
+            <% else %>
+              <p><%= @team.communication_tool %></p>
+            <% end %>
+          </li>
+          <li>
+            <h4>タスク管理ツール</h4>
+            <% if @team.project_tool == "" %>
+              <p class="undefined">未定</p>
+            <% else %>
+              <p><%= @team.project_tool %></p>
+            <% end %>
+          </li>
+          <li>
+            <h4>制作期間</h4>
+            <% if @team.period == "" %>
+              <p class="undefined">未定</p>
+            <% else %>
+              <p><%= @team.period %></p>
+            <% end %>
+          </li>
+          <li>
+            <h4>制作頻度</h4>
+            <% if @team.frequency == "" %>
+              <p class="undefined">未定</p>
+            <% else %>
+              <p><%= @team.frequency %></p>
+            <% end %>
+          </li>
+          <li>
+            <h4>場所</h4>
+            <% if @team.location == "" %>
+              <p class="undefined">未定</p>
+            <% else %>
+              <p><%= @team.location %></p>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="wanted-positions">
+        <h2>募集ポジション</h2>
+        <% if @team.wanted_positions.length > 0 %>
+          <h3>以下のポジションを募集中！</h3>
+          <ul>
+            <% @team.wanted_positions.each do |position| %>
+              <li>
+                <div class="position-name">
+                  <%= position.position_name.name %>
+                </div>
+                <div class="position-amount">
+                  <%= position.amount %>名
+                </div>
+              </li>
+            <% end %>
+          </ul>
+          <% if user_signed_in? %>
+            <% unless @team.owner_user_id == current_user.id or @team.member? current_user %>
+              <% if @team.join_request current_user %>
+                <%= link_to "加入申請を取り消す", join_request_path(@team.permalink, (@team.join_request current_user).id), method: :delete %>
+              <% else %>
+                <%= form_with model: JoinRequest.new, url: join_requests_path(@team.permalink), local: true, class: "join-form" do |f| %>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :team_id, value: @team.id %>
+                  <%= f.hidden_field :message, value: "" %>
+                  <div class="field">
+                    <h4>ポジション</h4>
+                    <div class="select-field">
+                      <%= f.collection_select :position_name_id, @team.position_names, :id, :name %>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit value: "加入申請" %>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <div class="not-wanted">
+            メンバーを募集してないようです
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 
   <% if user_signed_in? %>
     <% if @team.owner_user_id == current_user.id %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'invitations/index'
   root "home#top"
 
   devise_for :users,
@@ -28,12 +29,13 @@ Rails.application.routes.draw do
     member do
       get :tags_edit, path: "settings/tags"
       get :environments_edit, path: "settings/environments"
+      get :urls_edit, path: "settings/urls"
       get :wants_edit, path: "settings/wants"
       get :publishing_edit, path: "settings/publishing"
       get :dissolution, path: "settings/dissolution"
       patch :tags_update, path: "tags"
-      patch :publishing_update, path: "publishing"
       patch :environments_update, path: "environments"
+      patch :publishing_update, path: "publishing"
     end
   end
 
@@ -45,6 +47,12 @@ Rails.application.routes.draw do
   resources :setting_invitations, except: [:show, :new, :edit, :update], path: "settings/invitations"
   resources :wanted_positions, only: [:create, :update, :destroy], path: "settings/:permalink/wants"
   resources :join_requests, only: [:create, :destroy], path: "teams/:permalink/join" do
+    member do
+      post :accept
+      post :reject
+    end
+  end
+  resources :invitations, only: [:index, :create, :destroy] do
     member do
       post :accept
       post :reject

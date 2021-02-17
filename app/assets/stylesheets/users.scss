@@ -91,6 +91,7 @@ div.user-show-page {
     div.container2 {
       width: 300px;
       margin-right: 20px;
+
       div.profile {
         width: 300px;
         padding: 30px 14px 20px;
@@ -216,6 +217,7 @@ div.user-show-page {
     div.container3 {
       width: 480px;
       margin-left: 20px;
+
       div.skills {
 
       }
@@ -289,13 +291,15 @@ div.user-show-page {
     div.container6 {
       margin-left: 35px;
       width: 400px;
-      div.positions{
-        h3{
+
+      div.positions {
+        h3 {
           text-align: center;
           line-height: 30px;
           font-size: 20px;
           color: #FF0080;
         }
+
         ul {
           padding-top: 10px;
           padding-bottom: 10px;
@@ -316,6 +320,58 @@ div.user-show-page {
               height: 10px;
               border-radius: 5px;
               background-color: #FF66B3;
+            }
+          }
+        }
+      }
+
+      div.invite {
+        form.invite-form {
+          border: 1px solid #FFCCE6;
+          border-radius: 10px;
+          padding: 20px 15px 30px;
+
+          h3{
+            font-size: 18px;
+            color: #FF0080;
+            text-align: center;
+          }
+          div.phrase{
+            font-size: 14px;
+            line-height: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #E6E6E6;
+          }
+          div.field {
+            padding-top: 20px;
+            h4 {
+              font-size: 18px;
+              line-height: 20px;
+            }
+
+            div.select-field {
+              padding-top: 5px;
+
+              select {
+                width: 200px;
+              }
+            }
+          }
+
+          div.actions {
+            input[type="submit"] {
+              display: block;
+              width: 200px;
+              height: 40px;
+              background-color: #FF0080;
+              color: white;
+              font-weight: 700;
+              font-size: 20px;
+              cursor: pointer;
+              margin: 30px auto 0;
+              border: none;
+              border-radius: 10px;
             }
           }
         }

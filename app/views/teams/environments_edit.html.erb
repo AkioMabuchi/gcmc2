@@ -5,7 +5,44 @@
       <%= render partial: "layouts/team_settings_menu", locals: {team: @team} %>
     </div>
     <div class="container3">
-
+      <%= form_with model: @team, url: environments_update_team_path(@team.permalink), local: true, class: "general-form team-setting-form environments-form" do |f| %>
+      <h3>開発環境設定</h3>
+        <div class="field">
+          <h4>使用言語</h4>
+          <%= f.text_field :using_language, placeholder: "例）C#(Unity)" %>
+        </div>
+        <div class="field">
+          <h4>プラットフォーム</h4>
+          <%= f.text_field :platform, placeholder: "例）iOS、Android" %>
+        </div>
+        <div class="field">
+          <h4>ソースコード管理ツール</h4>
+          <%= f.text_field :source_tool, placeholder: "例）GitHub" %>
+        </div>
+        <div class="field">
+          <h4>コミュニケーションツール</h4>
+          <%= f.text_field :communication_tool, placeholder: "例）Slack、Zoom" %>
+        </div>
+        <div class="field">
+          <h4>プロジェクト管理ツール</h4>
+          <%= f.text_field :project_tool, placeholder: "例）Redmine" %>
+        </div>
+        <div class="field">
+          <h4>制作期間</h4>
+          <%= f.text_field :period, placeholder: "例）2021年4月から3ヶ月間" %>
+        </div>
+        <div class="field">
+          <h4>制作頻度</h4>
+          <%= f.text_field :frequency, placeholder: "例）週に2回（水曜日、木曜日）" %>
+        </div>
+        <div class="field">
+          <h4>場所</h4>
+          <%= f.text_field :location, placeholder: "例）オンライン" %>
+        </div>
+        <div class="actions">
+          <%= f.submit value: "更新" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
