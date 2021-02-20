@@ -21,3 +21,57 @@ form.sign-up-form {
   }
 }
 
+div.new-session-page{
+  div.container1{
+    display: flex;
+    div.container2{
+      form.login-form{
+        width: 480px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 5px 15px 30px;
+        div.field{
+          padding-top: 20px;
+        }
+        div.forgot{
+          padding-top: 5px;
+          font-size: 12px;
+          line-height: 20px;
+        }
+      }
+    }
+    div.container3{
+      div.sns-login{
+        border: 1px solid #BFBFBF;
+        border-radius: 10px;
+        padding: 0 15px 30px;
+        div.field{
+          padding-top: 20px;
+          a{
+            display: block;
+            width: 270px;
+            height: 40px;
+            font-size: 16px;
+            line-height: 24px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            text-align: center;
+            border-radius: 10px;
+            letter-spacing: 1px;
+            &.twitter{
+              color: white;
+              background-color: #1DA1F2;
+            }
+            &.github{
+              color: white;
+              background-color: #171515;
+            }
+          }
+        }
+      }
+      div.direction{
+        font-size: 14px;
+      }
+    }
+  }
+}

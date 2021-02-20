@@ -141,7 +141,22 @@
   <%= yield %>
 </main>
 <footer>
-
+  <nav>
+    <ul>
+      <li>
+        <%= link_to "利用規約", terms_path %>
+      </li>
+      <li>
+        <%= link_to "プライバシーポリシー", privacy_path %>
+      </li>
+      <li>
+        <%= link_to "お問い合わせ", contact_form_path %>
+      </li>
+    </ul>
+  </nav>
+  <address>
+    Copyright <i class="far fa-copyright"></i> 2021 GCMC All Rights Reserved.
+  </address>
 </footer>
 </body>
 </html>

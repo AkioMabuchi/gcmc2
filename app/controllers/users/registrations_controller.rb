@@ -164,8 +164,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     if params[:mode] == "password"
-      if params[:current_password] != resource.password
+      if !resource.valid_password? params[:current_password]
         flash[:current_password_warning] = "パスワードが間違っています"
+        redirect_to edit_password_user_registration_path
+      elsif !(8..32).cover? params[:user][:password].length
+        flash[:password_warning] = "8字以上、32字以内で入力してください"
+        redirect_to edit_password_user_registration_path
+      elsif params[:user][:password] != params[:user][:password_confirmation]
+        flash[:password_confirmation_warning] = "もう一度入力してください"
         redirect_to edit_password_user_registration_path
       end
     end

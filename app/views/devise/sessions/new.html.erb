@@ -1,26 +1,40 @@
 <h1>ログイン</h1>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="new-session-page">
+  <div class="container1">
+    <div class="container2">
+      <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true, class: "general-form login-form" do |f| %>
+        <div class="field">
+          <h4>メールアドレス</h4>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+        <div class="field">
+          <h4>パスワード</h4>
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+        <div class="forgot">
+          <%= link_to "パスワードをお忘れですか", new_user_password_path %>
+        </div>
+        <div class="actions">
+          <%= f.submit "ログイン" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="container3">
+      <div class="sns-login">
+        <div class="field">
+          <%= link_to user_twitter_omniauth_authorize_path, class: "twitter", method: :post do %>
+            <i class="fab fa-twitter"></i> Twitterでログイン
+          <% end %>
+        </div>
+        <div class="field">
+          <%= link_to user_github_omniauth_authorize_path, class: "github", method: :post do %>
+            <i class="fab fa-github"></i> GitHubでログイン
+          <% end %>
+        </div>
+      </div>
+      <div class="direction">
+        アカウントをお持ちでない方は<%= link_to "こちら", new_user_registration_path %>より新規登録
+      </div>
+    </div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

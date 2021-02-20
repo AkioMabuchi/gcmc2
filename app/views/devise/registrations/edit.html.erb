@@ -108,14 +108,29 @@
           <div class="field">
             <h4>現在のパスワード</h4>
             <%= f.password_field :current_password, name: "current_password", id: nil %>
+            <% if flash[:current_password_warning] %>
+              <div class="warning">
+                <%= flash[:current_password_warning] %>
+              </div>
+            <% end %>
           </div>
           <div class="field">
             <h4>新しいパスワード<small>（8字以上、32字以内）</small></h4>
             <%= f.password_field :password %>
+            <% if flash[:password_warning] %>
+              <div class="warning">
+                <%= flash[:password_warning] %>
+              </div>
+            <% end %>
           </div>
           <div class="field">
             <h4>新しいパスワード<small>（確認用）</small></h4>
             <%= f.password_field :password_confirmation %>
+            <% if flash[:password_confirmation_warning] %>
+              <div class="warning">
+                <%= flash[:password_confirmation_warning] %>
+              </div>
+            <% end %>
           </div>
           <div class="actions">
             <%= f.submit "更新" %>

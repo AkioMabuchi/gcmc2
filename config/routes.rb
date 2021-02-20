@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  get 'invitations/index'
   root "home#top"
+
+  get "terms", to: "home#terms", as: "terms"
+  get "privacy", to: "home#privacy", as: "privacy"
+  get "contact", to: "home#contact_form", as: "contact_form"
+  post "contact", to: "home#contact", as: "contact"
 
   devise_for :users,
              path: "",
