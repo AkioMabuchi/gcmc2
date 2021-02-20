@@ -315,6 +315,16 @@ main[role="main"] {
     background-color: #CCF2FF;
     color: #00BFFF;
   }
+
+  p.alert {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #FFEFCF;
+    color: #FFAF5F;
+  }
 }
 
 // ------------------------------ FOOTER ------------------------------
@@ -461,8 +471,14 @@ div.privacy-contents{
 }
 // ------------------------------ CONTACT ------------------------------
 
-div.page-home-contact {
-
+form.contact-form {
+  padding: 5px 15px 30px;
+  width: 480px;
+  margin-right: auto;
+  margin-left: auto;
+  div.field{
+    padding-top: 20px;
+  }
 }
 
 // ------------------------------ TEMPLATES ------------------------------

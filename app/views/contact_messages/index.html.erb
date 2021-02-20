@@ -1,0 +1,36 @@
+<h1>お問い合わせ</h1>
+<%= form_with model: @contact_message, url: contact_messages_path, local: true, class: "general-form contact-form" do |f| %>
+  <div class="field">
+    <h4>メールアドレス<small>（必須）</small></h4>
+    <%= f.email_field :email %>
+    <% if flash[:email_warning] %>
+      <div class="warning">
+        <%= flash[:email_warning] %>
+      </div>
+    <% end %>
+  </div>
+  <div class="field">
+    <h4>件名<small>（必須）</small></h4>
+    <%= f.text_field :title %>
+    <% if flash[:title_warning] %>
+      <div class="warning">
+        <%= flash[:title_warning] %>
+      </div>
+    <% end %>
+  </div>
+  <div class="field">
+    <h4>メッセージ</h4>
+    <%= f.text_area :message %>
+    <% if flash[:message_warning] %>
+      <div class="warning">
+        <%= flash[:message_warning] %>
+      </div>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= recaptcha_tags %>
+  </div>
+  <div class="actions">
+    <%= f.submit value: "送信" %>
+  </div>
+<% end %>

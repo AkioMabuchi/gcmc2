@@ -13,10 +13,5 @@ class HomeController < ApplicationController
   def privacy
   end
 
-  def contact_form
-  end
 
-  def contact
-
-  end
 end

@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   get "terms", to: "home#terms", as: "terms"
   get "privacy", to: "home#privacy", as: "privacy"
-  get "contact", to: "home#contact_form", as: "contact_form"
-  post "contact", to: "home#contact", as: "contact"
 
   devise_for :users,
              path: "",
@@ -63,6 +61,7 @@ Rails.application.routes.draw do
     end
   end
   resources :portfolios, only: [:show]
+  resources :contact_messages, only: [:index, :create], path: "contact"
 
   get "new-team", to: "teams#new", as: "new_team"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
