@@ -1,16 +1,16 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user, only: [
-      :edit,
-      :update,
-      :destroy,
-      :tags_edit,
-      :tags_update,
-      :environments_edit,
-      :environments_update,
-      :wants_edit,
-      :publishing_edit,
-      :publishing_update,
-      :dissolution
+    :edit,
+    :update,
+    :destroy,
+    :tags_edit,
+    :tags_update,
+    :environments_edit,
+    :environments_update,
+    :wants_edit,
+    :publishing_edit,
+    :publishing_update,
+    :dissolution
   ]
 
   def index
@@ -89,20 +89,29 @@ class TeamsController < ApplicationController
   end
 
   def urls_edit
+    @team = Team.friendly.find(params[:id])
 
+    @react_info = {
+      authenticityToken: form_authenticity_token,
+      team:{
+        id: @team.id,
+        permalink: @team.permalink,
+        urls: @team.team_urls
+      }
+    }
   end
 
   def wants_edit
     @team = Team.friendly.find(params[:id])
 
     @react_info = {
-        authenticityToken: form_authenticity_token,
-        positions: PositionName.order(sort_number: :asc).select(:id, :name),
-        team: {
-            id: @team.id,
-            permalink: @team.permalink
-        },
-        wantedPositions: @team.wanted_positions.joins(:position_name).order(sort_number: :asc).select(:id, :amount, :name_id, :name)
+      authenticityToken: form_authenticity_token,
+      positions: PositionName.order(sort_number: :asc).select(:id, :name),
+      team: {
+        id: @team.id,
+        permalink: @team.permalink
+      },
+      wantedPositions: @team.wanted_positions.joins(:position_name).order(sort_number: :asc).select(:id, :amount, :name_id, :name)
     }
   end
 

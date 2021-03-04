@@ -452,6 +452,67 @@ div.team-setting-page {
           appearance: none;
         }
       }
+
+      form.urls-form{
+        div.urls{
+          padding-top: 20px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #E6E6E6;
+          h4{
+            font-size: 18px;
+            line-height: 20px;
+          }
+          ul{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            li{
+              padding-top: 5px;
+              padding-bottom: 5px;
+              button.url-name{
+                font-size: 20px;
+                line-height: 30px;
+                color: #00CC99;
+                &.selected{
+                  color: #00BFFF;
+                }
+              }
+              span.url-public{
+                font-size: 14px;
+                line-height: 20px;
+                color: #BFBFBF;
+              }
+              div.url-url{
+                font-size: 14px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+        div.radio-buttons{
+          padding-top: 5px;
+          span.radio-name{
+            padding-left: 2px;
+            padding-right: 18px;
+          }
+        }
+        div.description{
+          padding-top: 10px;
+          padding-bottom: 10px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        input[type="submit"]{
+          &.create{
+            background-color: #00FFBF;
+          }
+          &.update{
+            background-color: #00BFFF;
+          }
+          &.destroy{
+            background-color: #FFBF00;
+          }
+        }
+      }
     }
   }
 }

@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   resources :setting_portfolios, except: [:new, :edit], path: "settings/portfolios"
   resources :setting_invitations, except: [:show, :new, :edit, :update], path: "settings/invitations"
   resources :wanted_positions, only: [:create, :update, :destroy], path: "settings/:permalink/wants"
+  resources :team_urls, only: [:create, :update, :destroy], path: "teams/:permalink/settings/urls"
   resources :join_requests, only: [:create, :destroy], path: "teams/:permalink/join" do
     member do
       post :accept

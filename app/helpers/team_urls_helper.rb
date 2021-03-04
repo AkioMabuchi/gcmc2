@@ -1,0 +1,2 @@
+module TeamUrlsHelper
+end
