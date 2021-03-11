@@ -10,7 +10,9 @@ class UsersController < ApplicationController
     end
 
     Thread.current[:users_hyper_sort] = positions
-    @users = User.hyper_sort(current_user).page(params[:page]).per(10)
+
+    @q = User.ransack(params[:q])
+    @users = @q.result.includes(:user_tag_names).hyper_sort(current_user).page(params[:page]).per(10)
   end
 
   def show

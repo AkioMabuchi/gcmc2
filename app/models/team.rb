@@ -15,6 +15,8 @@ class Team < ApplicationRecord
             length: {maximum: 24, too_long: "24字以内で入力してください"}
   validates :title, length: {maximum: 100, too_long: "100字以内で入力してください"}
 
+  validates :not_adult, acceptance: {message: "同意してください"}
+
   belongs_to :user, foreign_key: :owner_user_id
 
   has_many :members, dependent: :destroy

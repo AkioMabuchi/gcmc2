@@ -2,52 +2,85 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-form.sign-up-form {
-  @media(max-width: 500px) {
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  @media(min-width: 500px) {
-    width: 480px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  padding: 20px 15px 30px;
 
-  div.field {
-    &:nth-child(n+3) {
-      margin-top: 20px;
+div.new-registration-page {
+  form.sign-up-form {
+    @media(max-width: 500px) {
+      margin-right: 10px;
+      margin-left: 10px;
     }
+    @media(min-width: 500px) {
+      width: 480px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    padding: 20px 15px 30px;
+
+    div.field {
+      &:nth-child(n+3) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  div.direction {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 14px;
   }
 }
 
-div.new-session-page{
-  div.container1{
-    display: flex;
-    div.container2{
-      form.login-form{
+div.new-session-page {
+  div.container1 {
+    margin-right: auto;
+    margin-left: auto;
+
+    @media(min-width: 860px) {
+      display: flex;
+      width: 840px;
+    }
+
+    div.container2 {
+      @media(min-width: 860px) {
+        margin-right: 20px;
+      }
+      padding-bottom: 20px;
+
+      form.login-form {
         width: 480px;
         margin-right: auto;
         margin-left: auto;
         padding: 5px 15px 30px;
-        div.field{
+
+        div.field {
           padding-top: 20px;
         }
-        div.forgot{
+
+        div.forgot {
           padding-top: 5px;
           font-size: 12px;
           line-height: 20px;
         }
       }
     }
-    div.container3{
-      div.sns-login{
+
+    div.container3 {
+      @media(min-width: 860px) {
+        margin-left: 20px;
+      }
+
+      div.sns-login {
+        margin-right: auto;
+        margin-left: auto;
+        width: 300px;
         border: 1px solid #BFBFBF;
         border-radius: 10px;
-        padding: 0 15px 30px;
-        div.field{
+        padding: 0 14px 30px;
+
+        div.field {
           padding-top: 20px;
-          a{
+
+          a {
             display: block;
             width: 270px;
             height: 40px;
@@ -58,20 +91,99 @@ div.new-session-page{
             text-align: center;
             border-radius: 10px;
             letter-spacing: 1px;
-            &.twitter{
+
+            &.twitter {
               color: white;
               background-color: #1DA1F2;
             }
-            &.github{
+
+            &.github {
               color: white;
               background-color: #171515;
             }
           }
         }
       }
-      div.direction{
+
+      div.direction {
+        padding-top: 20px;
+        text-align: center;
         font-size: 14px;
       }
+    }
+  }
+}
+
+div.new-password-page {
+  form.new-password-form {
+    @media(max-width: 500px) {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    @media(min-width: 500px) {
+      width: 480px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    padding: 20px 15px 30px;
+
+    h3 {
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    div.description {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 14px;
+      line-height: 20px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    div.field{
+      padding-top: 20px;
+    }
+  }
+  div.return{
+    padding-top: 20px;
+    text-align: center;
+  }
+}
+
+div.edit-password-page{
+  form.edit-password-form {
+    @media(max-width: 500px) {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    @media(min-width: 500px) {
+      width: 480px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    padding: 20px 15px 30px;
+
+    h3 {
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    div.description {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 14px;
+      line-height: 20px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    div.field{
+      padding-top: 20px;
     }
   }
 }

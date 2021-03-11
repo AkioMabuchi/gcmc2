@@ -8,10 +8,6 @@ class User < ApplicationRecord
 
   friendly_id :permalink
 
-  validates :email,
-            presence: {message: "入力してください"},
-            uniqueness: {case_sensitive: true, message: "そのメールアドレスは既に使用されています"}
-
   validates :permalink,
             presence: {message: "入力してください"},
             uniqueness: {case_sensitive: true, message: "そのユーザーIDは既に使用されています"},
@@ -32,7 +28,7 @@ class User < ApplicationRecord
   has_many :position_names, through: :positions
   has_many :members, dependent: :destroy
 
-  has_many :owner_teams, class_name: "Team", foreign_key: :owner_user_id
+  has_many :owner_teams, class_name: "Team", foreign_key: :owner_user_id, dependent: :destroy
   has_many :member_teams, through: :members, source: :team
 
   has_many :join_requests, dependent: :destroy

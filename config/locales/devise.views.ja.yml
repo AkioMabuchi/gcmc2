@@ -9,6 +9,20 @@ ja:
         remember_me: "ログインを記憶"
     models:
       user: "ユーザ"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "入力してください"
+              taken: "そのメールアドレスは既に使用されています"
+            password:
+              blank: "入力してください"
+              too_short: "8字以上、32字以内で入力してください"
+              too_long: "8字以上、32字以内で入力してください"
+            password_confirmation:
+              confirmation: "もう一度入力してください"
+
   devise:
     confirmations:
       new:

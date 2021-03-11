@@ -2,34 +2,60 @@
 <div class="users-index-page">
   <div class="container1">
     <div class="container2">
-
+      <%= search_form_for @q, url: users_path, class: "general-form search-form" do |f| %>
+        <%= f.search_field :name_cont, placeholder: "検索ワードを入力" %>
+        <div class="field">
+          <h4>タグ検索</h4>
+          <ul class="tags">
+            <%= f.collection_check_boxes :user_tag_names_id_in, UserTagName.order(sort_number: :asc), :id, :name, include_hidden: false do |tag| %>
+              <li>
+                <%= tag.label do %>
+                  <%= tag.check_box %>
+                  <%= tag.text %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="actions">
+          <%= f.submit "検索" %>
+        </div>
+      <% end %>
     </div>
     <div class="container3">
-      <div class="users">
-        <ul>
-          <% @users.each do |user| %>
-            <li>
-              <div class="image-name">
-                <div class="user-image">
-                  <%= link_to user_path(user.permalink) do %>
-                    <%= image_tag user.image.url %>
-                  <% end %>
-                </div>
-                <div class="user-name">
-                  <%= link_to user.name, user_path(user.permalink) %>
-                </div>
+      <ul class="users">
+        <% @users.each do |user| %>
+          <li class="user">
+            <div class="image-name">
+              <div class="user-image">
+                <%= link_to user_path(user.permalink) do %>
+                  <%= image_tag user.image.url %>
+                <% end %>
               </div>
-              <% if user.invitable? current_user %>
-                <div class="invitable">
-                  あなたの招待を待ってます！
-                </div>
+              <div class="user-name">
+                <%= link_to user.name, user_path(user.permalink) %>
+              </div>
+            </div>
+            <ul class="general-tags">
+              <% user.user_tag_names.each do |tag| %>
+                <li>
+                  <%= tag.name %>
+                </li>
               <% end %>
-            </li>
-          <% end %>
-        </ul>
-        <div class="pagination">
-          <%= paginate @users %>
-        </div>
+            </ul>
+            <div class="user-description">
+              <%= truncate user.description, length: 100 %>
+            </div>
+            <% if user.invitable? current_user %>
+              <div class="invitable">
+                あなたの招待を待ってます！
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="pagination">
+        <%= paginate @users %>
       </div>
     </div>
   </div>

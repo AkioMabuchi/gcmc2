@@ -3,53 +3,73 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 div.users-index-page {
+  padding-bottom: 100px;
   div.container1 {
-    div.container2 {
+    @media(min-width: 1000px) {
+      display: flex;
+      width: 980px;
+      margin-right: auto;
+      margin-left: auto;
+    }
 
+    div.container2 {
+      margin-right: 20px;
     }
 
     div.container3 {
-      div.users {
-        ul {
-          li {
-            div.image-name {
-              width: 100%;
-              height: 50px;
-              position: relative;
+      margin-left: 20px;
 
-              div.user-image {
+      ul.users {
+        li.user {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #E6E6E6;
+          width: 640px;
+
+          div.image-name {
+            width: 100%;
+            height: 60px;
+            position: relative;
+
+            div.user-image {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              img {
+                display: block;
                 width: 50px;
                 height: 50px;
-                position: absolute;
-                top: 0;
-                left: 0;
-
-                img {
-                  display: block;
-                  width: 50px;
-                  height: 50px;
-                  border-radius: 100%;
-                }
+                border-radius: 100%;
               }
+            }
 
-              div.user-name {
-                width: calc(100% - 60px);
-                height: 30px;
-                line-height: 30px;
-                position: absolute;
-                top: 10px;
-                left: 60px;
+            div.user-name {
+              width: calc(100% - 60px);
+              height: 30px;
+              line-height: 30px;
+              position: absolute;
+              top: 10px;
+              left: 60px;
 
-                a {
-                  font-size: 20px;
-                  color: black;
+              a {
+                font-size: 20px;
+                color: black;
 
-                  &:hover {
-                    color: #7F7F7F;
-                  }
+                &:hover {
+                  color: #7F7F7F;
                 }
               }
             }
+
+          }
+
+          div.user-description {
+            font-size: 12px;
+            line-height: 20px;
+            color: #BFBFBF;
           }
         }
       }
@@ -57,7 +77,9 @@ div.users-index-page {
   }
 }
 
+
 div.user-show-page {
+  padding-bottom: 100px;
   h2 {
     padding-top: 10px;
     padding-bottom: 20px;
@@ -331,20 +353,23 @@ div.user-show-page {
           border-radius: 10px;
           padding: 20px 15px 30px;
 
-          h3{
+          h3 {
             font-size: 18px;
             color: #FF0080;
             text-align: center;
           }
-          div.phrase{
+
+          div.phrase {
             font-size: 14px;
             line-height: 20px;
             padding-top: 10px;
             padding-bottom: 10px;
             border-bottom: 1px solid #E6E6E6;
           }
+
           div.field {
             padding-top: 20px;
+
             h4 {
               font-size: 18px;
               line-height: 20px;
@@ -381,14 +406,20 @@ div.user-show-page {
 }
 
 div.user-setting-page {
+  padding-bottom: 100px;
   div.container1 {
+    width: 780px;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
-
     div.container2 {
-
+      width: 260px;
+      margin-right: 20px;
     }
 
     div.container3 {
+      width: 480px;
+      margin-left: 20px;
       form.user-setting-form {
         width: 480px;
         padding: 20px 15px 30px;
@@ -416,7 +447,7 @@ div.user-setting-page {
           padding-bottom: 5px;
         }
 
-        div.nothing{
+        div.nothing {
           padding-top: 10px;
           padding-bottom: 20px;
           color: #BFBFBF;
@@ -433,9 +464,8 @@ div.user-setting-page {
           height: 160px;
 
           img {
-            display: block;
-            width: 160px;
-            height: 160px;
+            width: 100%;
+            height: 100%;
             border-radius: 100%;
           }
         }
@@ -456,29 +486,35 @@ div.user-setting-page {
       }
 
       form.skills-form {
-        div.skills{
+        div.skills {
           padding-top: 20px;
           padding-bottom: 10px;
           border-bottom: 1px solid #E6E6E6;
-          h4{
+
+          h4 {
             font-size: 18px;
             line-height: 20px;
           }
-          ul{
+
+          ul {
             padding-top: 10px;
             padding-bottom: 10px;
-            li{
+
+            li {
               padding-top: 5px;
               padding-bottom: 5px;
-              button.skill-name{
+
+              button.skill-name {
                 font-size: 20px;
                 line-height: 30px;
                 color: #00CC99;
-                &.selected{
+
+                &.selected {
                   color: #00BFFF;
                 }
               }
-              div.skill-level{
+
+              div.skill-level {
                 font-size: 14px;
                 line-height: 20px;
                 color: #BFBFBF;
@@ -486,20 +522,24 @@ div.user-setting-page {
             }
           }
         }
-        div.description{
+
+        div.description {
           padding-top: 10px;
           padding-bottom: 10px;
           font-size: 14px;
           line-height: 20px;
         }
-        input[type="submit"]{
-          &.create{
+
+        input[type="submit"] {
+          &.create {
             background-color: #00FFBF;
           }
-          &.update{
+
+          &.update {
             background-color: #00BFFF;
           }
-          &.destroy{
+
+          &.destroy {
             background-color: #FFBF00;
           }
         }

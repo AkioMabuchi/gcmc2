@@ -43,6 +43,18 @@ class TeamsController < ApplicationController
     if team.save
       redirect_to root_path, notice: "チームを作成しました"
     else
+      if team.errors.messages[:permalink]
+        flash[:permalink_warning] = team.errors.messages[:permalink][0]
+      end
+      if team.errors.messages[:name]
+        flash[:name_warning] = team.errors.messages[:name][0]
+      end
+      if team.errors.messages[:title]
+        flash[:title_warning] = team.errors.messages[:title][0]
+      end
+      if team.errors.messages[:not_adult]
+        flash[:not_adult_warning] = team.errors.messages[:not_adult][0]
+      end
       redirect_to new_team_path
     end
   end
@@ -148,7 +160,7 @@ class TeamsController < ApplicationController
   end
 
   def team_params
-    params.require(:team).permit(:owner_user_id, :permalink, :name, :image, :title, :description)
+    params.require(:team).permit(:owner_user_id, :permalink, :name, :image, :title, :description, :not_adult)
   end
 
   def team_tags_params

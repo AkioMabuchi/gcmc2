@@ -1,28 +1,59 @@
 <h1>新規登録</h1>
-<%= form_with model: @user, url: user_registration_path, local: true, class: "sign-up-form general-form" do |f| %>
-  <div class="field">
-    <h4>ユーザーID<small>（英数字およびハイフン24字以内）</small></h4>
-    <%= f.text_field :permalink %>
+<div class="new-registration-page">
+  <%= form_with model: @user, url: user_registration_path, local: true, class: "sign-up-form general-form" do |f| %>
+    <div class="field">
+      <h4>ユーザーID<small>（英数字およびハイフン24字以内）</small></h4>
+      <%= f.text_field :permalink, autofocus: true %>
+      <% if flash[:permalink_warning] %>
+        <div class="warning">
+          <%= flash[:permalink_warning] %>
+        </div>
+      <% end %>
+    </div>
+    <div class="field">
+      <h4>ユーザー名<small>（24字以内）</small></h4>
+      <%= f.text_field :name %>
+      <% if flash[:name_warning] %>
+        <div class="warning">
+          <%= flash[:name_warning] %>
+        </div>
+      <% end %>
+    </div>
+    <div class="field">
+      <h4>メールアドレス</h4>
+      <%= f.email_field :email %>
+      <% if flash[:email_warning] %>
+        <div class="warning">
+          <%= flash[:email_warning] %>
+        </div>
+      <% end %>
+    </div>
+    <div class="field">
+      <h4>パスワード<small>（8字以上、32字以内）</small></h4>
+      <%= f.password_field :password %>
+      <% if flash[:password_warning] %>
+        <div class="warning">
+          <%= flash[:password_warning] %>
+        </div>
+      <% end %>
+    </div>
+    <div class="field">
+      <h4>パスワード<small>（確認用）</small></h4>
+      <%= f.password_field :password_confirmation %>
+      <% if flash[:password_confirmation_warning] %>
+        <div class="warning">
+          <%= flash[:password_confirmation_warning] %>
+        </div>
+      <% end %>
+    </div>
+    <div class="field">
+      <%= recaptcha_tags %>
+    </div>
+    <div class="actions">
+      <%= f.submit "新規登録" %>
+    </div>
+  <% end %>
+  <div class="direction">
+    既にアカウントをお持ちの方は<%= link_to "ログイン", new_user_session_path %>
   </div>
-  <div class="field">
-    <h4>ユーザー名<small>（24字以内）</small></h4>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <h4>メールアドレス</h4>
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <h4>パスワード<small>（8字以上、32字以内）</small></h4>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="field">
-    <h4>パスワード<small>（確認用）</small></h4>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
+</div>

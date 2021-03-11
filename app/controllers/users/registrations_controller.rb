@@ -10,7 +10,40 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
+    build_resource(sign_up_params)
+
+    resource.save
+    yield resource if block_given?
+    if resource.persisted?
+      if resource.active_for_authentication?
+        set_flash_message! :notice, :signed_up
+        sign_up(resource_name, resource)
+        respond_with resource, location: after_sign_up_path_for(resource)
+      else
+        set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+        expire_data_after_sign_in!
+        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+      end
+    else
+      if resource.errors.messages[:permalink]
+        flash[:permalink_warning] = resource.errors.messages[:permalink][0]
+      end
+      if resource.errors.messages[:name]
+        flash[:name_warning] = resource.errors.messages[:name][0]
+      end
+      if resource.errors.messages[:email]
+        flash[:email_warning] = resource.errors.messages[:email][0]
+      end
+      if resource.errors.messages[:password]
+        flash[:password_warning] = resource.errors.messages[:password][0]
+      end
+      if resource.errors.messages[:password_confirmation]
+        flash[:password_confirmation_warning] = resource.errors.messages[:password_confirmation][0]
+      end
+      clean_up_passwords resource
+      set_minimum_password_length
+      respond_with resource
+    end
   end
 
   # GET /resource/edit
@@ -112,42 +145,48 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     added_attrs = [
-        :permalink,
-        :name,
-        :email,
-        :password,
-        :password_confirmations
+      :permalink,
+      :name,
+      :email,
+      :password,
+      :password_confirmations
     ]
 
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+
+    build_resource(sign_up_params)
+
+    unless verify_recaptcha(model: resource)
+      redirect_to new_user_registration_path, alert: "reCAPTCHA認証を行ってください"
+    end
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     added_attrs = [
-        [
-            :permalink,
-            :name,
-            :image,
-            :description,
-            :location,
-            :birth,
-            :is_birth_published,
-            :url
-        ],
-        user_tag_name_ids: [],
-        twitter_attributes: [
-            :id,
-            :uid,
-            :url,
-            :is_published_url
-        ],
-        github_attributes: [
-            :id,
-            :uid,
-            :url,
-            :is_published_url
-        ]
+      [
+        :permalink,
+        :name,
+        :image,
+        :description,
+        :location,
+        :birth,
+        :is_birth_published,
+        :url
+      ],
+      user_tag_name_ids: [],
+      twitter_attributes: [
+        :id,
+        :uid,
+        :url,
+        :is_published_url
+      ],
+      github_attributes: [
+        :id,
+        :uid,
+        :url,
+        :is_published_url
+      ]
     ]
 
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
@@ -156,8 +195,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if params[:current_email] != resource.email
         flash[:current_email_warning] = "メールアドレスが間違っています"
         redirect_to edit_email_user_registration_path
-      end
-      if params[:user][:email] == resource.email
+      elsif params[:user][:email] == resource.email
         flash[:email_warning] = "別のメールアドレスを入力してください"
         redirect_to edit_email_user_registration_path
       end
