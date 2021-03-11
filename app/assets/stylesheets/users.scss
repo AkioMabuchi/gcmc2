@@ -415,6 +415,14 @@ div.user-setting-page {
           padding-top: 10px;
           padding-bottom: 5px;
         }
+
+        div.nothing{
+          padding-top: 10px;
+          padding-bottom: 20px;
+          color: #BFBFBF;
+          font-size: 14px;
+          line-height: 20px;
+        }
       }
 
       form.profile-form {
@@ -448,18 +456,51 @@ div.user-setting-page {
       }
 
       form.skills-form {
-        div.skills {
+        div.skills{
           padding-top: 20px;
           padding-bottom: 10px;
           border-bottom: 1px solid #E6E6E6;
-
-          h4 {
+          h4{
             font-size: 18px;
             line-height: 20px;
           }
-
-          div.level {
-
+          ul{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            li{
+              padding-top: 5px;
+              padding-bottom: 5px;
+              button.skill-name{
+                font-size: 20px;
+                line-height: 30px;
+                color: #00CC99;
+                &.selected{
+                  color: #00BFFF;
+                }
+              }
+              div.skill-level{
+                font-size: 14px;
+                line-height: 20px;
+                color: #BFBFBF;
+              }
+            }
+          }
+        }
+        div.description{
+          padding-top: 10px;
+          padding-bottom: 10px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        input[type="submit"]{
+          &.create{
+            background-color: #00FFBF;
+          }
+          &.update{
+            background-color: #00BFFF;
+          }
+          &.destroy{
+            background-color: #FFBF00;
           }
         }
       }

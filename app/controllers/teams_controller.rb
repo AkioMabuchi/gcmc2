@@ -23,7 +23,8 @@ class TeamsController < ApplicationController
 
     Thread.current[:teams_hyper_sort] = positions
 
-    @teams = Team.hyper_sort(current_user).page(params[:page]).per(5)
+    @q = Team.ransack(params[:q])
+    @teams = @q.result.includes(:team_tag_names).hyper_sort(current_user).page(params[:page]).per(5)
   end
 
   def show

@@ -4,16 +4,116 @@
 
 div.teams-index-page {
   div.container1 {
+    @media(min-width: 1000px) {
+      display: flex;
+      width: 980px;
+      margin-right: auto;
+      margin-left: auto;
+    }
     div.container2 {
+      margin-right: 20px;
 
     }
 
     div.container3 {
-      div.teams {
-        border: 1px solid #BFBFBF;
-        border-radius: 10px;
-        padding: 9px;
-        width: 300px;
+      margin-left: 20px;
+      ul.teams {
+        display: flex;
+        flex-wrap: wrap;
+        width: 640px;
+        li.team {
+          width: 640px;
+          padding: 20px 20px 30px;
+          border-bottom: 1px solid #BFBFBF;
+          div.team-image {
+            width: 600px;
+            height: 315px;
+            margin-bottom: 10px;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          div.team-title {
+            font-size: 20px;
+            line-height: 30px;
+
+            a {
+              color: black;
+
+              &:hover {
+                color: #7F7F7F;
+              }
+            }
+          }
+
+          div.team-description {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 12px;
+            line-height: 20px;
+            color: #BFBFBF;
+          }
+
+          div.team-owner {
+            width: 100%;
+            height: 50px;
+            position: relative;
+
+            div.owner-image {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              img {
+                display: block;
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+              }
+            }
+
+            div.owner-header {
+              width: calc(100% - 60px);
+              height: 20px;
+              line-height: 20px;
+              position: absolute;
+              top: 0;
+              left: 60px;
+              font-size: 14px;
+              color: #BFBFBF;
+            }
+
+            div.owner-name {
+              width: calc(100% - 60px);
+              height: 30px;
+              line-height: 30px;
+              font-size: 18px;
+              position: absolute;
+              top: 20px;
+              left: 60px;
+
+              a {
+                color: black;
+
+                &:hover {
+                  color: #7F7F7F;
+                }
+              }
+            }
+          }
+
+          div.team-wanted{
+            padding-top: 20px;
+            text-align: center;
+            font-size: 20px;
+            color: #FF0080;
+          }
+        }
       }
     }
   }
@@ -51,6 +151,7 @@ div.team-show-page {
 
       div.information {
         padding: 0 10px 60px;
+
         div.team-header {
           padding-top: 10px;
           padding-bottom: 10px;
@@ -127,17 +228,20 @@ div.team-show-page {
           color: #979797;
         }
       }
-      div.members{
-        ul{
+
+      div.members {
+        ul {
           padding: 15px 0 40px 10px;
           display: flex;
           flex-wrap: wrap;
-          li{
+
+          li {
             margin-right: 10px;
             margin-bottom: 10px;
             width: 50px;
             height: 50px;
-            img{
+
+            img {
               display: block;
               width: 50px;
               height: 50px;
@@ -145,7 +249,8 @@ div.team-show-page {
             }
           }
         }
-        div.no-member{
+
+        div.no-member {
           padding: 20px 10px 50px;
           font-size: 16px;
           line-height: 20px;
@@ -153,8 +258,9 @@ div.team-show-page {
 
         }
       }
-      div.urls{
-        div.no-url{
+
+      div.urls {
+        div.no-url {
           padding: 20px 10px 40px;
           font-size: 16px;
           line-height: 20px;
@@ -216,6 +322,7 @@ div.team-show-page {
             line-height: 20px;
             margin-top: 5px;
             position: relative;
+
             &::before {
               position: relative;
               top: -1px;
@@ -227,12 +334,14 @@ div.team-show-page {
               border-radius: 5px;
               background-color: #00CC99;
             }
-            div.position-name{
+
+            div.position-name {
               position: absolute;
               top: 0;
               left: 10px;
             }
-            div.position-amount{
+
+            div.position-amount {
               position: absolute;
               top: 0;
               right: 0;
@@ -241,7 +350,7 @@ div.team-show-page {
           }
         }
 
-        div.not-wanted{
+        div.not-wanted {
           padding-top: 20px;
           padding-bottom: 50px;
           text-align: center;
@@ -250,12 +359,13 @@ div.team-show-page {
           color: #BFBFBF;
         }
 
-        form.join-form{
+        form.join-form {
           padding: 20px 15px 30px;
           margin-right: 10px;
           margin-left: 10px;
           border: 1px solid #00FFBF;
           border-radius: 10px;
+
           h4 {
             font-size: 18px;
             line-height: 20px;
@@ -263,7 +373,8 @@ div.team-show-page {
 
           div.select-field {
             padding-top: 5px;
-            select{
+
+            select {
               width: 200px;
             }
           }
@@ -453,62 +564,75 @@ div.team-setting-page {
         }
       }
 
-      form.urls-form{
-        div.urls{
+      form.urls-form {
+        div.urls {
           padding-top: 20px;
           padding-bottom: 10px;
           border-bottom: 1px solid #E6E6E6;
-          h4{
+
+          h4 {
             font-size: 18px;
             line-height: 20px;
           }
-          ul{
+
+          ul {
             padding-top: 10px;
             padding-bottom: 10px;
-            li{
+
+            li {
               padding-top: 5px;
               padding-bottom: 5px;
-              button.url-name{
+
+              button.url-name {
                 font-size: 20px;
                 line-height: 30px;
                 color: #00CC99;
-                &.selected{
+
+                &.selected {
                   color: #00BFFF;
                 }
               }
-              span.url-public{
+
+              span.url-public {
                 font-size: 14px;
                 line-height: 20px;
                 color: #BFBFBF;
               }
-              div.url-url{
+
+              div.url-url {
                 font-size: 14px;
                 line-height: 20px;
               }
             }
           }
         }
-        div.radio-buttons{
+
+        div.radio-buttons {
           padding-top: 5px;
-          span.radio-name{
+
+          span.radio-name {
             padding-left: 2px;
             padding-right: 18px;
           }
         }
-        div.description{
+
+        div.description {
           padding-top: 10px;
           padding-bottom: 10px;
           font-size: 14px;
           line-height: 20px;
         }
-        input[type="submit"]{
-          &.create{
+
+        input[type="submit"] {
+          &.create {
             background-color: #00FFBF;
           }
-          &.update{
+
+          &.update {
             background-color: #00BFFF;
           }
-          &.destroy{
+
+          &.destroy {
             background-color: #FFBF00;
           }
         }

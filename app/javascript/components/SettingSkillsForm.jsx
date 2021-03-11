@@ -1,58 +1,120 @@
 import React, {Fragment} from "react"
 
 class SettingSkillsForm extends React.Component {
-    skills = {}
-
     constructor(props) {
         super(props);
         this.state = {
             action: "/settings/skills",
             method: "POST",
             submit: "追加",
+            submitClass: "create",
             selectedSkillId: 0,
-            isLevelBlank: true
         };
-        this.props.info.skills.map((skill) => {
-            this.skills[skill.name] = skill.id;
-        });
     }
 
     onClickButtonName(id, name, level) {
-        document.getElementById("skill-name").value = name;
-        document.getElementById("skill-level").value = level;
-        this.setState({selectedSkillId: id, isLevelBlank: false}, () => {
-            this.changeActionMethod();
-        });
-    }
-
-    onChangeInputFieldName(e) {
-        let selectedSkillId = 0;
-        if (this.skills[e.target.value]) {
-            selectedSkillId = this.skills[e.target.value];
+        let skillId;
+        if (this.state.selectedSkillId === id) {
+            skillId = 0;
+        } else {
+            skillId = id;
         }
-        this.setState({selectedSkillId: selectedSkillId}, () => {
-            this.changeActionMethod();
+        this.setState({selectedSkillId: skillId}, () => {
+            if (this.state.selectedSkillId === 0) {
+                document.getElementsByName("skill[name]")[0].value = "";
+                document.getElementsByName("skill[level]")[0].value = "";
+                this.setState({
+                    action: "/settings/skills",
+                    method: "POST",
+                    submit: "追加",
+                    submitClass: "create"
+                });
+            } else {
+                document.getElementsByName("skill[name]")[0].value = name;
+                document.getElementsByName("skill[level]")[0].value = level;
+                this.setState({
+                    action: `/settings/skills/${id}`,
+                    method: "PATCH",
+                    submit: "更新",
+                    submitClass: "update"
+                });
+            }
         });
     }
 
     onChangeInputFieldLevel(e) {
-        let isLevelBlank = e.target.value === "";
-        this.setState({isLevelBlank: isLevelBlank}, () => {
-            this.changeActionMethod();
-        });
-    }
-
-    changeActionMethod() {
-        if (this.state.selectedSkillId === 0) {
-            this.setState({action: "/settings/skills", method: "POST"});
-        } else if (this.state.isLevelBlank) {
-            this.setState({action: `/settings/skills/${this.state.selectedSkillId}`, method: "DELETE"});
-        } else {
-            this.setState({action: `/settings/skills/${this.state.selectedSkillId}`, method: "PATCH"});
+        if (this.state.selectedSkillId !== 0) {
+            if (e.target.value === "") {
+                this.setState({
+                    method: "DELETE",
+                    submit: "削除",
+                    submitClass: "destroy"
+                });
+            } else {
+                this.setState({
+                    method: "PATCH",
+                    submit: "更新",
+                    submitClass: "update"
+                });
+            }
         }
     }
 
     render() {
+        let skills;
+        let nameWarning;
+        let levelWarning;
+
+        if (this.props.info.skills.length > 0) {
+            skills = (
+                <ul>
+                    {
+                        this.props.info.skills.map((skill) => {
+                            let className;
+                            if(this.state.selectedSkillId === skill.id){
+                                className = "skill-name selected";
+                            }else{
+                                className = "skill-name";
+                            }
+                            return (
+                                <li>
+                                    <button type={"button"} className={className} onClick={() => {
+                                        this.onClickButtonName(skill.id, skill.name, skill.level)
+                                    }}>
+                                        {skill.name}
+                                    </button>
+                                    <div className={"skill-level"}>
+                                        {skill.level}
+                                    </div>
+                                </li>
+                            );
+                        })
+                    }
+                </ul>
+            )
+        } else {
+            skills = (
+                <div className={"nothing"}>
+                    現在、登録されているスキルはありません
+                </div>
+            );
+        }
+        if (this.props.info.nameWarning !== null) {
+            nameWarning = (
+                <div className={"warning"}>
+                    {this.props.info.nameWarning}
+                </div>
+            );
+        }
+
+        if (this.props.info.levelWarning !== null) {
+            levelWarning = (
+                <div className={"warning"}>
+                    {this.props.info.levelWarning}
+                </div>
+            );
+        }
+
         return (
             <form action={this.state.action} method={"POST"}
                   className={"general-form user-setting-form skills-form"}>
@@ -62,39 +124,26 @@ class SettingSkillsForm extends React.Component {
                 <h3>スキルセット設定</h3>
                 <div className={"skills"}>
                     <h4>現在のスキルセット</h4>
-                    <ul>
-                        {
-                            this.props.info.skills.map((skill) => {
-                                return (
-                                    <li>
-                                        <button type={"button"} onClick={() => {
-                                            this.onClickButtonName(skill.id, skill.name, skill.level)
-                                        }}>
-                                            {skill.name}
-                                        </button>
-                                        <div className={"level"}>
-                                            {skill.level}
-                                        </div>
-                                    </li>
-                                );
-                            })
-                        }
-                    </ul>
+                    {skills}
                 </div>
                 <div className={"field"}>
                     <h4>スキル名<small>（必須）</small></h4>
-                    <input type={"text"} name={"skill[name]"} placeholder={"例）C#、Photoshop"} onChange={(e) => {
-                        this.onChangeInputFieldName(e)
-                    }} id={"skill-name"}/>
+                    <input type={"text"} name={"skill[name]"} placeholder={"例）C#、Photoshop"}/>
+                    {nameWarning}
                 </div>
                 <div className={"field"}>
                     <h4>レベル</h4>
                     <input type={"text"} name={"skill[level]"} placeholder={"例）初級レベル、実務経験1年"} onChange={(e) => {
                         this.onChangeInputFieldLevel(e)
-                    }} id={"skill-level"}/>
+                    }}/>
+                    {levelWarning}
+                </div>
+                <div className={"description"}>
+                    既存のスキル情報を更新、削除するには、上記のリストにあるスキル名をクリックしてください。
+                    また、削除する場合は、レベルを空欄にしてください。
                 </div>
                 <div className={"actions"}>
-                    <input type={"submit"} value={this.state.submit}/>
+                    <input type={"submit"} value={this.state.submit} className={this.state.submitClass}/>
                 </div>
             </form>
         );

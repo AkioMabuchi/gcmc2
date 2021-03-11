@@ -74,3 +74,5 @@ gem 'devise-i18n-views'
 gem 'kaminari'
 
 gem 'recaptcha'
+
+gem 'ransack'

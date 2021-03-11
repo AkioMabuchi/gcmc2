@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     if user_signed_in?
       render "home/show"
     else
+      @teams = Team.order(created_at: :asc).limit(8)
       render "home/index"
     end
   end

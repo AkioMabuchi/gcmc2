@@ -2,27 +2,71 @@
 <div class="teams-index-page">
   <div class="container1">
     <div class="container2">
-
+      <%= search_form_for @q, url: teams_path, class: "general-form search-form" do |f| %>
+        <%= f.search_field :name_cont, placeholder: "検索ワードを入力" %>
+        <div class="field">
+          <h4>タグ検索</h4>
+          <ul class="tags">
+            <%= f.collection_check_boxes :team_tag_names_id_in, TeamTagName.order(sort_number: :asc), :id, :name, include_hidden: false do |tag| %>
+              <li>
+                <%= tag.label do %>
+                  <%= tag.check_box %>
+                  <%= tag.text %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="actions">
+          <%= f.submit "検索" %>
+        </div>
+      <% end %>
     </div>
     <div class="container3">
-      <div class="teams">
-        <ul>
-          <% @teams.each do |team| %>
-            <li>
+      <ul class="teams">
+        <% @teams.each do |team| %>
+          <li class="team">
+            <div class="team-image">
               <%= link_to team_path(team.permalink) do %>
-                <%= team.name %>
+                <%= image_tag team.image.url %>
               <% end %>
-              <% if team.wanted? current_user %>
-                <div class="wanted">
-                  あなたのチーム加入を待ってます！
-                </div>
+            </div>
+            <ul class="general-tags">
+              <% team.team_tag_names.each do |tag| %>
+                <li>
+                  <%= tag.name %>
+                </li>
               <% end %>
-            </li>
-          <% end %>
-        </ul>
-        <div class="pagination">
-          <%= paginate @teams %>
-        </div>
+            </ul>
+            <div class="team-title">
+              <%= link_to team.title, team_path(team.permalink) %>
+            </div>
+            <div class="team-description">
+              <%= team.description[0, 100] %>
+            </div>
+            <div class="team-owner">
+              <div class="owner-image">
+                <%= link_to user_path(team.user.permalink) do %>
+                  <%= image_tag team.user.image.url %>
+                <% end %>
+              </div>
+              <div class="owner-header">
+                オーナー
+              </div>
+              <div class="owner-name">
+                <%= link_to team.user.name, user_path(team.user.permalink) %>
+              </div>
+            </div>
+            <% if team.wanted? current_user %>
+              <div class="team-wanted">
+                あなたのチーム加入を待ってます！
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="pagination">
+        <%= paginate @teams %>
       </div>
     </div>
   </div>

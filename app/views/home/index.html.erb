@@ -2,7 +2,7 @@
   <div class="top-section">
     <div class="top-section-main">
       <h1>一緒にゲームを作ろう！</h1>
-      <p>GCMCは他のゲーム開発者をマッチングさせ<<br/>共同開発を支援するサービスです</p>
+      <p>GCMCは他のゲーム開発者をマッチングさせ<br/>共同開発を支援するサービスです</p>
     </div>
   </div>
   <div class="features-section">
@@ -11,7 +11,7 @@
       <li>
         <div class="feature">
           <div class="feature-image">
-
+            <%= image_tag "NoImageForTop.png" %>
           </div>
           <div class="feature-description">
             <h4>豊富なプロフィール機能</h4>
@@ -22,7 +22,7 @@
       <li>
         <div class="feature">
           <div class="feature-image">
-
+            <%= image_tag "NoImageForTop.png" %>
           </div>
           <div class="feature-description">
             <h4>スマートな検索機能</h4>
@@ -33,7 +33,7 @@
       <li>
         <div class="feature">
           <div class="feature-image">
-
+            <%= image_tag "NoImageForTop.png" %>
           </div>
           <div class="feature-description">
             <h4>役割別招待機能</h4>
@@ -42,5 +42,149 @@
         </div>
       </li>
     </ul>
+  </div>
+  <div class="usage-section">
+    <h2>How to use GCMC</h2>
+    <div class="introduction">
+      GCMCのユーザーは大きく分けて、
+      チームの管理および仲間を募る「オーナー」と、
+      チームの仲間として参加してもらう「メンバー」の2種類に分けられます。
+    </div>
+    <h3>オーナーの場合</h3>
+    <ul>
+      <li>
+        <div class="usage-image">
+          <%= image_tag "NoImageForTop.png" %>
+        </div>
+        <div class="usage-description">
+          1：チームを作成して
+        </div>
+      </li>
+      <li>
+        <div class="usage-image">
+          <%= image_tag "NoImageForTop.png" %>
+        </div>
+        <div class="usage-description">
+          2：共同開発環境を整備して
+        </div>
+      </li>
+      <li>
+        <div class="usage-image">
+          <%= image_tag "NoImageForTop.png" %>
+        </div>
+        <div class="usage-description">
+          3：メンバーを招待して
+        </div>
+      </li>
+      <li>
+        <div class="usage-image">
+          <%= image_tag "NoImageForTop.png" %>
+        </div>
+        <div class="usage-description">
+          4：共同開発スタート！
+        </div>
+      </li>
+    </ul>
+    <h3>メンバーの場合</h3>
+    <ul>
+      <li>
+        <div class="usage-image">
+          <%= image_tag "NoImageForTop.png" %>
+        </div>
+        <div class="usage-description">
+          1：プロフィールを充実させて
+        </div>
+      </li>
+      <li>
+        <div class="usage-image">
+          <%= image_tag "NoImageForTop.png" %>
+        </div>
+        <div class="usage-description">
+          2：チームに参加申請を行って
+        </div>
+      </li>
+      <li>
+        <div class="usage-image">
+          <%= image_tag "NoImageForTop.png" %>
+        </div>
+        <div class="usage-description">
+          3：チームに加入してもらって
+        </div>
+      </li>
+      <li>
+        <div class="usage-image">
+          <%= image_tag "NoImageForTop.png" %>
+        </div>
+        <div class="usage-description">
+          4：共同開発スタート！
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="teams-section">
+    <h2>こんなチームがあります</h2>
+    <ul class="teams">
+      <% @teams.each do |team| %>
+        <li class="team">
+          <div class="team-image">
+            <%= link_to team_path(team.permalink) do %>
+              <%= image_tag team.image.url %>
+            <% end %>
+          </div>
+          <ul class="general-tags">
+            <% team.team_tag_names.each do |tag| %>
+              <li>
+                <%= tag.name %>
+              </li>
+            <% end %>
+          </ul>
+          <div class="team-title">
+            <%= link_to team.title, team_path(team.permalink) %>
+          </div>
+          <div class="team-description">
+            <%= team.description[0, 100] %>
+          </div>
+          <div class="team-owner">
+            <div class="owner-image">
+              <%= link_to user_path(team.user.permalink) do %>
+                <%= image_tag team.user.image.url %>
+              <% end %>
+            </div>
+            <div class="owner-header">
+              オーナー
+            </div>
+            <div class="owner-name">
+              <%= link_to team.user.name, user_path(team.user.permalink) %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="conclusion-section">
+    <div class="conclusion">
+      <p>
+        GCMC上のチームは会社のではありません。そのため、会社のように利益を追求する必要はありません。
+        作りたいゲームを他のメンバーと一緒に作ることができます。
+      </p>
+      <p>
+        会社ではありませんから、ゲーム業界の開発実務経験もいりません。初心者や未経験の方も、スキルアップしたい方も大歓迎です。
+        チームでの開発経験を積みたい方や、チームでの開発によってコミュニケーション能力を高めたい方も大歓迎です。
+      </p>
+    </div>
+    <div class="conclusion-notice">
+      <h3>GCMCは一切無料です！</h3>
+      <p>
+        早速ログインもしくは会員登録を行って<br/>素晴らしい開発仲間と出会いましょう！
+      </p>
+      <ul class="conclusion-sign">
+        <li>
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to "新規登録", new_user_registration_path %>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
