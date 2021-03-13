@@ -1,27 +1,53 @@
 <h1>招待一覧</h1>
 <div class="invitations-page">
-  <% if current_user.invitations.length > 0 %>
-    <div class="invitations">
+  <div class="invitations">
+    <% if current_user.invitations.length > 0 %>
       <ul>
         <% current_user.invitations.each do |invitation| %>
           <li>
-            <div class="invitation">
-              <div class="position">
-                <h4>招待ポジション</h4>
-                <p><%= invitation.position_name.name %></p>
+            <div class="team-information">
+              <div class="team-image">
+                <%= link_to team_path(invitation.team.permalink) do %>
+                  <%= image_tag invitation.team.image.url %>
+                <% end %>
               </div>
-              <div class="actions">
-                <%= button_to "受諾", accept_invitation_path(invitation.id), data: {confirm: "招待を受諾しますか？"}, method: :post %>
-                <%= button_to "拒否", reject_invitation_path(invitation.id), data: {confirm: "招待を拒否しますか？"}, method: :post %>
+              <div class="team-name">
+                <h5>チーム名</h5>
+                <div class="team-link">
+                  <%= link_to invitation.team.name, team_path(invitation.team.permalink) %>
+                </div>
               </div>
+              <div class="team-owner">
+                <div class="owner-image">
+                  <%= link_to user_path(invitation.team.user.permalink) do %>
+                    <%= image_tag invitation.team.user.image.url %>
+                  <% end %>
+                </div>
+                <div class="owner-header">
+                  オーナー
+                </div>
+                <div class="owner-name">
+                  <%= link_to user_path(invitation.team.user.permalink) do %>
+                    <%= invitation.team.user.name %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="position">
+              <h5>招待ポジション</h5>
+              <p><%= invitation.position_name.name %></p>
+            </div>
+            <div class="actions">
+              <%= button_to "受諾", accept_invitation_path(invitation.id), data: { confirm: "招待を受諾しますか？" }, method: :post, class: "accept" %>
+              <%= button_to "拒否", reject_invitation_path(invitation.id), data: { confirm: "招待を拒否しますか？" }, method: :post, class: "reject" %>
             </div>
           </li>
         <% end %>
       </ul>
-    </div>
-  <% else %>
-    <div class="no-invitations">
-      現在招待は届いていません
-    </div>
-  <% end %>
+    <% else %>
+      <div class="no-invitation">
+        現在招待は届いていません
+      </div>
+    <% end %>
+  </div>
 </div>

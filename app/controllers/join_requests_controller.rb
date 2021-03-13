@@ -1,4 +1,7 @@
 class JoinRequestsController < ApplicationController
+  def index
+    @team = Team.friendly.find(params[:permalink])
+  end
   def create
     join_request = JoinRequest.new(join_request_params)
 

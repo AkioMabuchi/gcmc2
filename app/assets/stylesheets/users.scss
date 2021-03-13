@@ -4,6 +4,7 @@
 
 div.users-index-page {
   padding-bottom: 100px;
+
   div.container1 {
     @media(min-width: 1000px) {
       display: flex;
@@ -80,6 +81,7 @@ div.users-index-page {
 
 div.user-show-page {
   padding-bottom: 100px;
+
   h2 {
     padding-top: 10px;
     padding-bottom: 20px;
@@ -407,11 +409,13 @@ div.user-show-page {
 
 div.user-setting-page {
   padding-bottom: 100px;
+
   div.container1 {
     width: 780px;
     margin-right: auto;
     margin-left: auto;
     display: flex;
+
     div.container2 {
       width: 260px;
       margin-right: 20px;
@@ -420,6 +424,7 @@ div.user-setting-page {
     div.container3 {
       width: 480px;
       margin-left: 20px;
+
       form.user-setting-form {
         width: 480px;
         padding: 20px 15px 30px;
@@ -556,24 +561,68 @@ div.user-setting-page {
             line-height: 20px;
           }
 
-          div.portfolio-image {
-            a {
-              display: block;
-              width: 200px;
-              height: 105px;
-
-              img {
+          ul {
+            li {
+              padding-top: 10px;
+              padding-bottom: 10px;
+              div.portfolio-image {
                 display: block;
                 width: 200px;
                 height: 105px;
+
+                img {
+                  display: block;
+                  width: 200px;
+                  height: 105px;
+                }
+              }
+
+
+              button.button-portfolio-name {
+                font-size: 20px;
+                line-height: 30px;
+                color: #00CC99;
+
+                &.selected {
+                  color: #00BFFF;
+                }
               }
             }
           }
         }
-      }
 
-      form.portfolio-form {
+        div.upload-image {
+          margin-top: 10px;
+          margin-bottom: 20px;
+          width: 240px;
+          height: 126px;
 
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        div.description {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        input[type="submit"] {
+          &.create {
+            background-color: #00FFBF;
+          }
+
+          &.update {
+            background-color: #00BFFF;
+          }
+
+          &.destroy {
+            background-color: #FFBF00;
+          }
+        }
       }
 
       form.invitations-form {

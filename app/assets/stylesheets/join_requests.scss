@@ -1,3 +1,156 @@
 // Place all the styles related to the join_requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+div.join-requests-page {
+  div.container1 {
+    display: flex;
+    width: 780px;
+    margin-right: auto;
+    margin-left: auto;
+    div.container2 {
+      margin-right: 20px;
+
+      div.team-description {
+        width: 260px;
+        border: 1px solid #BFBFBF;
+        border-radius: 10px;
+        padding: 9px 9px 20px;
+        margin-bottom: 30px;
+
+        div.team-image {
+          width: 240px;
+          height: 126px;
+
+          a {
+            img {
+              display: block;
+              width: 240px;
+              height: 126px;
+            }
+          }
+        }
+
+        div.team-name {
+          padding: 10px 6px;
+
+          a {
+            font-size: 20px;
+            line-height: 24px;
+            color: black;
+
+            &:hover {
+              color: #7F7F7F;
+            }
+          }
+        }
+      }
+    }
+
+    div.container3 {
+      margin-left: 20px;
+
+      div.requests {
+        width: 480px;
+        border: 1px solid #BFBFBF;
+        border-radius: 10px;
+        padding: 10px 20px 30px;
+        ul{
+          li{
+            padding-top: 10px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E6E6E6;
+            div.joiner-information {
+              width: 100%;
+              height: 60px;
+              position: relative;
+
+              div.joiner-image {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                img {
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 100%;
+                }
+              }
+
+              div.joiner-name {
+                width: calc(100% - 60px);
+                height: 30px;
+                position: absolute;
+                top: 10px;
+                left: 60px;
+
+                a {
+                  font-size: 20px;
+                  line-height: 30px;
+                  color: black;
+
+                  &:hover {
+                    color: #7F7F7F;
+                  }
+                }
+              }
+
+            }
+
+            div.joiner-position {
+              padding-bottom: 20px;
+              h5 {
+                font-size: 14px;
+                line-height: 20px;
+                color: #BFBFBF;
+              }
+
+              p {
+                font-size: 18px;
+                line-height: 30px;
+              }
+            }
+            div.actions{
+              display: flex;
+              justify-content: center;
+              input[type="submit"]{
+                margin-right: 10px;
+                margin-left: 10px;
+                width: 160px;
+                height: 40px;
+                border-width: 2px;
+                border-style: solid;
+                border-radius: 10px;
+                font-size: 18px;
+                &.accept{
+                  border-color: #00FF40;
+                  background-color: #CCFFD9;
+                  color: #00FF40;
+                }
+                &.reject{
+                  border-color: #FF4000;
+                  background-color: #FFD9CC;
+                  color: #FF4000;
+                }
+              }
+            }
+          }
+        }
+        div.no-request{
+          padding-top: 20px;
+          padding-bottom: 30px;
+          color: #BFBFBF;
+          text-align: center;
+          border-bottom: 1px solid #E6E6E6;
+        }
+        div.return{
+          padding-top: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

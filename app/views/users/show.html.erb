@@ -148,7 +148,9 @@
             <% end %>
           </ul>
           <% if user_signed_in? %>
-            <%= react_component "InviteForm", info: @react_info %>
+            <% if @user.invitable? current_user %>
+              <%= react_component "InviteForm", info: @react_info %>
+            <% end %>
           <% end %>
         <% else %>
           <div class="no-position">

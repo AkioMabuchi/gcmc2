@@ -1,0 +1,54 @@
+<h1>加入申請一覧</h1>
+<div class="join-requests-page">
+  <div class="container1">
+    <div class="container2">
+      <div class="team-description">
+        <div class="team-image">
+          <%= link_to team_path(@team.permalink) do %>
+            <%= image_tag @team.image.url %>
+          <% end %>
+        </div>
+        <div class="team-name">
+          <%= link_to "チーム名：#{@team.name}", team_path(@team.permalink) %>
+        </div>
+      </div>
+    </div>
+    <div class="container3">
+      <div class="requests">
+        <% if @team.join_requests.length > 0 %>
+          <ul>
+            <% @team.join_requests.each do |join_request| %>
+              <li>
+                <div class="joiner-information">
+                  <div class="joiner-image">
+                    <%= link_to user_path(join_request.user.permalink) do %>
+                      <%= image_tag join_request.user.image.url %>
+                    <% end %>
+                  </div>
+                  <div class="joiner-name">
+                    <%= link_to join_request.user.name, user_path(join_request.user.permalink) %>
+                  </div>
+                </div>
+                <div class="joiner-position">
+                  <h5>希望ポジション</h5>
+                  <p><%= join_request.position_name.name %></p>
+                </div>
+                <div class="actions">
+                  <%= button_to "受諾", accept_join_request_path(@team.permalink, join_request.id), data: { confirm: "加入申請を受諾しますか？" }, method: :post, class: "accept" %>
+                  <%= button_to "拒否", reject_join_request_path(@team.permalink, join_request.id), data: { confirm: "加入申請を拒否しますか？" }, method: :post, class: "reject" %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <div class="no-request">
+            加入申請がございません
+          </div>
+        <% end %>
+        <div class="return">
+          <%= link_to "マイページに戻る", root_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

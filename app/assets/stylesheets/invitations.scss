@@ -1,3 +1,166 @@
 // Place all the styles related to the invitations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+div.invitations-page {
+  div.invitations {
+    width: 480px;
+    border: 1px solid #BFBFBF;
+    border-radius: 10px;
+    padding: 10px 19px 30px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    ul {
+      li {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #E6E6E6;
+
+        div.team-information {
+
+          div.team-image {
+            width: 440px;
+            height: 231px;
+
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          div.team-name {
+            padding-top: 10px;
+            padding-bottom: 15px;
+
+            h5 {
+              font-size: 12px;
+              color: #BFBFBF;
+              line-height: 20px;
+            }
+
+            div.team-link {
+              a {
+                font-size: 18px;
+                line-height: 30px;
+                color: black;
+
+                &:hover {
+                  color: #7F7F7F;
+                }
+              }
+            }
+          }
+
+          div.team-owner {
+            width: 100%;
+            height: 60px;
+            position: relative;
+
+            div.owner-image {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+              }
+            }
+
+            div.owner-header {
+              width: calc(100% - 60px);
+              height: 20px;
+              font-size: 12px;
+              color: #BFBFBF;
+              line-height: 20px;
+              position: absolute;
+              top: 0;
+              left: 60px;
+            }
+
+            div.owner-name {
+              width: calc(100% - 60px);
+              height: 30px;
+              position: absolute;
+              top: 20px;
+              left: 60px;
+
+              a {
+                font-size: 18px;
+                line-height: 30px;
+                color: black;
+
+                &:hover {
+                  color: #7F7F7F;
+                }
+              }
+            }
+          }
+        }
+
+        div.position {
+          padding-bottom: 20px;
+
+          h5 {
+            font-size: 14px;
+            line-height: 20px;
+            color: #BFBFBF;
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 30px;
+          }
+        }
+
+        div.actions {
+          display: flex;
+          justify-content: center;
+
+          input[type="submit"] {
+            margin-right: 10px;
+            margin-left: 10px;
+            width: 160px;
+            height: 40px;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 10px;
+            font-size: 18px;
+
+            &.accept {
+              border-color: #00FF40;
+              background-color: #CCFFD9;
+              color: #00FF40;
+            }
+
+            &.reject {
+              border-color: #FF4000;
+              background-color: #FFD9CC;
+              color: #FF4000;
+            }
+          }
+        }
+      }
+    }
+
+    div.no-invitation {
+      padding-top: 20px;
+      padding-bottom: 30px;
+      color: #BFBFBF;
+      text-align: center;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    div.return {
+      padding-top: 20px;
+      text-align: center;
+    }
+  }
+}

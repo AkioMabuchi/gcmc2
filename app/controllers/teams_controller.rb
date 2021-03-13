@@ -8,8 +8,6 @@ class TeamsController < ApplicationController
     :environments_edit,
     :environments_update,
     :wants_edit,
-    :publishing_edit,
-    :publishing_update,
     :dissolution
   ]
 
@@ -65,12 +63,24 @@ class TeamsController < ApplicationController
     if team.save
       redirect_to edit_team_path(params[:id]), notice: "チーム情報を更新しました"
     else
+      if team.errors.messages[:permalink]
+        flash[:permalink_warning] = team.errors.messages[:permalink][0]
+      end
+      if team.errors.messages[:name]
+        flash[:name_warning] = team.errors.messages[:name][0]
+      end
+      if team.errors.messages[:title]
+        flash[:title_warning] = team.errors.messages[:title][0]
+      end
       redirect_to edit_team_path(params[:id])
     end
   end
 
   def destroy
+    team = Team.friendly.find(params[:id])
+    team.destroy!
 
+    redirect_to root_path, notice: "チームを解散させました"
   end
 
   def tags_edit
@@ -106,10 +116,14 @@ class TeamsController < ApplicationController
 
     @react_info = {
       authenticityToken: form_authenticity_token,
-      team:{
+      team: {
         id: @team.id,
         permalink: @team.permalink,
         urls: @team.team_urls
+      },
+      warnings:{
+        name: flash[:name_warning],
+        url: flash[:url_warning]
       }
     }
   end
@@ -126,14 +140,6 @@ class TeamsController < ApplicationController
       },
       wantedPositions: @team.wanted_positions.joins(:position_name).order(sort_number: :asc).select(:id, :amount, :name_id, :name)
     }
-  end
-
-  def publishing_edit
-    @team = Team.friendly.find(params[:id])
-  end
-
-  def publishing_update
-
   end
 
   def dissolution

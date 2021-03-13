@@ -5,10 +5,9 @@
     <% end %>
   </div>
   <div class="team-name">
-    <%= link_to team.name, team_path(team.permalink) %>
+    <%= link_to "チーム名：#{team.name}", team_path(team.permalink) %>
   </div>
 </div>
-
 <div class="settings-menu">
   <nav>
     <ul>
@@ -35,11 +34,6 @@
       <li>
         <%= link_to wants_edit_team_path(team.permalink) do %>
           募集ポジション設定
-        <% end %>
-      </li>
-      <li>
-        <%= link_to publishing_edit_team_path(team.permalink) do %>
-          公開設定
         <% end %>
       </li>
       <li>

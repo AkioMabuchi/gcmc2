@@ -1,18 +1,27 @@
 class SettingPortfoliosController < ApplicationController
   def index
-    @portfolio = Portfolio.new
+    @react_info = {
+      authenticityToken: form_authenticity_token,
+      portfolios: Portfolio.where(user_id: current_user.id),
+      user: {
+        id: current_user.id
+      },
+      warnings: {
+        name: flash[:name_warning]
+      }
+    }
   end
 
   def show
     portfolio = Portfolio.find(params[:id])
     @react_info = {
-        authenticityToken: form_authenticity_token,
-        id: portfolio.id,
-        name: portfolio.name,
-        image: portfolio.image.url,
-        period: portfolio.period,
-        description: portfolio.description,
-        url: portfolio.url
+      authenticityToken: form_authenticity_token,
+      id: portfolio.id,
+      name: portfolio.name,
+      image: portfolio.image.url,
+      period: portfolio.period,
+      description: portfolio.description,
+      url: portfolio.url
     }
   end
 
@@ -21,6 +30,9 @@ class SettingPortfoliosController < ApplicationController
     if portfolio.save
       redirect_to setting_portfolios_path, notice: "ポートフォリオを追加しました"
     else
+      if portfolio.errors.messages[:name]
+        flash[:name_warning] = portfolio.errors.messages[:name][0]
+      end
       redirect_to setting_portfolios_path
     end
   end
@@ -28,8 +40,14 @@ class SettingPortfoliosController < ApplicationController
   def update
     portfolio = Portfolio.find(params[:id])
     portfolio.update portfolio_params
-    portfolio.save!
-    redirect_to setting_portfolio_path(params[:id]), notice: "ポートフォリオを更新しました"
+    if portfolio.save
+      redirect_to setting_portfolios_path, notice: "ポートフォリオを更新しました"
+    else
+      if portfolio.errors.messages[:name]
+        flash[:name_warning] = portfolio.errors.messages[:name][0]
+      end
+      redirect_to setting_portfolios_path
+    end
   end
 
   def destroy

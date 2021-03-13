@@ -1,8 +1,149 @@
 <h1>マイページ</h1>
 <div class="page-home-top-user">
-  <ul>
-    <% current_user.owner_teams.each do |team| %>
-      <%= link_to "編集", edit_team_path(team.permalink) %>
-    <% end %>
-  </ul>
+  <h2>最新情報</h2>
+  <div class="information">
+    現在、準備中です
+  </div>
+  <h2>参入中のチーム一覧</h2>
+  <div class="teams-container">
+    <div class="owner-teams">
+      <h3>オーナー</h3>
+      <% if current_user.owner_teams.length > 0 %>
+        <ul>
+          <% current_user.owner_teams.each do |team| %>
+            <li>
+              <div class="team-image">
+                <%= link_to team_path(team.permalink) do %>
+                  <%= image_tag team.image.url %>
+                <% end %>
+              </div>
+              <div class="team-name">
+                <h5>チーム名</h5>
+                <p><%= link_to team.name, team_path(team.permalink) %></p>
+              </div>
+              <% if team.join_requests.length > 0 %>
+                <div class="team-requests">
+                  <%= team.join_requests.length %>件の加入申請がございます
+                </div>
+              <% end %>
+              <div class="actions">
+                <%= link_to "加入申請一覧", join_requests_path(team.permalink) %>
+                <%= link_to "編集", edit_team_path(team.permalink) %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <div class="no-team">
+          どのチームのオーナーではありません
+        </div>
+      <% end %>
+    </div>
+    <div class="member-teams">
+      <h3>メンバー</h3>
+      <% if current_user.member_teams.length > 0 %>
+        <ul>
+          <% current_user.member_teams.each do |team| %>
+            <li>
+              <div class="team-image">
+                <%= link_to team_path(team.permalink) do %>
+                  <%= image_tag team.image.url %>
+                <% end %>
+              </div>
+              <div class="team-name">
+                <h5>チーム名</h5>
+                <p><%= link_to team.name, team_path(team.permalink) %></p>
+              </div>
+              <div class="team-owner">
+                <div class="owner-image">
+                  <%= link_to user_path(team.user.permalink) do %>
+                    <%= image_tag team.user.image.url %>
+                  <% end %>
+                </div>
+                <div class="owner-header">
+                  オーナー
+                </div>
+                <div class="owner-name">
+                  <%= link_to team.user.name, user_path(team.user.permalink) %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <div class="no-team">
+          どのチームにも加入していません
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <h2>あなたにおすすめのユーザー</h2>
+  <div class="recommended-users">
+    <ul class="users">
+      <% @users.each do |user| %>
+        <li class="user">
+          <div class="image-name">
+            <div class="user-image">
+              <%= link_to user_path(user.permalink) do %>
+                <%= image_tag user.image.url %>
+              <% end %>
+            </div>
+            <div class="user-name">
+              <%= link_to user.name, user_path(user.permalink) %>
+            </div>
+          </div>
+          <ul class="general-tags">
+            <% user.user_tag_names.each do |tag| %>
+              <li>
+                <%= tag.name %>
+              </li>
+            <% end %>
+          </ul>
+          <div class="user-description">
+            <%= truncate user.description, length: 100 %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <h2>あなたにおすすめのチーム</h2>
+  <div class="recommended-teams">
+    <ul class="teams">
+      <% @teams.each do |team| %>
+        <li class="team">
+          <div class="team-image">
+            <%= link_to team_path(team.permalink) do %>
+              <%= image_tag team.image.url %>
+            <% end %>
+          </div>
+          <ul class="general-tags">
+            <% team.team_tag_names.each do |tag| %>
+              <li>
+                <%= tag.name %>
+              </li>
+            <% end %>
+          </ul>
+          <div class="team-title">
+            <%= link_to team.title, team_path(team.permalink) %>
+          </div>
+          <div class="team-description">
+            <%= team.description[0, 100] %>
+          </div>
+          <div class="team-owner">
+            <div class="owner-image">
+              <%= link_to user_path(team.user.permalink) do %>
+                <%= image_tag team.user.image.url %>
+              <% end %>
+            </div>
+            <div class="owner-header">
+              オーナー
+            </div>
+            <div class="owner-name">
+              <%= link_to team.user.name, user_path(team.user.permalink) %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

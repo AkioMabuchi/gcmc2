@@ -5,7 +5,15 @@
       <%= render partial: "layouts/team_settings_menu", locals: {team: @team} %>
     </div>
     <div class="container3">
-
+      <div class="team-destroy-box">
+        <h3>チーム解散</h3>
+        <div class="caution">
+          解散後、全てのデータが削除されます。また、削除されたデータの復元はできません。
+        </div>
+        <div class="destroy-action">
+          <%= button_to "解散", team_path, data: {confirm: "本当に解散しますか？"}, method: :delete %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

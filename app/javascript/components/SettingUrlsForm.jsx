@@ -49,7 +49,7 @@ class SettingUrlsForm extends React.Component {
     }
 
     onChangeUrlUrl(e) {
-        if(this.state.selectedUrlId!==0) {
+        if (this.state.selectedUrlId !== 0) {
             if (e.target.value === "") {
                 this.setState({
                     method: "DELETE",
@@ -68,6 +68,8 @@ class SettingUrlsForm extends React.Component {
 
     render() {
         let urls;
+        let nameWarning;
+        let urlWarning;
 
         if (this.props.info.team.urls.length > 0) {
             urls = (
@@ -106,6 +108,21 @@ class SettingUrlsForm extends React.Component {
             );
         }
 
+        if (this.props.info.warnings.name !== null) {
+            nameWarning = (
+                <div className={"warning"}>
+                    {this.props.info.warnings.name}
+                </div>
+            );
+        }
+
+        if (this.props.info.warnings.url !== null) {
+            urlWarning = (
+                <div className={"warning"}>
+                    {this.props.info.warnings.url}
+                </div>
+            );
+        }
         return (
             <form action={this.state.action} method={"POST"}
                   className={"general-form team-setting-form urls-form"}>
@@ -120,12 +137,14 @@ class SettingUrlsForm extends React.Component {
                 <div className={"field"}>
                     <h4>リンク名<small>（必須）</small></h4>
                     <input type={"text"} name={"team_url[name]"}/>
+                    {nameWarning}
                 </div>
                 <div className={"field"}>
                     <h4>URL</h4>
                     <input type={"url"} name={"team_url[url]"} onChange={(e) => {
                         this.onChangeUrlUrl(e);
                     }}/>
+                    {urlWarning}
                 </div>
                 <div className={"field"}>
                     <h4>公開</h4>

@@ -4,6 +4,12 @@ class TeamUrlsController < ApplicationController
     if team_url.save
       redirect_to team_urls_path(params[:permalink]), notice: "URLを追加しました"
     else
+      if team_url.errors.messages[:name]
+        flash[:name_warning] = team_url.errors.messages[:name][0]
+      end
+      if team_url.errors.messages[:url]
+        flash[:url_warning] = team_url.errors.messages[:url][0]
+      end
       redirect_to team_urls_path(params[:permalink])
     end
   end
@@ -14,6 +20,12 @@ class TeamUrlsController < ApplicationController
     if team_url.save
       redirect_to team_urls_path(params[:permalink]), notice: "URLを更新しました"
     else
+      if team_url.errors.messages[:name]
+        flash[:name_warning] = team_url.errors.messages[:name][0]
+      end
+      if team_url.errors.messages[:url]
+        flash[:url_warning] = team_url.errors.messages[:url][0]
+      end
       redirect_to team_urls_path(params[:permalink])
     end
   end

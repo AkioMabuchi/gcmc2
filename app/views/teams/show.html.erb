@@ -219,17 +219,7 @@
   <% if user_signed_in? %>
     <% if @team.owner_user_id == current_user.id %>
       <div>
-        <ul>
-          <% @team.join_requests.each do |join_request| %>
-            <li>
-              <%= join_request.user.name %>
-              <%= join_request.position_name.name %>
-              <%= join_request.message %>
-              <%= button_to "受諾", accept_join_request_path(@team.permalink, join_request.id), data: {confirm: "加入申請を受諾しますか？"}, method: :post %>
-              <%= button_to "拒否", reject_join_request_path(@team.permalink, join_request.id), data: {confirm: "加入申請を拒否しますか？"}, method: :post %>
-            </li>
-          <% end %>
-        </ul>
+
       </div>
     <% end %>
   <% end %>

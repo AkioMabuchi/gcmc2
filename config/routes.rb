@@ -33,11 +33,9 @@ Rails.application.routes.draw do
       get :environments_edit, path: "settings/environments"
       get :urls_edit, path: "settings/urls"
       get :wants_edit, path: "settings/wants"
-      get :publishing_edit, path: "settings/publishing"
       get :dissolution, path: "settings/dissolution"
       patch :tags_update, path: "tags"
       patch :environments_update, path: "environments"
-      patch :publishing_update, path: "publishing"
     end
   end
 
@@ -45,11 +43,11 @@ Rails.application.routes.draw do
   resource :twitters, only: [:destroy], path: "disconnect/twitter"
   resource :githubs, only: [:destroy], path: "disconnect/github"
   resources :setting_skills, except: [:show, :new, :edit], path: "settings/skills"
-  resources :setting_portfolios, except: [:new, :edit], path: "settings/portfolios"
+  resources :setting_portfolios, except: [:show, :new, :edit], path: "settings/portfolios"
   resources :setting_invitations, except: [:show, :new, :edit, :update], path: "settings/invitations"
   resources :wanted_positions, only: [:create, :update, :destroy], path: "settings/:permalink/wants"
   resources :team_urls, only: [:create, :update, :destroy], path: "teams/:permalink/settings/urls"
-  resources :join_requests, only: [:create, :destroy], path: "teams/:permalink/join" do
+  resources :join_requests, only: [:index, :create, :destroy], path: "teams/:permalink/join" do
     member do
       post :accept
       post :reject
