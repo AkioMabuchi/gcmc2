@@ -547,6 +547,7 @@ DEPENDENCIES
   devise-i18n
   devise-i18n-views
   fog
+  fog-aws
   friendly_id
   jbuilder (~> 2.7)
   kaminari
