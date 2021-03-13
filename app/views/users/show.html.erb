@@ -81,43 +81,55 @@
     <div class="container3">
       <div class="skills">
         <h2>スキルセット</h2>
-        <ul>
-          <% @user.skills.each do |skill| %>
-            <li>
-              <div class="skill-name">
-                <%= skill.name %>
-              </div>
-              <div class="skill-level">
-                <%= skill.level %>
-              </div>
-            </li>
-          <% end %>
-        </ul>
+        <% if @user.skills.length > 0 %>
+          <ul>
+            <% @user.skills.each do |skill| %>
+              <li>
+                <div class="skill-name">
+                  <%= skill.name %>
+                </div>
+                <div class="skill-level">
+                  <%= skill.level %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <div class="no-skill">
+            スキルセットがありません
+          </div>
+        <% end %>
       </div>
       <div class="portfolios">
         <h2>ポートフォリオ</h2>
-        <ul>
-          <% @user.portfolios.each do |portfolio| %>
-            <li>
-              <div class="portfolio-header">
-                <div class="portfolio-image">
-                  <%= link_to portfolio_path(portfolio.id) do %>
-                    <%= image_tag portfolio.image.url %>
-                  <% end %>
+        <% if @user.portfolios.length > 0 %>
+          <ul>
+            <% @user.portfolios.each do |portfolio| %>
+              <li>
+                <div class="portfolio-header">
+                  <div class="portfolio-image">
+                    <%= link_to portfolio.url, target: :_blank do %>
+                      <%= image_tag portfolio.image.url %>
+                    <% end %>
+                  </div>
+                  <div class="portfolio-name">
+                    <%= link_to portfolio.name, portfolio.url, target: :_blank %>
+                  </div>
+                  <div class="portfolio-period">
+                    制作期間：<%= portfolio.period %>
+                  </div>
                 </div>
-                <div class="portfolio-name">
-                  <%= link_to portfolio.name, portfolio_path(portfolio.id) %>
+                <div class="portfolio-description">
+                  <%= portfolio.description %>
                 </div>
-                <div class="portfolio-period">
-                  制作期間：<%= portfolio.period %>
-                </div>
-              </div>
-              <div class="portfolio-description">
-                <%= portfolio.description %>
-              </div>
-            </li>
-          <% end %>
-        </ul>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          <div class="no-portfolio">
+            ポートフォリオがありません
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -125,14 +137,9 @@
     <div class="container5">
       <div class="teams">
         <h2>参加中のチーム</h2>
-        <h3>オーナー</h3>
-        <ul>
-
-        </ul>
-        <h3>メンバー</h3>
-        <ul>
-
-        </ul>
+        <div class="no-team">
+          準備中
+        </div>
       </div>
     </div>
     <div class="container6">
