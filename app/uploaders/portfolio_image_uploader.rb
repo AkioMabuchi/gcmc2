@@ -1,6 +1,6 @@
 class PortfolioImageUploader < CarrierWave::Uploader::Base
   if Rails.env.production? or Rails.env.staging?
-    storage :file #todo change to fog
+    storage :fog
   else
     storage :file
   end

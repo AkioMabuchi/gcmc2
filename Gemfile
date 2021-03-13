@@ -79,3 +79,5 @@ gem 'kaminari'
 gem 'recaptcha'
 
 gem 'ransack'
+
+gem 'fog'
