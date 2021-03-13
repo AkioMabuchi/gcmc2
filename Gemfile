@@ -80,5 +80,4 @@ gem 'recaptcha'
 
 gem 'ransack'
 
-gem 'fog'
 gem 'fog-aws'
