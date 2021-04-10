@@ -29,20 +29,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="CFPropertyList (vbundled(2.3.6)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/CFPropertyList-2.3.6/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/CFPropertyList-2.3.6/lib" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="actioncable (vbundled(6.0.3.4)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -252,34 +238,6 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/addressable-2.7.0/data" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/addressable-2.7.0/spec" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/addressable-2.7.0/tasks" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="aliyun-sdk (vbundled(0.8.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/examples" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/examples" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/aliyun-sdk-0.8.0/examples" />
         </excluded>
       </library>
     </orderEntry>
@@ -548,39 +506,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="declarative (vbundled(0.0.20)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/declarative-0.0.20/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/declarative-0.0.20/lib" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="declarative-option (vbundled(0.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/declarative-option-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/declarative-option-0.1.0/test" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/declarative-option-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/declarative-option-0.1.0/test" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/declarative-option-0.1.0/test" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="devise (vbundled(4.7.3)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -644,45 +569,6 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/devise-i18n-views-0.3.7/spec" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/devise-i18n-views-0.3.7/locales" />
         </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="domain_name (vbundled(0.5.20190701)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/data" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/tool" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/data" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/tool" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/data" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/domain_name-0.5.20190701/tool" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="dry-inflector (vbundled(0.2.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/dry-inflector-0.2.0/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/dry-inflector-0.2.0/lib" />
-        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -791,103 +677,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="fission (vbundled(0.5.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fission-0.5.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fission-0.5.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fission-0.5.0/spec" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fission-0.5.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fission-0.5.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fission-0.5.0/spec" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fission-0.5.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fission-0.5.0/spec" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog (vbundled(2.2.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/benchs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/.github" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/benchs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/.github" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/benchs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/.github" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-2.2.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-aliyun (vbundled(0.3.19)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-aliyun-0.3.19/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-aliyun-0.3.19/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-aliyun-0.3.19/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-aliyun-0.3.19/lib" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-aliyun-0.3.19/bin" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-atmos (vbundled(0.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-atmos-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-atmos-0.1.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-atmos-0.1.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-atmos-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-atmos-0.1.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-atmos-0.1.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-atmos-0.1.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-atmos-0.1.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="fog-aws (vbundled(3.9.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -913,72 +702,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="fog-brightbox (vbundled(0.16.1)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-brightbox-0.16.1/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-cloudatcost (vbundled(0.4.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudatcost-0.4.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudatcost-0.4.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudatcost-0.4.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudatcost-0.4.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudatcost-0.4.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudatcost-0.4.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudatcost-0.4.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudatcost-0.4.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-cloudstack (vbundled(0.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudstack-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudstack-0.1.0/tests" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudstack-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudstack-0.1.0/tests" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-cloudstack-0.1.0/tests" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="fog-core (vbundled(2.1.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -998,144 +721,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="fog-digitalocean (vbundled(0.4.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-digitalocean-0.4.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-digitalocean-0.4.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-digitalocean-0.4.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-digitalocean-0.4.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-digitalocean-0.4.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-digitalocean-0.4.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-digitalocean-0.4.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-digitalocean-0.4.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-dnsimple (vbundled(2.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dnsimple-2.1.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dnsimple-2.1.0/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dnsimple-2.1.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dnsimple-2.1.0/lib" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dnsimple-2.1.0/bin" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-dynect (vbundled(0.0.3)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dynect-0.0.3/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dynect-0.0.3/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dynect-0.0.3/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dynect-0.0.3/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dynect-0.0.3/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dynect-0.0.3/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dynect-0.0.3/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-dynect-0.0.3/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-ecloud (vbundled(0.3.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ecloud-0.3.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-google (vbundled(1.12.1)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/ci" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/tasks" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/examples" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/ci" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/tasks" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/examples" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/ci" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/tasks" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-google-1.12.1/examples" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-internet-archive (vbundled(0.0.2)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-internet-archive-0.0.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-internet-archive-0.0.2/tasks" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-internet-archive-0.0.2/tests" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-internet-archive-0.0.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-internet-archive-0.0.2/tasks" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-internet-archive-0.0.2/tests" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-internet-archive-0.0.2/tasks" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-internet-archive-0.0.2/tests" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="fog-json (vbundled(1.2.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1151,396 +736,6 @@
         </SOURCES>
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-json-1.2.0/test" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-local (vbundled(0.6.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-local-0.6.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-local-0.6.0/tests" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-local-0.6.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-local-0.6.0/tests" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-local-0.6.0/tests" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-openstack (vbundled(1.0.11)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/docs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/unit" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/examples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/playbooks" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/docs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/unit" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/examples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/playbooks" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/docs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/unit" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/examples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-openstack-1.0.11/playbooks" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-ovirt (vbundled(2.0.1)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ovirt-2.0.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ovirt-2.0.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ovirt-2.0.1/tests" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ovirt-2.0.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ovirt-2.0.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ovirt-2.0.1/tests" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ovirt-2.0.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-ovirt-2.0.1/tests" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-powerdns (vbundled(0.2.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-powerdns-0.2.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-powerdns-0.2.0/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-powerdns-0.2.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-powerdns-0.2.0/lib" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-powerdns-0.2.0/bin" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-profitbricks (vbundled(0.0.5)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/examples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/examples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/examples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-profitbricks-0.0.5/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-rackspace (vbundled(0.1.6)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-rackspace-0.1.6/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-rackspace-0.1.6/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-rackspace-0.1.6/tests" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-rackspace-0.1.6/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-rackspace-0.1.6/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-rackspace-0.1.6/tests" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-rackspace-0.1.6/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-rackspace-0.1.6/tests" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-radosgw (vbundled(0.0.5)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-radosgw-0.0.5/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-radosgw-0.0.5/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-radosgw-0.0.5/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-radosgw-0.0.5/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-radosgw-0.0.5/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-radosgw-0.0.5/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-radosgw-0.0.5/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-radosgw-0.0.5/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-riakcs (vbundled(0.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-riakcs-0.1.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-sakuracloud (vbundled(1.7.5)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-sakuracloud-1.7.5/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-sakuracloud-1.7.5/tests" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-sakuracloud-1.7.5/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-sakuracloud-1.7.5/tests" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-sakuracloud-1.7.5/tests" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-serverlove (vbundled(0.1.2)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-serverlove-0.1.2/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-softlayer (vbundled(1.1.4)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/docs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/examples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/docs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/examples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/docs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/examples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-softlayer-1.1.4/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-storm_on_demand (vbundled(0.1.1)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-storm_on_demand-0.1.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-storm_on_demand-0.1.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-storm_on_demand-0.1.1/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-storm_on_demand-0.1.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-storm_on_demand-0.1.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-storm_on_demand-0.1.1/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-storm_on_demand-0.1.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-storm_on_demand-0.1.1/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-terremark (vbundled(0.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-terremark-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-terremark-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-terremark-0.1.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-terremark-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-terremark-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-terremark-0.1.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-terremark-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-terremark-0.1.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-vmfusion (vbundled(0.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vmfusion-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vmfusion-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vmfusion-0.1.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vmfusion-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vmfusion-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vmfusion-0.1.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vmfusion-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vmfusion-0.1.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-voxel (vbundled(0.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/tests" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-voxel-0.1.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-vsphere (vbundled(3.5.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vsphere-3.5.0/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-vsphere-3.5.0/lib" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="fog-xenserver (vbundled(1.0.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-xenserver-1.0.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-xenserver-1.0.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-xenserver-1.0.0/gemfiles" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-xenserver-1.0.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-xenserver-1.0.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-xenserver-1.0.0/gemfiles" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-xenserver-1.0.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/fog-xenserver-1.0.0/gemfiles" />
         </excluded>
       </library>
     </orderEntry>
@@ -1628,91 +823,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="google-api-client (vbundled(0.50.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/docs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/.github" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/.kokoro" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/rakelib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/samples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/generated" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/docs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/.github" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/.kokoro" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/rakelib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/samples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/generated" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/docs" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/.github" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/.kokoro" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/rakelib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/samples" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-api-client-0.50.0/generated" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="google-cloud-env (vbundled(1.5.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-cloud-env-1.5.0/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/google-cloud-env-1.5.0/lib" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="googleauth (vbundled(0.16.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/.github" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/.kokoro" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/rakelib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/integration" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/.github" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/.kokoro" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/rakelib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/integration" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/.github" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/.kokoro" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/rakelib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/googleauth-0.16.0/integration" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="hashie (vbundled(4.1.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1724,64 +834,6 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/hashie-4.1.0/lib" />
         </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="http-accept (vbundled(1.7.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/http-accept-1.7.0/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/http-accept-1.7.0/lib" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="http-cookie (vbundled(1.0.3)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/http-cookie-1.0.3/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/http-cookie-1.0.3/test" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/http-cookie-1.0.3/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/http-cookie-1.0.3/test" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/http-cookie-1.0.3/test" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="httpclient (vbundled(2.8.3)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/sample" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/sample" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/httpclient-2.8.3/sample" />
-        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -2047,28 +1099,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="memoist (vbundled(0.16.2)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/memoist-0.16.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/memoist-0.16.2/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/memoist-0.16.2/script" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/memoist-0.16.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/memoist-0.16.2/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/memoist-0.16.2/script" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/memoist-0.16.2/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/memoist-0.16.2/script" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="method_source (vbundled(1.0.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -2312,28 +1342,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="netrc (vbundled(0.11.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/netrc-0.11.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/netrc-0.11.0/data" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/netrc-0.11.0/test" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/netrc-0.11.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/netrc-0.11.0/data" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/netrc-0.11.0/test" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/netrc-0.11.0/data" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/netrc-0.11.0/test" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="nio4r (vbundled(2.5.4)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -2526,25 +1534,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="optimist (vbundled(3.0.1)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/optimist-3.0.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/optimist-3.0.1/test" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/optimist-3.0.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/optimist-3.0.1/test" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/optimist-3.0.1/test" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="orm_adapter (vbundled(0.5.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -2563,47 +1552,6 @@
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/orm_adapter-0.5.0/spec" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/orm_adapter-0.5.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="os (vbundled(1.1.1)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/os-1.1.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/os-1.1.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/os-1.1.1/autotest" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/os-1.1.1/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/os-1.1.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/os-1.1.1/autotest" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/os-1.1.1/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/os-1.1.1/autotest" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="ovirt-engine-sdk (vbundled(4.4.1)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ovirt-engine-sdk-4.4.1/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ovirt-engine-sdk-4.4.1/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ovirt-engine-sdk-4.4.1/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ovirt-engine-sdk-4.4.1/lib" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ovirt-engine-sdk-4.4.1/ext" />
         </excluded>
       </library>
     </orderEntry>
@@ -2948,25 +1896,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="rbvmomi (vbundled(2.4.1)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rbvmomi-2.4.1/exe" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rbvmomi-2.4.1/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rbvmomi-2.4.1/exe" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rbvmomi-2.4.1/lib" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rbvmomi-2.4.1/exe" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="react-rails (vbundled(2.6.1)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -3019,25 +1948,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="representable (vbundled(3.0.4)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/representable-3.0.4/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/representable-3.0.4/test" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/representable-3.0.4/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/representable-3.0.4/test" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/representable-3.0.4/test" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="responders (vbundled(3.0.1)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -3048,61 +1958,6 @@
         <JAVADOC />
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/responders-3.0.1/lib" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="rest-client (vbundled(2.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rest-client-2.1.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rest-client-2.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rest-client-2.1.0/spec" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rest-client-2.1.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rest-client-2.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rest-client-2.1.0/spec" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rest-client-2.1.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rest-client-2.1.0/spec" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="retriable (vbundled(3.1.2)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/retriable-3.1.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/retriable-3.1.2/spec" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/retriable-3.1.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/retriable-3.1.2/spec" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/retriable-3.1.2/spec" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="rexml (vbundled(3.2.4)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rexml-3.2.4/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rexml-3.2.4/lib" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -3242,28 +2097,6 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/selenium-webdriver-3.142.7/lib" />
         </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="signet (vbundled(0.15.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/signet-0.15.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/signet-0.15.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/signet-0.15.0/website" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/signet-0.15.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/signet-0.15.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/signet-0.15.0/website" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/signet-0.15.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/signet-0.15.0/website" />
-        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -3426,66 +2259,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="uber (vbundled(0.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/uber-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/uber-0.1.0/test" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/uber-0.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/uber-0.1.0/test" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/uber-0.1.0/test" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="unf (vbundled(0.1.4)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf-0.1.4/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf-0.1.4/test" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf-0.1.4/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf-0.1.4/test" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf-0.1.4/test" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="unf_ext (vbundled(0.0.7.7)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/test" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/test" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/ext" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/test" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="unicorn (vbundled(5.8.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -3606,25 +2379,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="webrick (vbundled(1.7.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/webrick-1.7.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/webrick-1.7.0/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/webrick-1.7.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/webrick-1.7.0/lib" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/webrick-1.7.0/bin" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="websocket-driver (vbundled(0.7.3)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -3669,28 +2423,6 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/xml-simple-1.1.8/lib" />
         </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="xmlrpc (vbundled(0.3.2)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/xmlrpc-0.3.2/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/xmlrpc-0.3.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/xmlrpc-0.3.2/.github" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/xmlrpc-0.3.2/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/xmlrpc-0.3.2/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/xmlrpc-0.3.2/.github" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/xmlrpc-0.3.2/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/xmlrpc-0.3.2/.github" />
-        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
