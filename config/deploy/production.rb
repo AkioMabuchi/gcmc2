@@ -1,3 +1,3 @@
-server "gcmatchingcenter.com", user: "akio", roles: %w{app db web}
+server "3.114.103.248", user: "akio", roles: %w{app db web}
 
-set :ssh_options, keys: "~/.ssh/gcmc_key_rsa"
+set :ssh_options, port: 22, keys: '~/.ssh/gcmc_key_rsa'
