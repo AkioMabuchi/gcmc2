@@ -9,6 +9,7 @@ class User < ApplicationRecord
   friendly_id :permalink
 
   validates :permalink,
+            format: {with: /\A[0-9a-zA-Z\\-]*\z/, message: "英数字およびハイフンのみ使えます"},
             presence: {message: "入力してください"},
             uniqueness: {case_sensitive: true, message: "そのユーザーIDは既に使用されています"},
             length: {maximum: 24, message: "24字以内で入力してください"}

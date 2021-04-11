@@ -6,6 +6,7 @@ class Team < ApplicationRecord
 
 
   validates :permalink,
+            format: {with: /\A[0-9a-zA-Z\\-]*\z/, message: "英数字およびハイフンのみ使えます"},
             presence: {message: "入力してください"},
             uniqueness: {case_sensitive: true, message: "そのチームIDは既に使われています"},
             length: {maximum: 24, too_long: "24字以内で入力してください"}

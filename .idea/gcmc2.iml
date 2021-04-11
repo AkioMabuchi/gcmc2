@@ -1645,43 +1645,43 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="omniauth (vbundled(2.0.4)) [path][gem]" type="rubylib">
+      <library name="omniauth (vbundled(1.9.1)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
         </properties>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-2.0.4/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-2.0.4/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-1.9.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-1.9.1/.github" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-2.0.4/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-2.0.4/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-1.9.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-1.9.1/.github" />
         </SOURCES>
         <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-2.0.4/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-1.9.1/.github" />
         </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="omniauth-github (vbundled(2.0.0)) [path][gem]" type="rubylib">
+      <library name="omniauth-github (vbundled(1.4.0)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
         </properties>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-2.0.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-2.0.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-2.0.0/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-1.4.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-1.4.0/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-1.4.0/.github" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-2.0.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-2.0.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-2.0.0/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-1.4.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-1.4.0/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-1.4.0/.github" />
         </SOURCES>
         <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-2.0.0/spec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-2.0.0/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-1.4.0/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/omniauth-github-1.4.0/.github" />
         </excluded>
       </library>
     </orderEntry>
@@ -1913,20 +1913,6 @@
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rack-2.2.3/contrib" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rack-2.2.3/example" />
         </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="rack-protection (vbundled(2.1.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rack-protection-2.1.0/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/rack-protection-2.1.0/lib" />
-        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
