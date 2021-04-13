@@ -2,8 +2,7 @@
 <html lang="ja">
 <head>
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>GCMC</title>
+  <%= display_meta_tags default_meta_tags %>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
@@ -13,7 +12,12 @@
 
 <body>
 <header>
-  <%= link_to "", "/", class: "logo" %>
+  <%= link_to "", root_path, class: "logo" %>
+  <nav class="hamburger">
+    <div id="jquery-header-hamburger-button" class="hamburger-button">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
   <nav class="left-nav">
     <ul>
       <li>
@@ -48,43 +52,89 @@
     <% else %>
       <ul>
         <li>
-          <%= link_to "/signup" do %>
+          <%= link_to new_user_registration_path do %>
             <i class="fas fa-user-plus"></i> 新規登録
           <% end %>
         </li>
         <li>
-          <%= link_to "/login" do %>
+          <%= link_to new_user_session_path do %>
             <i class="fas fa-sign-in-alt"></i> ログイン
           <% end %>
         </li>
       </ul>
     <% end %>
   </nav>
-  <div class="pull-down-menu">
-    <nav>
+  <div id="jquery-header-pull-down-menu" class="pull-down-menu">
+    <nav class="top-nav">
       <ul>
         <li>
           <%= link_to teams_path do %>
-            <i class="far fa-list-alt"></i> チーム
+            <span class="icon"><i class="far fa-list-alt"></i></span> チーム
           <% end %>
         </li>
         <li>
           <%= link_to users_path do %>
-            <i class="fas fa-users"></i> ユーザー
+            <span class="icon"><i class="fas fa-users"></i></span> ユーザー
           <% end %>
         </li>
       </ul>
     </nav>
-    <nav>
+    <nav class="bottom-nav">
       <% if user_signed_in? %>
+        <div class="user-information">
+          <div class="user-image">
+            <%= image_tag current_user.image.url %>
+          </div>
+          <div class="user-name">
+            <%= current_user.name %>
+          </div>
+        </div>
         <ul>
           <li>
+            <%= link_to new_team_path do %>
+              <span class="icon"><i class="fas fa-plus"></i></span> 新規チーム作成
+            <% end %>
+          </li>
+          <li>
+            <% if current_user.invitations.length > 0 %>
+              <%= link_to invitations_path, class: "invited" do %>
+                <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧（<%= current_user.invitations.length %>件）
+              <% end %>
+            <% else %>
+              <%= link_to invitations_path do %>
+                <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧
+              <% end %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+              <span class="icon"><i class="fas fa-user-cog"></i></span> アカウント設定
+            <% end %>
+          </li>
+          <li>
+            <%= link_to user_path(current_user.permalink) do %>
+              <span class="icon"><i class="far fa-address-card"></i></span> プロフィール
+            <% end %>
+          </li>
+          <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-
+              <span class="icon"><i class="fas fa-sign-out-alt"></i></span> ログアウト
             <% end %>
           </li>
         </ul>
       <% else %>
+        <ul>
+          <li>
+            <%= link_to new_user_session_path do %>
+              ログイン
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_registration_path do %>
+              新規登録
+            <% end %>
+          </li>
+        </ul>
       <% end %>
     </nav>
   </div>
@@ -95,7 +145,6 @@
       </div>
       <ul>
         <li>
-
           <% if current_user.invitations.length > 0 %>
             <%= link_to invitations_path, class: "invited" do %>
               <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧（<%= current_user.invitations.length %>件）

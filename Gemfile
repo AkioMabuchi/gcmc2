@@ -93,3 +93,5 @@ gem 'fog-aws'
 gem 'rubocop'
 
 gem 'rspec'
+
+gem 'meta-tags'

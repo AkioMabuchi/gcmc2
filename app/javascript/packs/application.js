@@ -37,5 +37,15 @@ $(document).ready(function () {
                 $("#jquery-header-pop-up-menu").show();
             }
         }
+
+        if($(e.target).closest("#jquery-header-hamburger-button").length){
+            if (isPullDownMenuOpen) {
+                isPullDownMenuOpen = false;
+                $("#jquery-header-pull-down-menu").slideUp();
+            } else {
+                isPullDownMenuOpen = true;
+                $("#jquery-header-pull-down-menu").slideDown();
+            }
+        }
     });
 });

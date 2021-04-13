@@ -14,18 +14,28 @@ div.users-index-page {
     }
 
     div.container2 {
-      margin-right: 20px;
+      @media(max-width: 1000px) {
+        padding-bottom: 50px;
+      }
+      @media(min-width: 1000px) {
+        margin-left: 20px;
+      }
     }
 
     div.container3 {
-      margin-left: 20px;
+      @media(min-width: 1000px) {
+        width: 640px;
+        margin-left: 20px;
+      }
 
       ul.users {
+        padding-right: 10px;
+        padding-left: 10px;
+
         li.user {
           padding-top: 10px;
           padding-bottom: 10px;
           border-bottom: 1px solid #E6E6E6;
-          width: 640px;
 
           div.image-name {
             width: 100%;
@@ -85,6 +95,7 @@ div.user-show-page {
   h2 {
     padding-top: 10px;
     padding-bottom: 20px;
+
     display: flex;
     align-items: center;
     font-size: 24px;
@@ -96,29 +107,41 @@ div.user-show-page {
       content: "";
       flex-grow: 1;
       margin-right: 10px;
+      margin-left: 10px;
     }
 
     &:after {
       border-top: 1px solid #979797;
       content: "";
       flex-grow: 1;
+      margin-right: 10px;
       margin-left: 10px;
     }
   }
 
   div.container1 {
-    width: 820px;
-    display: flex;
-    margin-right: auto;
-    margin-left: auto;
+    @media(min-width: 1000px) {
+      width: 820px;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+    }
     padding-bottom: 50px;
 
     div.container2 {
-      width: 300px;
-      margin-right: 20px;
+      @media(max-width: 1000px) {
+        padding-bottom: 30px;
+      }
+      @media(min-width: 1000px) {
+        width: 300px;
+        margin-right: 20px;
+      }
+
 
       div.profile {
         width: 300px;
+        margin-right: auto;
+        margin-left: auto;
         padding: 30px 14px 20px;
         border: 1px solid #BFBFBF;
         border-radius: 10px;
@@ -240,11 +263,16 @@ div.user-show-page {
     }
 
     div.container3 {
-      width: 480px;
-      margin-left: 20px;
+      @media(min-width: 1000px) {
+        width: 480px;
+        margin-left: 20px;
+      }
 
       div.skills {
         ul {
+          padding-right: 20px;
+          padding-left: 20px;
+
           li {
             padding-bottom: 20px;
 
@@ -273,56 +301,81 @@ div.user-show-page {
 
       div.portfolios {
         ul {
+          padding-right: 20px;
+          padding-left: 20px;
+
           li {
             padding-bottom: 20px;
 
             div.portfolio-header {
-              width: 100%;
-              height: 70px;
-              position: relative;
+              @media(min-width: 500px) {
+                height: 70px;
+                position: relative;
+              }
 
               div.portfolio-image {
-                width: 120px;
-                height: 63px;
-                position: absolute;
-                top: 0;
-                left: 0;
-
-                img {
-                  display: block;
+                @media(max-width: 500px) {
+                  width: 280px;
+                  height: 147px;
+                }
+                @media(min-width: 500px) {
                   width: 120px;
                   height: 63px;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+
+                img {
+                  width: 100%;
+                  height: 100%;
                 }
               }
 
               div.portfolio-name {
-                width: calc(100% - 130px);
-                height: 30px;
+                @media(max-width: 500px) {
+                  padding-top: 10px;
+                }
+                @media(min-width: 500px) {
+                  width: calc(100% - 130px);
+                  height: 30px;
+
+                  position: absolute;
+                  top: 0;
+                  left: 130px;
+                }
+
                 line-height: 30px;
-                position: absolute;
-                top: 0;
-                left: 130px;
+                font-size: 20px;
 
                 a {
                   color: #00CC99;
-                  font-size: 20px;
+                  text-decoration: underline;
 
                   &:hover {
                     color: #00FFBF;
                   }
                 }
+
+                p {
+                  color: #00CC99;
+                }
               }
 
               div.portfolio-period {
-                width: calc(100% - 130px);
-                height: 20px;
+                @media(max-width: 500px) {
+                  padding-top: 5px;
+                  padding-bottom: 10px;
+                }
+                @media(min-width: 500px) {
+                  width: calc(100% - 130px);
+                  height: 20px;
+                  position: absolute;
+                  top: 35px;
+                  left: 130px;
+                }
                 line-height: 20px;
-                position: absolute;
-                top: 35px;
-                left: 130px;
               }
-
-
             }
 
             div.portfolio-description {
@@ -346,14 +399,18 @@ div.user-show-page {
   }
 
   div.container4 {
-    display: flex;
-    width: 820px;
-    margin-right: auto;
-    margin-left: auto;
+    @media(min-width: 1000px) {
+      display: flex;
+      width: 820px;
+      margin-right: auto;
+      margin-left: auto;
+    }
 
     div.container5 {
-      margin-right: 35px;
-      width: 350px;
+      @media(min-width: 1000px) {
+        margin-right: 35px;
+        width: 350px;
+      }
 
       div.no-team {
         font-size: 14px;
@@ -363,8 +420,10 @@ div.user-show-page {
     }
 
     div.container6 {
-      margin-left: 35px;
-      width: 400px;
+      @media(min-width: 1000px) {
+        width: 400px;
+        margin-left: 35px;
+      }
 
       div.positions {
         h3 {
@@ -375,8 +434,21 @@ div.user-show-page {
         }
 
         ul {
+          @media(max-width: 520px) {
+            margin-right: 20px;
+            margin-left: 20px;
+          }
+          @media(min-width: 520px)and(max-width: 1000px){
+            width: 480px;
+            margin-right: auto;
+            margin-left: auto;
+          }
+          @media(min-width: 1000px){
+            margin-right: 20px;
+            margin-left: 20px;
+          }
           padding-top: 10px;
-          padding-bottom: 10px;
+          padding-bottom: 30px;
           padding-left: 15px;
 
           li {
@@ -406,6 +478,15 @@ div.user-show-page {
 
       div.invite {
         form.invite-form {
+          @media(max-width: 380px) {
+            margin-right: 10px;
+            margin-left: 10px;
+          }
+          @media(min-width: 380px){
+            width: 360px;
+            margin-right: auto;
+            margin-left: auto;
+          }
           border: 1px solid #FFCCE6;
           border-radius: 10px;
           padding: 20px 15px 30px;
@@ -466,22 +547,41 @@ div.user-setting-page {
   padding-bottom: 100px;
 
   div.container1 {
-    width: 780px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
+    @media(min-width: 1000px){
+      width: 780px;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+    }
+
 
     div.container2 {
-      width: 260px;
-      margin-right: 20px;
+      @media(max-width: 1000px){
+        padding-bottom: 50px;
+      }
+      @media(min-width: 1000px){
+        width: 260px;
+        margin-right: 20px;
+      }
     }
 
     div.container3 {
-      width: 480px;
-      margin-left: 20px;
+      @media(min-width: 1000px){
+        width: 480px;
+        margin-left: 20px;
+      }
+
 
       form.user-setting-form {
-        width: 480px;
+        @media(max-width: 500px){
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+        @media(min-width: 500px){
+          width: 480px;
+          margin-right: auto;
+          margin-left: auto;
+        }
         padding: 20px 15px 30px;
 
         h3 {
@@ -814,9 +914,17 @@ div.user-setting-page {
       }
 
       div.user-destroy-box {
+        @media(max-width: 500px){
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+        @media(min-width: 500px){
+          width: 480px;
+          margin-right: auto;
+          margin-left: auto;
+        }
         border: 1px solid #BFBFBF;
         border-radius: 10px;
-        width: 480px;
         padding: 20px 15px 30px;
 
         h3 {

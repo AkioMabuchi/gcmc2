@@ -4,13 +4,18 @@
 
 div.invitations-page {
   div.invitations {
-    width: 480px;
+    @media(max-width: 500px){
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    @media(min-width: 500px){
+      width: 480px;
+      margin-right: auto;
+      margin-left: auto;
+    }
     border: 1px solid #BFBFBF;
     border-radius: 10px;
     padding: 10px 19px 30px;
-
-    margin-right: auto;
-    margin-left: auto;
 
     ul {
       li {
@@ -19,13 +24,16 @@ div.invitations-page {
         border-bottom: 1px solid #E6E6E6;
 
         div.team-information {
-
           div.team-image {
-            width: 440px;
-            height: 231px;
-
+            @media(max-width: 500px){
+              width: 280px;
+              height: 147px;
+            }
+            @media(min-width: 500px){
+              width: 440px;
+              height: 231px;
+            }
             img {
-              display: block;
               width: 100%;
               height: 100%;
             }
@@ -121,18 +129,27 @@ div.invitations-page {
         }
 
         div.actions {
-          display: flex;
-          justify-content: center;
-
+          @media(min-width: 400px){
+            display: flex;
+            justify-content: center;
+          }
           input[type="submit"] {
-            margin-right: 10px;
-            margin-left: 10px;
-            width: 160px;
-            height: 40px;
+
             border-width: 2px;
             border-style: solid;
             border-radius: 10px;
             font-size: 18px;
+            @media(max-width: 400px){
+              margin-top: 20px;
+              width: 100%;
+              height: 40px;
+            }
+            @media(min-width: 400px){
+              margin-right: 10px;
+              margin-left: 10px;
+              width: 160px;
+              height: 40px;
+            }
 
             &.accept {
               border-color: #00FF40;

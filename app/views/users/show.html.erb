@@ -1,3 +1,4 @@
+<% set_meta_tags title: "#{@user.name}さんのプロフィール", noindex: true %>
 <h1>プロフィール</h1>
 <div class="user-show-page">
   <div class="container1">
@@ -106,19 +107,33 @@
           <ul>
             <% @user.portfolios.each do |portfolio| %>
               <li>
-                <div class="portfolio-header">
-                  <div class="portfolio-image">
-                    <%= link_to portfolio.url, target: :_blank do %>
+                <% if portfolio.url.blank? %>
+                  <div class="portfolio-header">
+                    <div class="portfolio-image">
                       <%= image_tag portfolio.image.url %>
-                    <% end %>
+                    </div>
+                    <div class="portfolio-name">
+                      <p><%= portfolio.name %></p>
+                    </div>
+                    <div class="portfolio-period">
+                      制作期間：<%= portfolio.period %>
+                    </div>
                   </div>
-                  <div class="portfolio-name">
-                    <%= link_to portfolio.name, portfolio.url, target: :_blank %>
+                <% else %>
+                  <div class="portfolio-header">
+                    <div class="portfolio-image">
+                      <%= link_to portfolio.url, target: :_blank do %>
+                        <%= image_tag portfolio.image.url %>
+                      <% end %>
+                    </div>
+                    <div class="portfolio-name">
+                      <%= link_to portfolio.name, portfolio.url, target: :_blank %>
+                    </div>
+                    <div class="portfolio-period">
+                      制作期間：<%= portfolio.period %>
+                    </div>
                   </div>
-                  <div class="portfolio-period">
-                    制作期間：<%= portfolio.period %>
-                  </div>
-                </div>
+                <% end %>
                 <div class="portfolio-description">
                   <%= portfolio.description %>
                 </div>

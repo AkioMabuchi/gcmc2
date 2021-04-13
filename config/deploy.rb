@@ -19,6 +19,12 @@ set :rbenv_ruby, "2.6.1"
 set :log_level, :debug
 
 namespace :deploy do
+  namespace :assets do
+    desc "Precompile Skip"
+    task :precompile do
+      logger.info "Skipped"
+    end
+  end
   desc "Restart application"
   task :restart do
     invoke "unicorn:restart"
