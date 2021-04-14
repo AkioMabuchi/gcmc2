@@ -8,8 +8,22 @@
 
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_pack_tag 'application' %>
-</head>
+  <% if Rails.env.production? %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-90GLNJW2Y9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-90GLNJW2Y9');
+    </script>
+  <% end %>
+</head>
 <body>
 <header>
   <%= link_to "", root_path, class: "logo" %>
@@ -98,7 +112,8 @@
           <li>
             <% if current_user.invitations.length > 0 %>
               <%= link_to invitations_path, class: "invited" do %>
-                <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧（<%= current_user.invitations.length %>件）
+                <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧（<%= current_user.invitations.length %>
+                件）
               <% end %>
             <% else %>
               <%= link_to invitations_path do %>
