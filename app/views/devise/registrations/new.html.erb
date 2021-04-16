@@ -1,7 +1,7 @@
 <% set_meta_tags title: "新規登録", noindex: true %>
 <h1>新規登録</h1>
 <div class="new-registration-page">
-  <%= form_with model: @user, url: user_registration_path, local: true, class: "sign-up-form general-form" do |f| %>
+  <%= form_with model: @user, url: create_user_registration_path, local: true, class: "sign-up-form general-form" do |f| %>
     <div class="field">
       <h4>ユーザーID<small>（英数字およびハイフン24字以内）</small></h4>
       <%= f.text_field :permalink, autofocus: true %>
