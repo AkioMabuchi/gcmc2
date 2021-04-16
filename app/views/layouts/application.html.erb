@@ -57,8 +57,10 @@
         <li>
           <div id="jquery-header-user-button" class="user-image">
             <%= image_tag current_user.image.url %>
-            <% if current_user.invitations.length > 0 %>
-              <div class="notice-circle"></div>
+            <% if current_user.invitations.length > 0 or current_user.received_messages.where(is_read: false).length > 0 %>
+              <div class="notice-mark">
+                <i class="fas fa-exclamation"></i>
+              </div>
             <% end %>
           </div>
         </li>
@@ -105,34 +107,46 @@
         </div>
         <ul>
           <li>
-            <%= link_to new_team_path do %>
+            <%= link_to new_team_path, class: "normal" do %>
               <span class="icon"><i class="fas fa-plus"></i></span> 新規チーム作成
             <% end %>
           </li>
           <li>
+            <% if current_user.received_messages.where(is_read: false).length > 0 %>
+              <%= link_to messages_path, class: "noticed" do %>
+                <span class="icon"><i class="far fa-envelope"></i></span>
+                メッセージ（未読：<%= current_user.received_messages.where(is_read: false).length %>件）
+              <% end %>
+            <% else %>
+              <%= link_to messages_path, class: "normal" do %>
+                <span class="icon"><i class="far fa-envelope"></i></span> メッセージ
+              <% end %>
+            <% end %>
+          </li>
+          <li>
             <% if current_user.invitations.length > 0 %>
-              <%= link_to invitations_path, class: "invited" do %>
+              <%= link_to invitations_path, class: "noticed" do %>
                 <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧（<%= current_user.invitations.length %>
                 件）
               <% end %>
             <% else %>
-              <%= link_to invitations_path do %>
+              <%= link_to invitations_path, class: "normal" do %>
                 <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧
               <% end %>
             <% end %>
           </li>
           <li>
-            <%= link_to edit_user_registration_path do %>
+            <%= link_to edit_user_registration_path, class: "normal" do %>
               <span class="icon"><i class="fas fa-user-cog"></i></span> アカウント設定
             <% end %>
           </li>
           <li>
-            <%= link_to user_path(current_user.permalink) do %>
+            <%= link_to user_path(current_user.permalink), class: "normal" do %>
               <span class="icon"><i class="far fa-address-card"></i></span> プロフィール
             <% end %>
           </li>
           <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= link_to destroy_user_session_path, class: "normal", method: :delete do %>
               <span class="icon"><i class="fas fa-sign-out-alt"></i></span> ログアウト
             <% end %>
           </li>
@@ -160,28 +174,40 @@
       </div>
       <ul>
         <li>
+          <% if current_user.received_messages.where(is_read: false).length > 0 %>
+            <%= link_to messages_path, class: "noticed" do %>
+              <span class="icon"><i class="far fa-envelope"></i></span>
+              メッセージ（未読：<%= current_user.received_messages.where(is_read: false).length %>件）
+            <% end %>
+          <% else %>
+            <%= link_to messages_path, class: "normal" do %>
+              <span class="icon"><i class="far fa-envelope"></i></span> メッセージ
+            <% end %>
+          <% end %>
+        </li>
+        <li>
           <% if current_user.invitations.length > 0 %>
-            <%= link_to invitations_path, class: "invited" do %>
+            <%= link_to invitations_path, class: "noticed" do %>
               <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧（<%= current_user.invitations.length %>件）
             <% end %>
           <% else %>
-            <%= link_to invitations_path do %>
+            <%= link_to invitations_path, class: "normal" do %>
               <span class="icon"><i class="far fa-paper-plane"></i></span> 招待一覧
             <% end %>
           <% end %>
         </li>
         <li>
-          <%= link_to edit_user_registration_path do %>
+          <%= link_to edit_user_registration_path, class: "normal" do %>
             <span class="icon"><i class="fas fa-user-cog"></i></span> アカウント設定
           <% end %>
         </li>
         <li>
-          <%= link_to user_path(current_user.permalink) do %>
+          <%= link_to user_path(current_user.permalink), class: "normal" do %>
             <span class="icon"><i class="far fa-address-card"></i></span> プロフィール
           <% end %>
         </li>
         <li>
-          <%= link_to destroy_user_session_path, method: :delete do %>
+          <%= link_to destroy_user_session_path, class: "normal", method: :delete do %>
             <span class="icon"><i class="fas fa-sign-out-alt"></i></span> ログアウト
           <% end %>
         </li>

@@ -77,6 +77,11 @@
             誕生日：<%= @user.birth.strftime "%Y年 %m月 %d日" %>
           </div>
         <% end %>
+        <div class="profile-message">
+          <%= link_to room_messages_path(@user.permalink), method: :post do %>
+            <i class="far fa-envelope"></i> メッセージを送る
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="container3">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_121129) do
+ActiveRecord::Schema.define(version: 2021_04_16_082133) do
 
   create_table "contact_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email"
@@ -62,6 +62,17 @@ ActiveRecord::Schema.define(version: 2021_02_20_121129) do
     t.index ["position_name_id"], name: "index_members_on_position_name_id"
     t.index ["team_id"], name: "index_members_on_team_id"
     t.index ["user_id"], name: "index_members_on_user_id"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "content"
+    t.boolean "is_read", default: false, null: false
+    t.bigint "sender_user_id"
+    t.bigint "receiver_user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["receiver_user_id"], name: "index_messages_on_receiver_user_id"
+    t.index ["sender_user_id"], name: "index_messages_on_sender_user_id"
   end
 
   create_table "portfolios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -219,6 +230,8 @@ ActiveRecord::Schema.define(version: 2021_02_20_121129) do
   add_foreign_key "members", "position_names"
   add_foreign_key "members", "teams"
   add_foreign_key "members", "users"
+  add_foreign_key "messages", "users", column: "receiver_user_id"
+  add_foreign_key "messages", "users", column: "sender_user_id"
   add_foreign_key "portfolios", "users"
   add_foreign_key "positions", "position_names", column: "name_id"
   add_foreign_key "positions", "users"

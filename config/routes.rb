@@ -6,13 +6,14 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: [:sessions, :registrations],
              path: "",
-             controllers:{
+             controllers: {
                confirmations: "users/confirmations",
                passwords: "users/passwords",
                registrations: "users/registrations",
                sessions: "users/sessions",
                omniauth_callbacks: "users/omniauth_callbacks"
              }
+
   devise_scope :user do
     get "login", to: "users/sessions#new", as: "new_user_session"
     post "login", to: "users/sessions#create", as: "user_session"
@@ -68,7 +69,14 @@ Rails.application.routes.draw do
   end
   resources :portfolios, only: [:show]
   resources :contact_messages, only: [:index, :create], path: "contact"
-
+  resources :messages, only: [:index, :create] do
+    collection do
+      match :room, path: "rooms/:permalink", via: [:get, :post]
+    end
+    member do
+      patch :read
+    end
+  end
   get "new-team", to: "teams#new", as: "new_team"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

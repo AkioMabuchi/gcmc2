@@ -1,0 +1,36 @@
+<% set_meta_tags title: "メッセージ", noindex: true %>
+<h1>メッセージ</h1>
+<div class="messages-index-page">
+  <ul>
+    <% @sender_users.each do |user| %>
+      <li>
+        <%= link_to room_messages_path(user.permalink) do %>
+          <% user.sent_messages.where(receiver_user_id: current_user.id).order(updated_at: :desc).limit(1).each do |message| %>
+            <div class="sender-header">
+              <div class="sender-image">
+                <%= image_tag user.image.url %>
+              </div>
+              <div class="sender-name">
+                <%= user.name %>
+              </div>
+              <% if user.sent_messages.where(receiver_user_id: current_user.id, is_read: false).length > 0 %>
+                <div class="sender-date">
+                  <%= message.updated_at.strftime("%Y-%m-%d %H:%M") %>
+                  <span class="unread">未読（<%= user.sent_messages.where(receiver_user_id: current_user.id, is_read: false).length %>
+                    件）</span>
+                </div>
+              <% else %>
+                <div class="sender-date">
+                  <%= message.updated_at.strftime("%Y-%m-%d %H:%M") %>
+                </div>
+              <% end %>
+            </div>
+            <div class="sender-content">
+              <%= truncate message.content, length: 80 %>
+            </div>
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

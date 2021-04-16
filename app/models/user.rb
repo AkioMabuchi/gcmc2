@@ -32,6 +32,9 @@ class User < ApplicationRecord
   has_many :owner_teams, class_name: "Team", foreign_key: :owner_user_id, dependent: :destroy
   has_many :member_teams, through: :members, source: :team
 
+  has_many :sent_messages, class_name: "Message", foreign_key: :sender_user_id, dependent: :destroy
+  has_many :received_messages, class_name: "Message", foreign_key: :receiver_user_id, dependent: :destroy
+
   has_many :join_requests, dependent: :destroy
   has_many :invitations, dependent: :destroy
   has_many :invited_teams, through: :invitations, source: :team
