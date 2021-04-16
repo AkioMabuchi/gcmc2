@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_action :login_user_only, only: [:index]
   before_action :self_user_forbidden, only: [:room]
-  
+
   def index
     sender_user_ids = Message.where(receiver_user_id: current_user.id).select(:sender_user_id).distinct.pluck(:sender_user_id)
     @sender_users = User.where(id: sender_user_ids)

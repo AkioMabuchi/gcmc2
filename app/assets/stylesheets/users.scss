@@ -259,6 +259,25 @@ div.user-show-page {
           line-height: 20px;
           color: #BFBFBF;
         }
+
+        div.profile-message{
+          padding-top: 10px;
+          a{
+            text-align: center;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            line-height: 30px;
+            display: block;
+            width: 200px;
+            height: 40px;
+            color: #00CC99;
+            border: 2px solid #00CC99;
+            border-radius: 10px;
+            background-color: #A6FFE9;
+            margin-right: auto;
+            margin-left: auto;
+          }
+        }
       }
     }
 
