@@ -71,13 +71,8 @@
             <%= f.submit "更新" %>
           </div>
         <% end %>
-      <% when "skills" %>
-        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form skills-form" do |f| %>
-          <%= f.hidden_field :mode, name: "mode", id: nil, value: "skills" %>
-          <h3>スキルセット設定</h3>
-        <% end %>
       <% when "email" then %>
-        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form email-form" do |f| %>
+        <%= form_with model: resource, url: email_user_registration_path, local: true, class: "general-form user-setting-form email-form" do |f| %>
           <%= f.hidden_field :mode, name: "mode", id: nil, value: "email" %>
           <h3>メールアドレス変更</h3>
           <div class="field">
@@ -103,7 +98,7 @@
           </div>
         <% end %>
       <% when "password" then %>
-        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form password-form" do |f| %>
+        <%= form_with model: resource, url: password_user_registration_path, local: true, class: "general-form user-setting-form password-form" do |f| %>
           <%= f.hidden_field :mode, name: "mode", id: nil, value: "password" %>
           <h3>パスワード変更</h3>
           <div class="field">
@@ -138,7 +133,7 @@
           </div>
         <% end %>
       <% when "notification" then %>
-        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form notification-form" do |f| %>
+        <%= form_with model: resource, url: notification_user_registration_path, local: true, class: "general-form user-setting-form notification-form" do |f| %>
           <%= f.hidden_field :mode, name: "mode", id: nil, value: "notification" %>
           <h3>通知設定</h3>
           <div class="field">
@@ -152,7 +147,7 @@
           </div>
         <% end %>
       <% when "sns" then %>
-        <%= form_with model: resource, url: user_registration_path, local: true, class: "general-form user-setting-form sns-form" do |f| %>
+        <%= form_with model: resource, url: sns_user_registration_path, local: true, class: "general-form user-setting-form sns-form" do |f| %>
           <%= f.hidden_field :mode, name: "mode", id: nil, value: "sns" %>
           <h3>SNS設定</h3>
           <div class="field">
@@ -202,7 +197,7 @@
             退会後、全てのデータが削除されます。また、削除されたデータの復元はできません。
           </div>
           <div class="destroy-action">
-            <%= button_to "退会", user_registration_path, data: {confirm: "本当に退会しますか？"}, method: :delete %>
+            <%= button_to "退会", destroy_user_registration_path, data: {confirm: "本当に退会しますか？"}, method: :delete %>
           </div>
         </div>
       <% else end %>
