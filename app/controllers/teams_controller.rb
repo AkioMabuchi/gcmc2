@@ -11,16 +11,9 @@ class TeamsController < ApplicationController
     :dissolution
   ]
 
+  before_action :set_positions, only: [:index]
+
   def index
-    positions = Set.new
-    if user_signed_in?
-      current_user.position_names.pluck(:id).each do |position|
-        positions.add position
-      end
-    end
-
-    Thread.current[:teams_hyper_sort] = positions
-
     @q = Team.ransack(params[:q])
     @teams = @q.result.includes(:team_tag_names).hyper_sort(current_user).page(params[:page]).per(5)
   end
@@ -163,6 +156,17 @@ class TeamsController < ApplicationController
     else
       raise Forbidden
     end
+  end
+
+  def set_positions
+    positions = Set.new
+    if user_signed_in?
+      current_user.position_names.pluck(:id).each do |position|
+        positions.add position
+      end
+    end
+
+    Thread.current[:teams_hyper_sort] = positions
   end
 
   def team_params

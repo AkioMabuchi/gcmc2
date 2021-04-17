@@ -9,13 +9,13 @@ class User < ApplicationRecord
   friendly_id :permalink
 
   validates :permalink,
-            format: {with: /\A[0-9a-zA-Z\\-]*\z/, message: "英数字およびハイフンのみ使えます"},
-            presence: {message: "入力してください"},
-            uniqueness: {case_sensitive: true, message: "そのユーザーIDは既に使用されています"},
-            length: {maximum: 24, message: "24字以内で入力してください"}
+            format: { with: /\A[0-9a-zA-Z\\-]*\z/, message: "英数字およびハイフンのみ使えます" },
+            presence: { message: "入力してください" },
+            uniqueness: { case_sensitive: true, message: "そのユーザーIDは既に使用されています" },
+            length: { maximum: 24, message: "24字以内で入力してください" }
   validates :name,
-            presence: {message: "入力してください"},
-            length: {maximum: 24, message: "24字以内で入力してください"}
+            presence: { message: "入力してください" },
+            length: { maximum: 24, message: "24字以内で入力してください" }
 
   has_many :user_tags, dependent: :destroy
   has_many :user_tag_names, through: :user_tags
@@ -39,7 +39,7 @@ class User < ApplicationRecord
   has_many :invitations, dependent: :destroy
   has_many :invited_teams, through: :invitations, source: :team
 
-  has_many :invitation_names, -> { where(positions: {name_id: Thread.current[:users_hyper_sort]}) }, through: :positions, source: :position_name
+  has_many :invitation_names, -> { where(positions: { name_id: Thread.current[:users_hyper_sort] }) }, through: :positions, source: :position_name
 
   accepts_nested_attributes_for :twitter
   accepts_nested_attributes_for :github
@@ -73,9 +73,9 @@ class User < ApplicationRecord
     if current_user
       unless current_user.id == self.id
         positions = Thread.current[:users_hyper_sort]
-
+        
         self.positions.each do |position|
-          return true if positions.include? position.name_id
+          return true if positions.include?(position.name_id)
         end
       end
       false

@@ -1,16 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_positions, only: [:index]
   def index
-    positions = Set.new
-    if user_signed_in?
-      current_user.owner_teams.each do |team|
-        team.position_names.each do |position|
-          positions.add position.id
-        end
-      end
-    end
-
-    Thread.current[:users_hyper_sort] = positions
-
     @q = User.ransack(params[:q])
     @users = @q.result.includes(:user_tag_names).hyper_sort(current_user).page(params[:page]).per(10)
   end
@@ -39,5 +29,20 @@ class UsersController < ApplicationController
           positions: @user.position_names.select(:id, :name)
       }
     end
+  end
+
+  private
+
+  def set_positions
+    positions = Set.new
+    if user_signed_in?
+      current_user.owner_teams.each do |team|
+        team.position_names.each do |position|
+          positions.add position.id
+        end
+      end
+    end
+
+    Thread.current[:users_hyper_sort] = positions
   end
 end
