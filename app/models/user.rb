@@ -73,7 +73,7 @@ class User < ApplicationRecord
     if current_user
       unless current_user.id == self.id
         positions = Thread.current[:users_hyper_sort]
-        
+
         self.positions.each do |position|
           return true if positions.include?(position.name_id)
         end
