@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_04_16_082133) do
 
-  create_table "contact_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "contact_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email"
     t.string "title"
     t.text "message"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "githubs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "githubs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "uid"
     t.string "url"
     t.boolean "is_published_url", default: false, null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["user_id"], name: "index_githubs_on_user_id"
   end
 
-  create_table "invitations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "invitations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "team_id"
     t.bigint "position_name_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
-  create_table "join_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "join_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.text "message"
     t.bigint "user_id"
     t.bigint "team_id"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["user_id"], name: "index_join_requests_on_user_id"
   end
 
-  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "team_id"
     t.bigint "position_name_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["user_id"], name: "index_members_on_user_id"
   end
 
-  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "content"
     t.boolean "is_read", default: false, null: false
     t.bigint "sender_user_id"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["sender_user_id"], name: "index_messages_on_sender_user_id"
   end
 
-  create_table "portfolios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "portfolios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.string "period"
@@ -87,14 +87,14 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["user_id"], name: "index_portfolios_on_user_id"
   end
 
-  create_table "position_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "position_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "sort_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "name_id"
     t.datetime "created_at", precision: 6, null: false
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["user_id"], name: "index_positions_on_user_id"
   end
 
-  create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "level"
     t.bigint "user_id"
@@ -112,14 +112,14 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["user_id"], name: "index_skills_on_user_id"
   end
 
-  create_table "team_tag_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "team_tag_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "sort_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "team_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "team_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "team_id"
     t.bigint "name_id"
     t.datetime "created_at", precision: 6, null: false
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["team_id"], name: "index_team_tags_on_team_id"
   end
 
-  create_table "team_urls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "team_urls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "url"
     t.boolean "is_public", default: false, null: false
@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["team_id"], name: "index_team_urls_on_team_id"
   end
 
-  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "permalink"
     t.string "name"
     t.string "image"
@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["owner_user_id"], name: "index_teams_on_owner_user_id"
   end
 
-  create_table "twitters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "twitters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "uid"
     t.string "url"
     t.boolean "is_published_url", default: false, null: false
@@ -168,14 +168,14 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["user_id"], name: "index_twitters_on_user_id"
   end
 
-  create_table "user_tag_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "user_tag_names", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "sort_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "user_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
@@ -184,7 +184,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["user_id"], name: "index_user_tags_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -210,7 +210,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_082133) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "wanted_positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "wanted_positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "amount"
     t.bigint "team_id"
     t.bigint "name_id"

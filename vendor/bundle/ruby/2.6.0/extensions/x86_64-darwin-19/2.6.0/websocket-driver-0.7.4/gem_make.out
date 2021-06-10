@@ -1,0 +1,15 @@
+current directory: /Users/amestric/rails/gcmc2/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+/Users/amestric/.rbenv/versions/2.6.1/bin/ruby -I /Users/amestric/.rbenv/versions/2.6.1/lib/ruby/2.6.0 -r ./siteconf20210609-85811-1g3pc2k.rb extconf.rb
+creating Makefile
+
+current directory: /Users/amestric/rails/gcmc2/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/amestric/rails/gcmc2/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/amestric/rails/gcmc2/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.4/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20210609-85811-1katc6j
